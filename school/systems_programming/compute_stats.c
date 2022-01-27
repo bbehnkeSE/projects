@@ -41,6 +41,18 @@ int main()
     nums->list = numbers;
     nums->len  = size;
 
+
+    // Prints array
+    printf("Numbers: [");
+    for(int i = 0; i < size; ++i)
+    {
+        printf("%.2f", nums->list[i]);
+        if(i < size - 1)
+            printf(", ");
+
+    }
+    printf("]\n");
+
     compute_stats(nums);
     printf("min value is: %.2f\n", nums->min);
     printf("max value is: %.2f\n", nums->max);
