@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
         sleepTime = 10;
         index = 1;
     }
+    int tmp = index;
 
     /* infinite loop to keep checking users */
     for(;;)
@@ -39,8 +40,16 @@ int main(int argc, char *argv[])
             exit(1);
         }
 
-        while ((utbufp = utmp_next()) != ((struct utmp *) NULL))
-            show_info(utbufp);
+        while ((utbufp = utmp_next()) != ((struct utmp *) NULL)) {
+            index = tmp;
+            while(index < argc) {
+                if(!strcmp(utbufp->ut_name, argv[index]))
+                    show_info(utbufp);
+                //else
+                    //printf("argv[i]: %s not found.\n", argv[index]);
+                ++index;
+            }
+        }
         utmp_close();
 
         sleep(sleepTime);
