@@ -21,11 +21,15 @@ int main(int argc, char *argv[])
     struct utmp *utbufp,        /* holds pointer to next rec    */
                 *utmp_next();   /* returns pointer to next  */
 
-    int sleepTime;
-    if(checkNum(argv[1])) 
-        sscanf(argv[1], "%d", &sleepTime);  /* converts argv[1] to int */
-    else
+    int sleepTime, index;
+    if(checkNum(argv[1])) {
+        sscanf(argv[1], "%d", &sleepTime);  /* converts argv[1] to int and assigns to sleepTime */
+        index = 2;
+    }
+    else {
         sleepTime = 10;
+        index = 1;
+    }
 
     /* infinite loop to keep checking users */
     for(;;)
