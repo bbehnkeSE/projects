@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
     }
     printf("(is/are) currently logged in.\n");
     utmp_close();
+    ut_index = 0;
 
     /* infinite loop to continually check utmp file */
     for(;;)
@@ -77,7 +78,23 @@ int main(int argc, char *argv[])
         /* someone logged off */
         if(nrs > utmp_reload())
         {
-            //while((utbufp = utmp_next()) != NULLUT)
+            while(ut_array[ut_index] != NULL)               /* compare each name from last pass with each name in current record */
+            {
+                static int found = 0;
+                while((utbufp = utmp_next()) != NULLUT)         
+                {
+                    if(!strcmp(ut_array[ut_index]->ut_name, utbufp->ut_name)) 
+                    {
+                        found = 1;
+                        break;
+                    }
+                }
+                if(!found)
+                    printf("%s logged off.\n", ut_array[ut_index]->ut_name);
+
+                ++ut_index;
+                utmp_reload();
+            }
         }
 
         /* someone logged on */
@@ -129,7 +146,7 @@ int check_utmp_array(char* name, struct utmp** names, size_t size)
 {
     for(int i = 0; i < size; ++i)
         if(!strcmp(name, names[i]))
-            return 1;               /* name found */
+            return i;               /* name found */
 
     return 0;                       /* not found */
 }
@@ -139,7 +156,7 @@ int  check_arg_array(char* name, char** names, size_t size)
 {
     for(int i = 0; i < size; ++i)
         if(!strcmp(name, names[i]))
-            return 1;               /* name found */
+            return i;               /* name found */
 
     return 0;                       /* not found */
 }
