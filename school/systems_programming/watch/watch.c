@@ -13,6 +13,7 @@
 
 void reset_array(struct utmp**, size_t);
 void show_info  (struct utmp *);
+int  check_array(char*, struct utmp**, size_t);
 int  check_num  (char cla[]);
 
 
@@ -76,7 +77,7 @@ int main(int argc, char *argv[])
         /* someone logged off */
         if(nrs > utmp_reload())
         {
-
+            //while((utbufp = utmp_next()) != NULLUT)
         }
 
         /* someone logged on */
@@ -84,6 +85,8 @@ int main(int argc, char *argv[])
         {
             
         }
+
+        utmp_close();
     }
     
 
@@ -112,6 +115,15 @@ int check_num(char cla[])
             return 0;
 
     return 1;
+}
+
+int check_array(char* name, struct utmp** names, size_t size)
+{
+    for(int i = 0; i < size; ++i)
+        if(!strcmp(name, names[i]))
+            return 1                /* name found */
+
+    return 0;                       /* not found */
 }
 
 void reset_array(struct utmp** ut_array, size_t size)
