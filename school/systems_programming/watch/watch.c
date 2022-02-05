@@ -12,7 +12,6 @@
 #include    "utmplib.c"
 
 void reset_array     (struct utmp**, size_t);
-void show_info       (struct utmp *);
 int  check_utmp_array(char*, struct utmp**, size_t);
 int  check_arg_array (char*, char**, size_t);
 int  check_num       (char cla[]);
@@ -40,7 +39,7 @@ int main(int argc, char *argv[])
     }
     else 
     {
-        sleepTime = 10;
+        sleepTime = 300;
         argv_index = 1;
     }
     int   nrs        = utmp_reload();       /* saves number of records at first run */
@@ -89,6 +88,24 @@ int main(int argc, char *argv[])
                     printf("%s logged in.\n", utbufp->ut_name);
         }
 
+        /* resets everything to prepare for next round */
+        ut_index = 0;
+        nrs = utmp_reload();
+        reset_array(ut_array, ut_size);
+        while((utbufp = utmp_next()) != NULLUT) 
+        {
+            argv_index = index_init;
+            while(argv_index < argc) 
+            {
+                if(!strcmp(utbufp->ut_name, argv[argv_index]))
+                {
+                    ut_array[ut_index] = utbufp;
+                    ++ut_index;
+                }
+                ++argv_index;
+            }
+        }
+
         utmp_close();
     }
     
@@ -96,19 +113,6 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-/*
- *  show info()
- *  displays the contents of the utmp struct
- *  in human readable form
- *  displays nothing if record has no user name
- */
-void show_info(struct utmp *utbufp)
-{
-    if (utbufp->ut_type != USER_PROCESS)
-        return;
-
-    printf("%-8.8s is logged in\n", utbufp->ut_name);      /* the logname  */
-}
 
 /* Checks if char array is an int */
 int check_num(char cla[])
