@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
         /* someone logged on */
         if(nrs < utmp_reload())
         {
-            
+
         }
 
         utmp_close();
@@ -121,7 +121,7 @@ int check_array(char* name, struct utmp** names, size_t size)
 {
     for(int i = 0; i < size; ++i)
         if(!strcmp(name, names[i]))
-            return 1                /* name found */
+            return 1;               /* name found */
 
     return 0;                       /* not found */
 }
