@@ -11,10 +11,11 @@
 
 #include    "utmplib.c"
 
-void reset_array(struct utmp**, size_t);
-void show_info  (struct utmp *);
-int  check_array(char*, struct utmp**, size_t);
-int  check_num  (char cla[]);
+void reset_array     (struct utmp**, size_t);
+void show_info       (struct utmp *);
+int  check_utmp_array(char*, struct utmp**, size_t);
+int  check_arg_array (char*, char**, size_t);
+int  check_num       (char cla[]);
 
 
 int main(int argc, char *argv[])
@@ -83,7 +84,9 @@ int main(int argc, char *argv[])
         /* someone logged on */
         if(nrs < utmp_reload())
         {
-
+            while((utbufp = utmp_next()) != NULLUT)
+                if(!check_utmp_array(utbufp->ut_name, ut_array, ut_size) && check_arg_array(utbufp->ut_name, argv, argc))
+                    printf("%s logged in.\n", utbufp->ut_name);
         }
 
         utmp_close();
@@ -117,7 +120,18 @@ int check_num(char cla[])
     return 1;
 }
 
-int check_array(char* name, struct utmp** names, size_t size)
+/* array of struct utmp* */
+int check_utmp_array(char* name, struct utmp** names, size_t size)
+{
+    for(int i = 0; i < size; ++i)
+        if(!strcmp(name, names[i]))
+            return 1;               /* name found */
+
+    return 0;                       /* not found */
+}
+
+/* array of char* */
+int  check_arg_array(char* name, char** names, size_t size)
 {
     for(int i = 0; i < size; ++i)
         if(!strcmp(name, names[i]))
