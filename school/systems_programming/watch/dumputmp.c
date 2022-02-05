@@ -18,7 +18,7 @@ char *fn;
  */
 {
 	struct utmp	utrec;
-	int		fd;
+	int	   fd;
 
 	fd = open( fn, 0 );
 	if ( fd == -1 )
