@@ -4,10 +4,10 @@
 # Type  make    to compile all the programs
 # in the chapter 
 #
-all: fileinfo filesize ls1 ls2
+all: fileinfo filesize ls1 ls2 ls3
 
 clean:
-	rm -f fileinfo filesize ls1 ls2
+	rm -f fileinfo filesize ls1 ls2 ls3
 
 
 fileinfo: fileinfo.c 
@@ -20,4 +20,7 @@ ls1: ls1.c
 	cc -o ls1 ls1.c 
 
 ls2: ls2.c 
-	cc -o ls2 ls2.c 
+	cc -o ls2 ls2.c
+
+ls3: ls3.c
+	cc -o ls3 ls3.c

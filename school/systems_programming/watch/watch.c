@@ -9,7 +9,7 @@
 #include    <stdlib.h>
 #include    <unistd.h>      /* sleep() */
 
-#include    "utmplib.c"
+#include    "u.c"
 
 void reset_array     (struct utmp**, size_t);
 int  check_utmp_array(char*, struct utmp**, size_t);
@@ -19,6 +19,11 @@ int  check_num       (char cla[]);
 
 int main(int argc, char *argv[])
 {
+    if(argc < 2) {
+        printf("Too few arguments. Exiting...\n");
+        return 1;
+    }
+
     size_t ut_size = NRECS * UTSIZE;
 
     struct utmp *utbufp;                    /* holds pointer to next rec */
