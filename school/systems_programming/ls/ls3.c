@@ -12,32 +12,74 @@
  * Feb 6, 2022
  *
  * Adds -u option to ls2.c
+ * Compile: cc ls3.c -o ls3
+ * Run: ./ls3 runs just like ./ls2. 
+ *      ./ls3 -u will list the files with their last access time instead of modification time.
  */
 
 #include    <stdio.h>
+#include    <stdlib.h>
 #include    <sys/types.h>
 #include    <dirent.h>
 #include    <sys/stat.h>
+#include    <string.h>
 
-void do_ls(char[]);
-void dostat(char *);
-void show_file_info( char *, struct stat *);
+void do_ls(char[], int);
+void dostat(char *, int);
+void show_file_info( char *, struct stat *, int);
 void mode_to_letters( int , char [] );
 char *uid_to_name( uid_t );
 char *gid_to_name( gid_t );
 
-main(int ac, char *av[])
+int compare(const void *, const void *);    /* comparison function for qsort() */
+
+int main(int ac, char *av[])
 {
-    if ( ac == 1 )
-        do_ls( "." );
-    else
-        while ( --ac ){
-            printf("%s:\n", *++av );
-            do_ls( *av );
+    int u_op = 0;
+    if(ac == 1)
+        do_ls(".", u_op);
+
+    /* 
+     * check if the first argument has a '-' in front.
+     * if not, treat first argument as a directory
+     * if so, check if second character is a 'u'
+     */
+    else if ( ac == 2 && av[1][0] == '-') 
+    {
+        if(av[1][1] == 'u')
+            u_op = 1;
+        else 
+        {
+            printf("Only supported option is \"-u.\"\n");
+            u_op = 0;
         }
+        do_ls( ".", u_op );
+    }
+    else 
+    {
+        if(av[1][0] == '-' && av[1][1] == 'u') { 
+            u_op = 1;
+            *++av;
+            --ac;
+        }
+        else if(av[1][0] == '-' && av[1][1] != 'u')
+        {
+            printf("Only supported option is \"-u.\"\n");
+            u_op = 0;
+            *++av;
+            --ac;
+        }
+        while ( --ac )
+        {
+            printf("%s:\n", *++av );
+            do_ls( *av, u_op );
+        }
+    }
+
+    return 0;
 }
 
-void do_ls( char dirname[] )
+void do_ls( char dirname[], int u_op )
 /*
  *  list files in directory called dirname
  */
@@ -50,29 +92,29 @@ void do_ls( char dirname[] )
     else
     {
         while ( ( direntp = readdir( dir_ptr ) ) != NULL )
-            dostat( direntp->d_name );
+            dostat( direntp->d_name, u_op);
         closedir(dir_ptr);
     }
-}
+} 
 
-void dostat( char *filename )
+void dostat( char *filename, int u_op )
 {
     struct stat info;
 
     if ( stat(filename, &info) == -1 )      /* cannot stat   */
-        perror( filename );         /* say why   */
-    else                    /* else show info    */
-        show_file_info( filename, &info );
+        perror( filename );                 /* say why   */
+    else                                    /* else show info    */
+        show_file_info( filename, &info, u_op );
 }
 
-void show_file_info( char *filename, struct stat *info_p )
+void show_file_info( char *filename, struct stat *info_p, int u_op )
 /*
  * display the info about 'filename'.  The info is stored in struct at *info_p
  */
 {
     char    *uid_to_name(), *ctime(), *gid_to_name(), *filemode();
     void    mode_to_letters();
-        char    modestr[11];
+    char    modestr[11];
 
     mode_to_letters( info_p->st_mode, modestr );
 
@@ -81,14 +123,23 @@ void show_file_info( char *filename, struct stat *info_p )
     printf( "%-8s " , uid_to_name(info_p->st_uid) );
     printf( "%-8s " , gid_to_name(info_p->st_gid) );
     printf( "%8ld " , (long)info_p->st_size);
-    printf( "%.12s ", 4+ctime(&info_p->st_mtime));
+    if(u_op)
+        printf( "%.12s ", 4+ctime(&info_p->st_atime));
+    else
+        printf( "%.12s ", 4+ctime(&info_p->st_mtime));
     printf( "%s\n"  , filename );
-
 }
 
 /*
  * utility functions
  */
+
+int compare(const void *lhs, const void *rhs) {
+    int l = ((struct stat *)lhs) -> st_atime;
+    int r = ((struct stat *)rhs) -> st_atime;
+
+    return (l - r);
+}
 
 /*
  * This function takes a mode value and a char array
