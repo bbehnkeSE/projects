@@ -4,7 +4,11 @@
  * Feb 18, 2022
  *
  * Lite version of the stty command
- * compile/run instructions go here
+ *
+ * Compile: gcc -Wall sttyl.c -o sttyl
+ * Run: ./sttyl
+ *
+ * Currently only prints certain flags without accepting arguments
  */
 
 
@@ -48,8 +52,8 @@ struct fl_info oflags[] =
 };
 
 void  noArgs(struct termios);
-
 void  printFlags(int, struct fl_info []);
+
 
 int main(int argc, char *argv[])
 {
@@ -61,7 +65,6 @@ int main(int argc, char *argv[])
 			perror("Unable to get info. Exiting...");
 			exit(1);
 		}
-		;
 	}
 	else
 		noArgs(tio);
