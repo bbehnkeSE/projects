@@ -51,6 +51,16 @@ struct fl_info oflags[] =
 	{ 0      ,   NULL    }
 };
 
+struct fl_info commands[] =
+{
+	{ VINTR  ,  "intr"   },
+	{ VERASE ,  "erase"  },
+	{ VKILL  ,  "kill"   },
+	{ VSTART ,  "start"  },
+	{ VSTOP  ,  "stop"   },
+	{ 0      ,   NULL    }
+};
+
 void  noArgs     (struct termios*);
 void  enable     (char*, struct termios*);
 void  disable    (char*, struct termios*);
@@ -83,58 +93,71 @@ int main(int argc, char *argv[])
 }
 
 
+/* Disables flags */
 void disable(char* str, struct termios* tio)
 {
-	++str; 										/* removes '-' */
-	int l = checkFlags(str, lflags);
-	int i = checkFlags(str, iflags);
-	int o = checkFlags(str, oflags);
+	++str;		/* removes '-' from str */
 
-	/* Uses bitwise AND to turn flags off */
-	if(l != -1) 								/* str found in lflags struct */
+	/* First, check lflags struct */
+	int l = checkFlags(str, lflags);
+	if (l != -1) 						/* str found in lflags struct */
 	{
 		tio->c_lflag &= ~lflags[l].fl_value;
 		tcsetattr(0, TCSANOW, tio);
+		return;
 	}
-	else if(i != -1)							/* str found in iflags struct */
+
+	/* If not found in lflags, check iflags */
+	int i = checkFlags(str, iflags);
+	if (i != -1)						/* str found in iflags struct */
 	{
 		tio->c_iflag &= ~iflags[i].fl_value;
 		tcsetattr(0, TCSANOW, tio);
+		return;
 	}
-	else if(o != -1)							/* str found in oflags struct */
+
+	/* Finally, check oflags */
+	int o = checkFlags(str, oflags);
+	if (o != -1)						/* str found in oflags struct */
 	{
 		tio->c_oflag &= ~oflags[o].fl_value;
 		tcsetattr(0, TCSANOW, tio);
+		return;
 	}
-	else
-		printf("Unknown mode.\n");
+	printf("Unknown mode.\n"); 			/* str wasn't found */
 }
 
 
+/* Enables flags */
 void enable(char* str, struct termios* tio)
 {
+	/* First, check lflags struct */
 	int l = checkFlags(str, lflags);
-	int i = checkFlags(str, iflags);
-	int o = checkFlags(str, oflags);
-
-	/* Uses bitwise OR to turn flags on */
-	if(l != -1) 								/* str found in lflags struct */
+	if (l != -1) 						/* str found in lflags struct */
 	{
 		tio->c_lflag |= lflags[l].fl_value;
 		tcsetattr(0, TCSANOW, tio);
+		return;
 	}
-	else if(i != -1)							/* str found in iflags struct */
+
+	/* If not found in lflags, check iflags */
+	int i = checkFlags(str, iflags);
+	if (i != -1)						/* str found in iflags struct */
 	{
 		tio->c_iflag |= iflags[i].fl_value;
 		tcsetattr(0, TCSANOW, tio);
+		return;
 	}
-	else if(o != -1)							/* str found in oflags struct */
+
+	/* Finally, check oflags */
+	int o = checkFlags(str, oflags);
+	if (o != -1)						/* str found in oflags struct */
 	{
 		tio->c_oflag |= oflags[o].fl_value;
 		tcsetattr(0, TCSANOW, tio);
+		return;
 	}
-	else
-		printf("Unknown mode.\n");
+	printf("Unknown mode.\n");			/* str wasn't found */
 }
 
 
@@ -156,7 +179,7 @@ void noArgs(struct termios *tio)
 }
 
 
-/* Utility functions */
+/********* Utility functions *********/
 
 /* Searches structs for flag names   */
 /* Returns index if found, -1 if not */
