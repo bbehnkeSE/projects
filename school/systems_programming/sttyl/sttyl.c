@@ -27,7 +27,7 @@ struct fl_info
 struct fl_info lflags[] = 
 {
 	{ ICANON ,  "icanon" },
-	{ IEXTEN ,  "ixten"  },
+	{ IEXTEN ,  "iexten" },
 	{ ECHO   ,  "echo"   },
 	{ ECHOE  ,  "echoe"  },
 	{ ECHOK  ,  "echok"  },
@@ -62,6 +62,12 @@ int   checkFlags (char*, struct fl_info []);
 int main(int argc, char *argv[])
 {
 	struct termios tio;
+	if(tcgetattr(0, &tio) == -1)
+	{
+		perror("Unable to get info. Exiting...");
+		exit(1);
+	}
+
 	if(argc > 1)
 		for(int i = 1; i < argc; ++i)
 		{
@@ -79,29 +85,34 @@ int main(int argc, char *argv[])
 
 void disable(char* str, struct termios* tio)
 {
-	++str; 		/* removes '-' */
-	int i = checkFlags(str, iflags);
+	++str; 										/* removes '-' */
 	int l = checkFlags(str, lflags);
+	int i = checkFlags(str, iflags);
 	int o = checkFlags(str, oflags);
 
-	if(i)
-		printf("disable %s\n", iflags[i].fl_name);
-	else if(l)
-		printf("disable %s\n", lflags[l].fl_name);
-	else if(o)
-		printf("disable %s\n", oflags[o].fl_name);
+	if(l != -1) 								/* Found in lflags struct */
+	{
+		tio->c_lflag &= ~lflags[l].fl_value;
+		tcsetattr(0, TCSANOW, tio);
+	}
+	else if(i != -1)							/* Found in iflags struct */
+	{
+		tio->c_iflag &= ~iflags[i].fl_value;
+		tcsetattr(0, TCSANOW, tio);
+	}
+	else if(o != -1)							/* Found in oflags struct */
+	{
+		tio->c_oflag &= ~oflags[o].fl_value;
+		tcsetattr(0, TCSANOW, tio);
+	}
 	else
 		printf("Unknown mode.\n");
 }
 
 
+/* Prints flag status and commands */
 void noArgs(struct termios *tio)
 {
-	if(tcgetattr(0, tio) == -1)
-	{
-		perror("Unable to get info. Exiting...");
-		exit(1);
-	}
 	/* Prints various keyboard commands */
 	printf("intr = ^%c; erase = ^%c; kill = ^%c; start = ^%c; stop = ^%c;\n",
 			tio->c_cc[VINTR]  - 1 + 'A',
@@ -111,8 +122,8 @@ void noArgs(struct termios *tio)
 			tio->c_cc[VSTOP]  - 1 + 'A'
 		  );
 
-	printFlags(tio->c_iflag, iflags);
 	printFlags(tio->c_lflag, lflags);
+	printFlags(tio->c_iflag, iflags);
 	printFlags(tio->c_oflag, oflags);
 		
 }
@@ -120,6 +131,8 @@ void noArgs(struct termios *tio)
 
 /* Utility functions */
 
+/* Searches structs for flag names   */
+/* Returns index if found, -1 if not */
 int checkFlags(char* str, struct fl_info name[])
 {
 	for(int i = 0; name[i].fl_value; ++i)
@@ -127,10 +140,11 @@ int checkFlags(char* str, struct fl_info name[])
 		if(!strcmp(str, name[i].fl_name))
 			return i;
 	}
-	return 0;
+	return -1;
 }
 
 
+/* Prints if flags are enables or disabled */
 void printFlags(int flag, struct fl_info name[])
 {
 	for(int i = 0; name[i].fl_value; ++i)
