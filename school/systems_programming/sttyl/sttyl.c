@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 			if(argv[i][0] == '-')
 				disable(argv[i], &tio);
 			else
-				continue;
+				enable (argv[i], &tio);
 		}
 	else
 		noArgs(&tio);
@@ -90,19 +90,47 @@ void disable(char* str, struct termios* tio)
 	int i = checkFlags(str, iflags);
 	int o = checkFlags(str, oflags);
 
-	if(l != -1) 								/* Found in lflags struct */
+	/* Uses bitwise AND to turn flags off */
+	if(l != -1) 								/* str found in lflags struct */
 	{
 		tio->c_lflag &= ~lflags[l].fl_value;
 		tcsetattr(0, TCSANOW, tio);
 	}
-	else if(i != -1)							/* Found in iflags struct */
+	else if(i != -1)							/* str found in iflags struct */
 	{
 		tio->c_iflag &= ~iflags[i].fl_value;
 		tcsetattr(0, TCSANOW, tio);
 	}
-	else if(o != -1)							/* Found in oflags struct */
+	else if(o != -1)							/* str found in oflags struct */
 	{
 		tio->c_oflag &= ~oflags[o].fl_value;
+		tcsetattr(0, TCSANOW, tio);
+	}
+	else
+		printf("Unknown mode.\n");
+}
+
+
+void enable(char* str, struct termios* tio)
+{
+	int l = checkFlags(str, lflags);
+	int i = checkFlags(str, iflags);
+	int o = checkFlags(str, oflags);
+
+	/* Uses bitwise OR to turn flags on */
+	if(l != -1) 								/* str found in lflags struct */
+	{
+		tio->c_lflag |= lflags[l].fl_value;
+		tcsetattr(0, TCSANOW, tio);
+	}
+	else if(i != -1)							/* str found in iflags struct */
+	{
+		tio->c_iflag |= iflags[i].fl_value;
+		tcsetattr(0, TCSANOW, tio);
+	}
+	else if(o != -1)							/* str found in oflags struct */
+	{
+		tio->c_oflag |= oflags[o].fl_value;
 		tcsetattr(0, TCSANOW, tio);
 	}
 	else
@@ -125,7 +153,6 @@ void noArgs(struct termios *tio)
 	printFlags(tio->c_lflag, lflags);
 	printFlags(tio->c_iflag, iflags);
 	printFlags(tio->c_oflag, oflags);
-		
 }
 
 
