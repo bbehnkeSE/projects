@@ -32,7 +32,7 @@ struct fl_info lflags[] =
 	{ ECHOE  ,  "echoe"  },
 	{ ECHOK  ,  "echok"  },
 	{ ISIG   ,  "isig"   },
-	{ 0      ,   NULL    }
+	{ -1     ,   NULL    }
 };
 
 struct fl_info iflags[] = 
@@ -41,14 +41,14 @@ struct fl_info iflags[] =
 	{ INPCK  ,  "inpck"  },
 	{ ICRNL  ,  "icrnl"  },
 	{ IXANY  ,  "ixany"  },
-	{ 0      ,   NULL    }
+	{ -1     ,   NULL    }
 };
 
 struct fl_info oflags[] =
 {
 	{ ONLCR  ,  "onlcr"  },
 	{ OLCUC  ,  "olcuc"  },
-	{ 0      ,   NULL    }
+	{ -1     ,   NULL    }
 };
 
 struct fl_info commands[] =
@@ -58,14 +58,15 @@ struct fl_info commands[] =
 	{ VKILL  ,  "kill"   },
 	{ VSTART ,  "start"  },
 	{ VSTOP  ,  "stop"   },
-	{ 0      ,   NULL    }
+	{ -1     ,   NULL    }
 };
 
 void  noArgs     (struct termios*);
 void  enable     (char*, struct termios*);
 void  disable    (char*, struct termios*);
+void  assignKey  (int  , char*, struct termios*);
 
-void  printFlags (int,   struct fl_info []);
+void  printFlags (int  , struct fl_info []);
 int   checkFlags (char*, struct fl_info []);
 
 
@@ -79,13 +80,32 @@ int main(int argc, char *argv[])
 	}
 
 	if(argc > 1)
+	{
+	   /* 
+		* If arg's first char is a '-', try to disable.
+		* If arg is found in commands array, and there is another argument,
+		* and that argument is shorter than three characters, assume the combination is
+		* assigning a new hotkey to that command.
+		* Else, try to enable arg.
+		*/
+		int cmdIndex = -1;
 		for(int i = 1; i < argc; ++i)
 		{
-			if(argv[i][0] == '-')
+			if((argv[i][0] == '-') && (strlen(argv[i]) > 2))
+			{
 				disable(argv[i], &tio);
-			else
+				continue;
+			}
+			cmdIndex = checkFlags(argv[i], commands);
+			if((cmdIndex != -1) && (argv[i + 1] != NULL) && (strlen(argv[i + 1]) < 3))
+			{
+				assignKey(cmdIndex, argv[i + 1], &tio);
+				continue;
+			}
+			if(strlen(argv[i]) > 2)
 				enable (argv[i], &tio);
 		}
+	}
 	else
 		noArgs(&tio);
 
@@ -98,16 +118,16 @@ void disable(char* str, struct termios* tio)
 {
 	++str;		/* removes '-' from str */
 
-	/* First, check lflags struct */
-	int l = checkFlags(str, lflags);
-	if (l != -1) 						/* str found in lflags struct */
+	/* First, check oflags */
+	int o = checkFlags(str, oflags);
+	if (o != -1)						/* str found in oflags struct */
 	{
-		tio->c_lflag &= ~lflags[l].fl_value;
+		tio->c_oflag &= ~oflags[o].fl_value;
 		tcsetattr(0, TCSANOW, tio);
 		return;
 	}
 
-	/* If not found in lflags, check iflags */
+	/* If not found in oflags, check iflags */
 	int i = checkFlags(str, iflags);
 	if (i != -1)						/* str found in iflags struct */
 	{
@@ -116,31 +136,31 @@ void disable(char* str, struct termios* tio)
 		return;
 	}
 
-	/* Finally, check oflags */
-	int o = checkFlags(str, oflags);
-	if (o != -1)						/* str found in oflags struct */
+	/* Finally, check lflags struct */
+	int l = checkFlags(str, lflags);
+	if (l != -1) 						/* str found in lflags struct */
 	{
-		tio->c_oflag &= ~oflags[o].fl_value;
+		tio->c_lflag &= ~lflags[l].fl_value;
 		tcsetattr(0, TCSANOW, tio);
 		return;
 	}
-	printf("Unknown mode.\n"); 			/* str wasn't found */
+	printf("Unknown mode: \"%s\".\n", str); 	  /* str wasn't found */
 }
 
 
 /* Enables flags */
 void enable(char* str, struct termios* tio)
 {
-	/* First, check lflags struct */
-	int l = checkFlags(str, lflags);
-	if (l != -1) 						/* str found in lflags struct */
+	/* First, check oflags */
+	int o = checkFlags(str, oflags);
+	if (o != -1)						/* str found in oflags struct */
 	{
-		tio->c_lflag |= lflags[l].fl_value;
+		tio->c_oflag |= oflags[o].fl_value;
 		tcsetattr(0, TCSANOW, tio);
 		return;
 	}
 
-	/* If not found in lflags, check iflags */
+	/* If not found in oflags, check iflags */
 	int i = checkFlags(str, iflags);
 	if (i != -1)						/* str found in iflags struct */
 	{
@@ -149,15 +169,26 @@ void enable(char* str, struct termios* tio)
 		return;
 	}
 
-	/* Finally, check oflags */
-	int o = checkFlags(str, oflags);
-	if (o != -1)						/* str found in oflags struct */
+	/* Finally, check lflags struct */
+	int l = checkFlags(str, lflags);
+	if (l != -1) 						/* str found in lflags struct */
 	{
-		tio->c_oflag |= oflags[o].fl_value;
+		tio->c_lflag |= lflags[l].fl_value;
 		tcsetattr(0, TCSANOW, tio);
 		return;
 	}
-	printf("Unknown mode.\n");			/* str wasn't found */
+	printf("Unknown mode: \"%s\".\n", str); 	  /* str wasn't found */
+}
+
+
+void assignKey(int cmdIndex, char* hotkey, struct termios *tio)
+{
+	int tmp = 0;
+	if(hotkey[0] == '^')
+		tmp = 1;
+
+	tio->c_cc[commands[cmdIndex].fl_value] = (hotkey[tmp] - 'A' + 1);
+	tcsetattr(0, TCSANOW, tio);
 }
 
 
@@ -185,7 +216,7 @@ void noArgs(struct termios *tio)
 /* Returns index if found, -1 if not */
 int checkFlags(char* str, struct fl_info name[])
 {
-	for(int i = 0; name[i].fl_value; ++i)
+	for(int i = 0; name[i].fl_value != -1; ++i)
 	{
 		if(!strcmp(str, name[i].fl_name))
 			return i;
@@ -194,10 +225,10 @@ int checkFlags(char* str, struct fl_info name[])
 }
 
 
-/* Prints if flags are enables or disabled */
+/* Prints if flags are enabled or disabled */
 void printFlags(int flag, struct fl_info name[])
 {
-	for(int i = 0; name[i].fl_value; ++i)
+	for(int i = 0; name[i].fl_value != -1; ++i)
 	{
 		if(flag & name[i].fl_value)
 			printf("%s ",  name[i].fl_name);
