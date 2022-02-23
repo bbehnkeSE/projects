@@ -1,12 +1,15 @@
 /* 
  * Brian Behnke
  * Systems Programming - CS43203
- * Feb 18, 2022
+ * Feb 23, 2022
  *
  * Lite version of the stty command
  *
  * Compile: gcc -Wall sttyl.c -o sttyl
- * Run: ./sttyl
+ * Run:     ./sttyl          // prints info on various flags and commands
+ *          ./sttyl [FLAG]   // enables  flag
+ *          ./sttyl -[FLAG]  // disables flag
+ *          ./sttyl [CMD] ^Q // sets CMD to Ctrl+Q
  *
  * Currently only prints certain flags without accepting arguments
  */
