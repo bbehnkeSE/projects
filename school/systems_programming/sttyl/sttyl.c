@@ -11,7 +11,6 @@
  *          ./sttyl -[FLAG]  // disables flag
  *          ./sttyl [CMD] ^Q // sets CMD to Ctrl+Q
  *
- * Currently only prints certain flags without accepting arguments
  */
 
 
