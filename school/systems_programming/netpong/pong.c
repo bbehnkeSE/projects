@@ -39,6 +39,7 @@ int main(int argc, char* argv[])
 
 		// Create the socket
 		printf("Creating socket...\t");
+		fflush(stdout);
 		int sock;
 		if((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1) 
 		{
@@ -49,6 +50,7 @@ int main(int argc, char* argv[])
 
 		// Define server address
 		printf("Defining address...\t");
+		fflush(stdout);
 		struct sockaddr_in address;
 		address.sin_family      = AF_INET;
 		address.sin_port        = htons(atoi(argv[1]));
@@ -57,6 +59,7 @@ int main(int argc, char* argv[])
 
 		// Bind the socket
 		printf("Binding socket...\t");
+		fflush(stdout);
 		if(bind(sock, (struct sockaddr*)&address, sizeof(address)) != 0)
 		{
 			printf("Unable to bind socket.\n");
@@ -66,6 +69,7 @@ int main(int argc, char* argv[])
 
 		// Listen on socket
 		printf("Listening on socket...\t");
+		fflush(stdout);
 		if(listen(sock, 1) != 0)
 		{
 			printf("Unable to listen on sock.\n");
@@ -75,6 +79,7 @@ int main(int argc, char* argv[])
 
 		// Get client socket
 		printf("Waiting for client...\t");
+		fflush(stdout);
 		int client;
 		if((client = accept(sock, NULL, NULL)) == -1)
 		{
@@ -85,11 +90,13 @@ int main(int argc, char* argv[])
 
 		// Send message to client
 		printf("Sending message...\t");
+		fflush(stdout);
 		send(client, srmsg, sizeof(srmsg), 0);
 		printf("Done.\n");
 
 		// Close the socket
 		printf("Closing the socket...\t");
+		fflush(stdout);
 		close(sock);
 		printf("Done.\n");
 	}
@@ -98,6 +105,7 @@ int main(int argc, char* argv[])
 	{
 		// Create the socket
 		printf("Creating socket...\t");
+		fflush(stdout);
 		int sock;
 		if((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1) 
 		{
@@ -108,6 +116,7 @@ int main(int argc, char* argv[])
 
 		// Get host info
 		printf("Getting host info...\t");
+		fflush(stdout);
 		struct hostent *host;
 		if((host = gethostbyname(argv[1])) == NULL)
 		{
@@ -118,6 +127,7 @@ int main(int argc, char* argv[])
 
 		// Specify an address
 		printf("Defining address...\t");
+		fflush(stdout);
 		struct sockaddr_in address;
 		address.sin_family = AF_INET;
 		address.sin_port   = htons(atoi(argv[2]));
@@ -127,6 +137,7 @@ int main(int argc, char* argv[])
 
 		// Connect to server
 		printf("Connecting to server...\t");
+		fflush(stdout);
 		if(connect(sock, (struct sockaddr*)&address, sizeof(address)) != 0) 
 		{
 			printf("Unable to connect.\n");
@@ -141,6 +152,7 @@ int main(int argc, char* argv[])
 
 		// Close the socket
 		printf("Closing the socket...\t");
+		fflush(stdout);
 		close(sock);
 		printf("Done.\n");
 	}
