@@ -19,6 +19,13 @@
 #include "stdlib.h"
 #include "time.h"
 
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <strings.h>
+#include <unistd.h>
+
 #define BLANK        ' '
 #define DFL_SYMBOL   'O'
 #define FLOOR        '-'
@@ -39,6 +46,10 @@
 
 #define X_TTM         5
 #define Y_TTM         8
+
+/* socklib prototypes */
+int make_server_socket(int);
+int connect_to_server( char *, int);
 
 
 /* paddle prototypes */

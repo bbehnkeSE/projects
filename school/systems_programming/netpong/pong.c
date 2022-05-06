@@ -25,8 +25,43 @@ int    bounceOrLose(struct ppball *);
 int    setTicker(int);
 
 
-int main()
+int main(int argc, char* argv[])
 {
+	if(argc == 1) 
+	{
+		printf("Too few arguments. Exiting...\n");
+        	return -1;
+	}
+
+	if(argc == 2)
+	{
+		int sock_id;
+		int port_num = atoi(argv[1]); 				/* Convert arg to int */
+		if((sock_id = make_server_socket(port_num)) == -1)
+		{
+			printf("Unable to make socket\n"); 
+			return -1;
+		}
+		printf("Waiting for client on port %d...\n", port_num);
+		accept(sock_id, NULL, NULL);
+		printf("accepted\n");
+	}
+
+	if(argc == 3)
+	{
+		int   sock_id;
+		char *hostname = argv[1];
+		int   port_num = atoi(argv[2]);
+
+		if((sock_id = connect_to_server(hostname, port_num)) == -1)
+		{
+			printf("Unable to connect to server\n");
+			return -1;
+		}
+		printf("Connected.\n");
+	}
+
+	/*
 	int c;
 	setUp();
 	while(ball.remaining > 0 && (c=getchar()) != 'q')
@@ -36,6 +71,7 @@ int main()
 			case 'j':paddle_down();break;
 		}
 	wrapUp();
+	*/
 
 	return 0;
 }
