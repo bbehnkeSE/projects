@@ -38,90 +38,101 @@ int main(int argc, char* argv[])
 		char srmsg[256] = "Connection established";
 
 		// Create the socket
-		printf("Creating socket.\n");
+		printf("Creating socket...\t");
 		int sock;
 		if((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1) 
 		{
 			printf("Unable to make socket.\n");
 			return -1;
 		}
+		printf("Done.\n");
 
 		// Define server address
-		printf("Defining address.\n");
+		printf("Defining address...\t");
 		struct sockaddr_in address;
 		address.sin_family      = AF_INET;
 		address.sin_port        = htons(atoi(argv[1]));
 		address.sin_addr.s_addr = INADDR_ANY;
+		printf("Done.\n");
 
 		// Bind the socket
-		printf("Binding socket.\n");
+		printf("Binding socket...\t");
 		if(bind(sock, (struct sockaddr*)&address, sizeof(address)) != 0)
 		{
 			printf("Unable to bind socket.\n");
 			return -1;
 		}
+		printf("Done.\n");
 
 		// Listen on socket
-		printf("Listening on socket.\n");
+		printf("Listening on socket...\t");
 		if(listen(sock, 1) != 0)
 		{
 			printf("Unable to listen on sock.\n");
 			return -1;
 		}
+		printf("Done.\n");
 
 		// Get client socket
-		printf("Waiting for client.\n");
+		printf("Waiting for client...\t");
 		int client;
 		if((client = accept(sock, NULL, NULL)) == -1)
 		{
 			printf("Unable to accept.\n");
 			return -1;
 		}
+		printf("Done.\n");
 
 		// Send message to client
-		printf("Sending message to client.\n");
+		printf("Sending message...\t");
 		send(client, srmsg, sizeof(srmsg), 0);
+		printf("Done.\n");
 
 		// Close the socket
-		printf("Closing the socket.\n");
+		printf("Closing the socket...\t");
 		close(sock);
+		printf("Done.\n");
 	}
 
 	if(argc == 3) 	// Process is the client
 	{
 		// Create the socket
-		printf("Creating socket.\n");
+		printf("Creating socket...\t");
 		int sock;
 		if((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1) 
 		{
 			printf("Unable to make socket.\n");
 			return -1;
 		}
+		printf("Done.\n");
 
 		// Get host info
-		printf("Getting host info.\n");
+		printf("Getting host info...\t");
 		struct hostent *host;
 		if((host = gethostbyname(argv[1])) == NULL)
 		{
 			printf("Unable to get host.\n");
 			return -1;
 		}
+		printf("Done.\n");
 
 		// Specify an address
-		printf("Defining address.\n");
+		printf("Defining address...\t");
 		struct sockaddr_in address;
-		address.sin_family      = AF_INET;
-		address.sin_port        = htons(atoi(argv[2]));
+		address.sin_family = AF_INET;
+		address.sin_port   = htons(atoi(argv[2]));
 		memcpy(&(address.sin_addr.s_addr), host->h_addr, 4);
 		//address.sin_addr.s_addr = *(uint32_t*)(host->h_addr);
+		printf("Done.\n");
 
 		// Connect to server
-		printf("Connecting to server.\n");
+		printf("Connecting to server...\t");
 		if(connect(sock, (struct sockaddr*)&address, sizeof(address)) != 0) 
 		{
 			printf("Unable to connect.\n");
 			return -1;
 		}
+		printf("Done.\n");
 
 		// Receive data from server
 		char response[256];
@@ -129,8 +140,9 @@ int main(int argc, char* argv[])
 		printf("Response: %s\n", response);
 
 		// Close the socket
-		printf("Closing the socket.\n");
+		printf("Closing the socket...\t");
 		close(sock);
+		printf("Done.\n");
 	}
 	/*
 	int c;
