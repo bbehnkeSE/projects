@@ -17,7 +17,7 @@
 
 struct ppball   ball;
 struct pppaddle paddle;
-void   setUp();
+void   setUp(int);
 void   wrapUp();
 void   moveBall(int);
 void   reset(struct ppball *);
@@ -35,47 +35,23 @@ int main(int argc, char* argv[])
 
 	if(argc == 2) 	// Process is the server
 	{
-		char srmsg[256] = "Connection established";
+		//int role = SERVER;
 
-		// Create the socket
-		printf("Creating socket...\t");
-		fflush(stdout);
-		int sock;
-		if((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1) 
-		{
-			printf("Unable to make socket.\n");
-			return -1;
-		}
-		printf("Done.\n");
+		// Gets name of the host player and creates the welcome message to send to the client
+		printf("Please enter your name: ");
+		char name[100];
+		scanf("%s", name);
+		char welcomeMsg[256] = "\n*************************\n*        NETPONG        *\n*************************\n  Welcome to the game!\n";
 
-		// Define server address
-		printf("Defining address...\t");
-		fflush(stdout);
-		struct sockaddr_in address;
-		address.sin_family      = AF_INET;
-		address.sin_port        = htons(atoi(argv[1]));
-		address.sin_addr.s_addr = INADDR_ANY;
-		printf("Done.\n");
+		// Initialize host info
+		struct pphost host;
+		host.versionNum = VERSION;
+		host.tps 	= TICKS_PER_SEC;
+		host.netHeight 	= 20;
+		strcpy(host.name, name);
 
-		// Bind the socket
-		printf("Binding socket...\t");
-		fflush(stdout);
-		if(bind(sock, (struct sockaddr*)&address, sizeof(address)) != 0)
-		{
-			printf("Unable to bind socket.\n");
-			return -1;
-		}
-		printf("Done.\n");
-
-		// Listen on socket
-		printf("Listening on socket...\t");
-		fflush(stdout);
-		if(listen(sock, 1) != 0)
-		{
-			printf("Unable to listen on sock.\n");
-			return -1;
-		}
-		printf("Done.\n");
+		int port = atoi(argv[1]);
+		int sock = make_server_socket(port);
 
 		// Get client socket
 		printf("Waiting for client...\t");
@@ -88,73 +64,63 @@ int main(int argc, char* argv[])
 		}
 		printf("Done.\n");
 
+		// Serialize struct data to send to client
+		char txt[512];
+		sprintf(txt, "%0.1f,%d,%d,%s", host.versionNum, host.tps, host.netHeight, host.name);
+
 		// Send message to client
 		printf("Sending message...\t");
 		fflush(stdout);
-		send(client, srmsg, sizeof(srmsg), 0);
+		send(client, welcomeMsg, sizeof(welcomeMsg), 0);
+		send(client, txt, sizeof(txt), 0);
 		printf("Done.\n");
+
+		// Begin the game
+		printf("%s", welcomeMsg);
+		printf("  Version: %0.1f\n\n", host.versionNum);
 
 		// Close the socket
 		printf("Closing the socket...\t");
 		fflush(stdout);
 		close(sock);
 		printf("Done.\n");
+
+		return 0;
 	}
 
 	if(argc == 3) 	// Process is the client
 	{
-		// Create the socket
-		printf("Creating socket...\t");
-		fflush(stdout);
-		int sock;
-		if((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1) 
-		{
-			printf("Unable to make socket.\n");
-			return -1;
-		}
-		printf("Done.\n");
+		//int role = CLIENT;
 
-		// Get host info
-		printf("Getting host info...\t");
-		fflush(stdout);
-		struct hostent *host;
-		if((host = gethostbyname(argv[1])) == NULL)
-		{
-			printf("Unable to get host.\n");
-			return -1;
-		}
-		printf("Done.\n");
+		printf("Please enter your name: ");
+		char name[100];
+		scanf("%s", name);
 
-		// Specify an address
-		printf("Defining address...\t");
-		fflush(stdout);
-		struct sockaddr_in address;
-		address.sin_family = AF_INET;
-		address.sin_port   = htons(atoi(argv[2]));
-		memcpy(&(address.sin_addr.s_addr), host->h_addr, 4);
-		//address.sin_addr.s_addr = *(uint32_t*)(host->h_addr);
-		printf("Done.\n");
-
-		// Connect to server
-		printf("Connecting to server...\t");
-		fflush(stdout);
-		if(connect(sock, (struct sockaddr*)&address, sizeof(address)) != 0) 
-		{
-			printf("Unable to connect.\n");
-			return -1;
-		}
-		printf("Done.\n");
+		char *host = argv[1];
+		int   port = atoi(argv[2]);
+		int   sock = connect_to_server(host, port);
 
 		// Receive data from server
-		char response[256];
-		recv(sock, &response, sizeof(response), 0);
-		printf("Response: %s\n", response);
+		char welcomeMsg[256];
+		char hostInfo[512];
+		recv(sock, &welcomeMsg, sizeof(welcomeMsg), 0);
+		recv(sock, &hostInfo, sizeof(hostInfo), 0);
+
+		// Parse data from server
+		struct pphost info;
+		sscanf(hostInfo, "%f,%d,%d,%s", &info.versionNum, &info.tps, &info.netHeight, info.name);
+
+		// Begin the game
+		printf("%s", welcomeMsg);
+		printf("  Version: %0.1f\n\n", info.versionNum);
 
 		// Close the socket
 		printf("Closing the socket...\t");
 		fflush(stdout);
 		close(sock);
 		printf("Done.\n");
+
+		return 0;
 	}
 	/*
 	int c;
@@ -172,7 +138,7 @@ int main(int argc, char* argv[])
 }
 
 
-void setUp()
+void setUp(int role)
 {
 	srand(time(NULL));
 
@@ -195,6 +161,18 @@ void setUp()
 	signal(SIGALRM, moveBall);
 	setTicker(1000 / TICKS_PER_SEC);
 
+	// Set location of net depending on player side
+	int netSide;
+	switch(role)
+	{
+		case(SERVER):
+			netSide = LEFT_EDGE;
+			break;
+		case(CLIENT):
+			netSide = RIGHT_EDGE;
+			break;
+	}
+
 	/* Draw the playing field */
 	for(int i = TOP_ROW; i <= BOT_ROW; ++i)
 		for(int j = LEFT_EDGE; j <= RIGHT_EDGE; ++j)
@@ -202,8 +180,8 @@ void setUp()
 			move(i, j);
 			if(i == TOP_ROW || i == BOT_ROW)
 				addch(FLOOR);
-			else if(j == LEFT_EDGE)
-				addch(WALL);
+			else if(j == netSide)
+				addch(NET);
 		}
 
 	/* Sets up display for remaining balls */
@@ -218,7 +196,7 @@ void setUp()
 	mvaddstr(BOT_ROW + 8, LEFT_EDGE, "PADDLE UP:   K");
 	mvaddstr(BOT_ROW + 9, LEFT_EDGE, "PADDLE DOWN: J");
 
-	paddle_init();
+	paddle_init(role);
 	refresh();
 }
 

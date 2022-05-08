@@ -12,12 +12,25 @@
 
 #include "pong.h"
 
-#define PAD_LOC (RIGHT_EDGE - 1)
-
 struct pppaddle paddle;
 
-void paddle_init()
+
+void paddle_init(int role)
 {
+	switch(role)
+	{
+		case(SERVER):
+			#ifndef PAD_LOC
+				#define PAD_LOC (RIGHT_EDGE - 1)
+			#endif
+			break;
+		case(CLIENT):
+			#ifndef PAD_LOC
+				#define PAD_LOC (LEFT_EDGE + 1)
+			#endif
+			break;
+	}
+
 	paddle.pad_top  = PT_INIT;
 	paddle.pad_bot  = PB_INIT;
 	paddle.pad_col  = 0;
@@ -73,11 +86,14 @@ int paddle_contact(int x, int y)
 	 *
 	 * Added a buffer of 1 row to the top and bottom of paddle to make the game more forgiving
 	 */
-	if(x == (PAD_LOC - 1))
+
+	if(x == (PAD_LOC - 1) || (PAD_LOC + 1))
+	{
 		if((paddle.pad_bot + 1) > y && y > (paddle.pad_top - 1))
 			return 1;
 		else
 			return 0;
+	}
 
 	return 0;
 }

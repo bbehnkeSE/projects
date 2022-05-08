@@ -29,7 +29,7 @@
 #define BLANK        ' '
 #define DFL_SYMBOL   'O'
 #define FLOOR        '-'
-#define WALL 		 '|'
+#define NET 		 ':'
 #define PAD_SYMBOL   '#'
 #define TOP_ROW       5
 #define BOT_ROW       25
@@ -43,9 +43,14 @@
 #define LIVES_LEN     17
 #define MAXNUM_X      6
 #define MAXNUM_Y      6
+#define VERSION       1.0
 
 #define X_TTM         5
 #define Y_TTM         8
+
+#define SERVER        1
+#define CLIENT        2
+
 
 /* socklib prototypes */
 int make_server_socket(int);
@@ -53,18 +58,18 @@ int connect_to_server( char *, int);
 
 
 /* paddle prototypes */
-void paddle_init();
+void paddle_init(int);
 void paddle_up();
 void paddle_down();
 int  paddle_contact(int, int);
 
 struct ppball
 {
-	int yPos, xPos,
-	    yTtm, xTtm,
-	    yTtg, xTtg,
-	    yDir, xDir,
-	    remaining;
+	int  yPos, xPos,
+	     yTtm, xTtm,
+	     yTtg, xTtg,
+	     yDir, xDir,
+	     remaining;
 
 	char symbol;
 };
@@ -72,9 +77,26 @@ struct ppball
 
 struct pppaddle
 {
-	int pad_top,
-		pad_bot,
-		pad_col; 		/* I don't know what this is for but the instructions said to add it */
+	int  pad_top,
+		 pad_bot,
+		 pad_col; 		/* I don't know what this is for but the instructions said to add it */
 
 	char pad_char;
+};
+
+
+struct pphost
+{
+	float versionNum;
+	int	  tps,
+		  netHeight;
+
+	char name[100];
+};
+
+
+struct ppplayer
+{
+	int   versionNum;
+	char *name;
 };

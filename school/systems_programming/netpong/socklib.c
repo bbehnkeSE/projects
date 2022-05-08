@@ -16,83 +16,92 @@
 
 int make_server_socket( int portnum )
 {
-        struct  sockaddr_in   saddr;   /* build our address here */
-        struct	hostent		*hp;   /* this is part of our    */
-        char	hostname[256];         /* address 	         */
-        int	sock_id;	       /* line id, file desc     */
-
-        /*
-        *      step 1: build our network address
-        *               domain is internet, hostname is local host,
-        *               port is some arbitrary number
-        */
-
-        gethostname( hostname , 256 );          /* where am I ?         */
-        hp = gethostbyname( hostname );         /* get info about host  */
-        if ( hp == NULL ) 
+        // Create the socket
+        printf("Creating socket...\t");
+        fflush(stdout);
+        int sock;
+        if((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1) 
+        {
+                printf("Unable to make socket.\n");
                 return -1;
+        }
+        printf("Done.\n");
 
-        bzero( (char *)&saddr, sizeof(saddr) ); /* zero struct          */
-                                                /* fill in hostaddr     */
-        bcopy( (char *)hp->h_addr, (char *)&saddr.sin_addr, hp->h_length);
-        saddr.sin_family = AF_INET ;            /* fill in socket type  */
-        saddr.sin_port = htons(portnum);        /* fill in socket port  */
+        // Define server address
+        printf("Defining address...\t");
+        fflush(stdout);
+        struct sockaddr_in address;
+        address.sin_family      = AF_INET;
+        address.sin_port        = htons(portnum);
+        address.sin_addr.s_addr = INADDR_ANY;
+        printf("Done.\n");
 
-        /*
-        *      step 2: ask kernel for a socket, then bind address
-        */
-
-        sock_id = socket( AF_INET, SOCK_STREAM, 0 );    /* get a socket */
-        if ( sock_id == -1 ) 
+        // Bind the socket
+        printf("Binding socket...\t");
+        fflush(stdout);
+        if(bind(sock, (struct sockaddr*)&address, sizeof(address)) != 0)
+        {
+                printf("Unable to bind socket.\n");
                 return -1;
-                                                        /* give it      */
-        if ( bind(sock_id, (struct sockaddr *) &saddr, sizeof(saddr)) != 0 )
-                return -1;				/* an address	*/
+        }
+        printf("Done.\n");
 
-        /*
-        *      step 3: tell kernel we want to listen for calls
-        */
+        // Listen on socket
+        printf("Listen on socket...\t");
+        fflush(stdout);
+        if(listen(sock, 1) != 0)
+        {
+                printf("Unable to listen on sock.\n");
+                return -1;
+        }
+        printf("Done.\n");
 
-        if ( listen(sock_id, 1) != 0 ) return -1;
-
-        return sock_id;
+        return sock;
 }
 
 int connect_to_server( char *hostname, int portnum )
 {
-        struct sockaddr_in  servadd;        /* the number to call */
-        struct hostent      *hp;            /* used to get number */
-        int    sock_id;                     /* the socket         */
-
-        /*
-        *      build the network address of where we want to call
-        */
-
-        hp = gethostbyname( hostname );
-        if ( hp == NULL ) 
+        // Create the socket
+        printf("Creating socket...\t");
+        fflush(stdout);
+        int sock;
+        if((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1) 
+        {
+                printf("Unable to make socket.\n");
                 return -1;
+        }
+        printf("Done.\n");
 
-        bzero( (char *)&servadd, sizeof(servadd));  /* zero the address     */
-        servadd.sin_family = AF_INET ;              /* fill in socket type  */
-                                                    /* and machine address  */
-        bcopy( (char *)hp->h_addr, (char *)&servadd.sin_addr, hp->h_length);
-        servadd.sin_port = htons(portnum);          /* host to num short    */
-
-        /*
-        *        make the connection
-        */
-
-        sock_id = socket( AF_INET, SOCK_STREAM, 0 );    /* get a line   */
-        if ( sock_id == -1 ) 
-                return -1;          	                /* or fail      */
-
-        /* now dial     */
-        if( connect(sock_id,(struct sockaddr *)&servadd,sizeof(servadd)) !=0 )
+        // Get host info
+        printf("Getting host info...\t");
+        fflush(stdout);
+        struct hostent *host;
+        if((host = gethostbyname(hostname)) == NULL)
+        {
+                printf("Unable to get host.\n");
                 return -1;
+        }
+        printf("Done.\n");
 
-        /*
-        *      we're connected to that number, return the socket
-        */
+        // Specify an address
+        printf("Defining address...\t");
+        fflush(stdout);
+        struct sockaddr_in address;
+        address.sin_family = AF_INET;
+        address.sin_port   = htons(portnum);
+        memcpy(&(address.sin_addr.s_addr), host->h_addr, 4);
+        //address.sin_addr.s_addr = *(uint32_t*)(host->h_addr);
+        printf("Done.\n");
 
-        return sock_id ;
+        // Connect to server
+        printf("Connecting to server...\t");
+        fflush(stdout);
+        if(connect(sock, (struct sockaddr*)&address, sizeof(address)) != 0) 
+        {
+                printf("Unable to connect.\n");
+                return -1;
+        }
+        printf("Done.\n");
+
+        return sock;
 }
