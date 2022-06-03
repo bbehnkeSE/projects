@@ -1,0 +1,96 @@
+infix   expression: ( AX + ( B * C ) ) 
+postfix expression: AX B C * +
+Prefix  expression: + AX * B C
+Assembly:
+LD     B
+MU     C
+ST     TMP1
+LD     AX
+AD     TMP1
+ST     TMP2
+0x7ffd4f07cb10
+
+infix   expression: ( ( AX + ( B * CY ) ) / ( D - E ) ) 
+postfix expression: AX B CY * + D E - /
+Prefix  expression: / + AX * B CY - D E
+Assembly:
+LD     B
+MU     CY
+ST     TMP1
+LD     AX
+AD     TMP1
+ST     TMP2
+LD     D
+SB     E
+ST     TMP3
+LD     TMP2
+DV     TMP3
+ST     TMP4
+0x7ffd4f07cb10
+
+infix   expression: ( ( A + B ) * ( C + E ) ) 
+postfix expression: A B + C E + *
+Prefix  expression: * + A B + C E
+Assembly:
+LD     A
+AD     B
+ST     TMP1
+LD     C
+AD     E
+ST     TMP2
+LD     TMP1
+MU     TMP2
+ST     TMP3
+0x7ffd4f07cb10
+
+infix   expression: ( AX * ( BX * ( ( ( CY + AY ) + BY ) * CX ) ) ) 
+postfix expression: AX BX CY AY + BY + CX * * *
+Prefix  expression: * AX * BX * + + CY AY BY CX
+Assembly:
+LD     CY
+AD     AY
+ST     TMP1
+LD     TMP1
+AD     BY
+ST     TMP2
+LD     TMP2
+MU     CX
+ST     TMP3
+LD     BX
+MU     TMP3
+ST     TMP4
+LD     AX
+MU     TMP4
+ST     TMP5
+0x7ffd4f07cb10
+
+infix   expression: ( ( H * ( ( ( ( A + ( ( B + C ) * D ) ) * F ) * G ) * E ) ) + J ) 
+postfix expression: H A B C + D * + F * G * E * * J +
+Prefix  expression: + * H * * * + A * + B C D F G E J
+Assembly:
+LD     B
+AD     C
+ST     TMP1
+LD     TMP1
+MU     D
+ST     TMP2
+LD     A
+AD     TMP2
+ST     TMP3
+LD     TMP3
+MU     F
+ST     TMP4
+LD     TMP4
+MU     G
+ST     TMP5
+LD     TMP5
+MU     E
+ST     TMP6
+LD     H
+MU     TMP6
+ST     TMP7
+LD     TMP7
+AD     J
+ST     TMP8
+0x7ffd4f07cb10
+
