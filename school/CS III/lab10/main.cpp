@@ -1,4 +1,4 @@
-// Three state process model using State and Prototype design patters
+// Three state process model using State and Prototype design patterns
 // Brian Behnke
 // 11/8/2021
 
