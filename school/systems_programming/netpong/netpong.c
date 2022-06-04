@@ -6,23 +6,28 @@
  * Simple, single-player pong game
  * Modified verson of bounce2d.c
  *
- * Compile: gcc pong.c paddle.c -lcurses -o pong
- * Run:     ./pong
+ * Compile: gcc netpong.c paddle.c socklib.c -lcurses -o netpong, or type make.
+ * Run:     ./netpong [port number] or
+ *	    ./netpong [hostname] [port number]
  *
+ *	    ***INCOMPLETE***
+ * See provided README.txt for more details
  */
 
 
 #include "pong.h"
 
 
-struct ppball   ball;
 struct pppaddle paddle;
-void   setUp(int);
+struct ppball   ball;
+void   setUp(int, int, char name[256]);
 void   wrapUp();
 void   moveBall(int);
 void   reset(struct ppball *);
 int    bounceOrLose(struct ppball *);
 int    setTicker(int);
+
+struct ppball setBall(int, int);
 
 
 int main(int argc, char* argv[])
@@ -35,23 +40,19 @@ int main(int argc, char* argv[])
 
 	if(argc == 2) 	// Process is the server
 	{
-		//int role = SERVER;
+		int role  = SERVER;
+		int score = 0;
 
 		// Gets name of the host player and creates the welcome message to send to the client
 		printf("Please enter your name: ");
-		char name[100];
+		char name[256];
 		scanf("%s", name);
 		char welcomeMsg[256] = "\n*************************\n*        NETPONG        *\n*************************\n  Welcome to the game!\n";
 
-		// Initialize host info
-		struct pphost host;
-		host.versionNum = VERSION;
-		host.tps 	= TICKS_PER_SEC;
-		host.netHeight 	= 20;
-		strcpy(host.name, name);
-
 		int port = atoi(argv[1]);
 		int sock = make_server_socket(port);
+		if(sock == -1)
+			return -1;
 
 		// Get client socket
 		printf("Waiting for client...\t");
@@ -64,20 +65,44 @@ int main(int argc, char* argv[])
 		}
 		printf("Done.\n");
 
+		// Get client's name
+		char clientName[256];
+		recv(client, &clientName, sizeof(clientName), 0);
+
 		// Serialize struct data to send to client
-		char txt[512];
-		sprintf(txt, "%0.1f,%d,%d,%s", host.versionNum, host.tps, host.netHeight, host.name);
+		char gameInfo[512];
+		sprintf(gameInfo, "%0.1f,%d,%d,%s", VERSION, TICKS_PER_SEC, 20, name);
 
 		// Send message to client
 		printf("Sending message...\t");
 		fflush(stdout);
 		send(client, welcomeMsg, sizeof(welcomeMsg), 0);
-		send(client, txt, sizeof(txt), 0);
+		send(client, gameInfo, sizeof(gameInfo), 0);
 		printf("Done.\n");
 
 		// Begin the game
 		printf("%s", welcomeMsg);
-		printf("  Version: %0.1f\n\n", host.versionNum);
+		printf("  Version: %0.1f\n\n", VERSION);
+
+		// Set max score and send to client
+		printf("You will be playing with ");
+		printf("%s\n", clientName);
+		printf("Enter the number of ping pong balls: ");
+		int ppb = 0;
+		scanf("%d", &ppb);
+		send(client, &ppb, sizeof(ppb), 0);
+
+		int c;
+		int hasBall = 0;
+		setUp(role, ppb, clientName);
+		ball.remaining = ppb;
+		while(ball.remaining > 0 && (c=getchar()) != 'q')
+			switch (c)
+			{
+				case 'k':paddle_up();  break;
+				case 'j':paddle_down();break;
+			}
+		wrapUp();
 
 		// Close the socket
 		printf("Closing the socket...\t");
@@ -90,15 +115,21 @@ int main(int argc, char* argv[])
 
 	if(argc == 3) 	// Process is the client
 	{
-		//int role = CLIENT;
+		int role  = CLIENT;
+		int score = 0;
 
 		printf("Please enter your name: ");
-		char name[100];
+		char name[256];
 		scanf("%s", name);
 
 		char *host = argv[1];
 		int   port = atoi(argv[2]);
 		int   sock = connect_to_server(host, port);
+		if(sock == -1)
+			return -1;
+
+		// Send client name to server
+		send(sock, name, sizeof(name), 0);
 
 		// Receive data from server
 		char welcomeMsg[256];
@@ -107,12 +138,35 @@ int main(int argc, char* argv[])
 		recv(sock, &hostInfo, sizeof(hostInfo), 0);
 
 		// Parse data from server
-		struct pphost info;
-		sscanf(hostInfo, "%f,%d,%d,%s", &info.versionNum, &info.tps, &info.netHeight, info.name);
+		float versionNum = 0.0;
+		int   tps 	 = 0;
+		int   netHeight  = 0;
+		char  hostName[256];
+		sscanf(hostInfo, "%f,%d,%d,%s", &versionNum, &tps, &netHeight, hostName);
 
 		// Begin the game
 		printf("%s", welcomeMsg);
-		printf("  Version: %0.1f\n\n", info.versionNum);
+		printf("  Version: %0.1f\n\n", versionNum);
+		printf("Waiting for your opponent, ");
+		printf("%s ", hostName);
+		printf(" to decide the max score...\n");
+		int ppb = 0;
+		recv(sock, &ppb, sizeof(ppb), 0);
+		printf("Total ping pong balls: %d\n", ppb);
+
+		// Create ball
+		struct ppball ball = setBall(role, ppb);
+
+		int c;
+		int hasBall = 1;
+		setUp(role, ppb, hostName);
+		while(ball.remaining > 0 && (c=getchar()) != 'q')
+			switch (c)
+			{
+				case 'k':paddle_up();  break;
+				case 'j':paddle_down();break;
+			}
+		wrapUp();
 
 		// Close the socket
 		printf("Closing the socket...\t");
@@ -122,38 +176,39 @@ int main(int argc, char* argv[])
 
 		return 0;
 	}
-	/*
-	int c;
-	setUp();
-	while(ball.remaining > 0 && (c=getchar()) != 'q')
-		switch (c)
-		{
-			case 'k':paddle_up();  break;
-			case 'j':paddle_down();break;
-		}
-	wrapUp();
-	*/
 
 	return 0;
 }
 
 
-void setUp(int role)
+struct ppball setBall(int role, int ppb)
 {
-	srand(time(NULL));
+	struct ppball ball;
 
 	ball.xPos      = X_INIT;
 	ball.yPos      = Y_INIT;
 	ball.xTtg      = ball.xTtm = X_TTM;
 	ball.yTtg      = ball.yTtm = Y_TTM;
-	ball.remaining = 3;
-	ball.xDir      = 1;
+	ball.remaining = ppb;
 	ball.symbol    = DFL_SYMBOL;
+
+	if(role == SERVER)
+		ball.xDir = 1;
+	else
+		ball.xDir = -1;
 
 	if(rand() % 2)
 		ball.yDir = -1;
 	else
 		ball.yDir =  1;
+
+	return ball;
+}
+
+
+void setUp(int role, int ppb, char name[256])
+{
+	srand(time(NULL));
 
 	initscr();
 	noecho();
@@ -184,11 +239,10 @@ void setUp(int role)
 				addch(NET);
 		}
 
-	/* Sets up display for remaining balls */
-	char* lives  = "BALLS REMAINING: ";
-	mvaddstr(TOP_ROW - 1, LEFT_EDGE, lives);
-	for(int i = 0; i < ball.remaining; ++i)
-		mvaddch(TOP_ROW - 1, (LEFT_EDGE + LIVES_LEN + i), 'O');
+	// Display scoreboard
+	mvaddstr(BOT_ROW + 1, LEFT_EDGE, "Me: 0");
+	mvaddstr(BOT_ROW + 1, LEFT_EDGE + 7, name);
+	mvaddstr(BOT_ROW + 1, (LEFT_EDGE + 7 + strlen(name)), ": 0");
 
 	/* Displays controls */
 	mvaddstr(BOT_ROW + 5, LEFT_EDGE, "CONTROLS");

@@ -35,8 +35,8 @@
 #define BOT_ROW       25
 #define LEFT_EDGE     10
 #define RIGHT_EDGE    80
-#define X_INIT        15
-#define Y_INIT        15
+#define X_INIT        10
+#define Y_INIT        35
 #define PT_INIT       12     /* top    of paddle */
 #define PB_INIT       17     /* bottom of paddle */
 #define TICKS_PER_SEC 50
@@ -79,24 +79,7 @@ struct pppaddle
 {
 	int  pad_top,
 		 pad_bot,
-		 pad_col; 		/* I don't know what this is for but the instructions said to add it */
+		 pad_loc;
 
 	char pad_char;
-};
-
-
-struct pphost
-{
-	float versionNum;
-	int	  tps,
-		  netHeight;
-
-	char name[100];
-};
-
-
-struct ppplayer
-{
-	int   versionNum;
-	char *name;
 };
