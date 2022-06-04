@@ -1,0 +1,2 @@
+Small file to test input operator.
+Working as intended.

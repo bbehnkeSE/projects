@@ -1,0 +1,41 @@
+// bigint Test Program
+//
+// Tests:  subscript, uses ==
+//
+// NEED TO IMPLEMENT
+//
+#include <iostream>
+#include <cassert>
+#include "bigint.hpp"
+
+//===========================================================================
+int main () {
+    
+    {
+        // Setup
+        bigint bi(1234567890);
+	std::cout << bi[0] << std::endl << bi[1] << std::endl << bi[2] << std::endl << bi[3] << std::endl
+		  << bi[4] << std::endl << bi[5] << std::endl;
+	std::cout << bi << std::endl;
+
+        // Test 
+        int digit = bi[0];
+	
+        // Verify
+        assert(bi     == 12);
+	assert(digit  == 2);
+	assert(bi[2]  == 2);
+        assert(bi[3]  == 3);
+        assert(bi[4]  == 6);
+        assert(bi[5]  == 5);
+        assert(bi[6]  == 4);
+        assert(bi[7]  == 3);
+        assert(bi[8]  == 2);
+        assert(bi[9]  == 1);
+    }
+
+    //Add test cases!!
+
+    std::cout << "Done testing subscript." << std::endl;
+}
+
