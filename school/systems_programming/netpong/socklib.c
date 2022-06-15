@@ -1,5 +1,3 @@
-#include "pong.h"
-
 /*
 *	socklib.c
 *
@@ -12,7 +10,9 @@
 *	connect_to_server(char *hostname, int portnum)
 *					returns a connected socket
 *					or -1 if error
-*/ 
+*/
+
+#include "pong.h"
 
 int make_server_socket( int portnum )
 {
