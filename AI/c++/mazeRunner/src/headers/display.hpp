@@ -7,5 +7,6 @@
 #define W_WIDTH     800
 #define W_HEIGHT    800
 #define MAX_FPS      60
+#define DOT_RADIUS    7
 
 #endif  // _DISPLAY_HPP
