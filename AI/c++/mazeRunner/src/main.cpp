@@ -35,9 +35,12 @@ int main()
                 case sf::Event::KeyPressed:
                     switch(event.key.code)
                     {
+                        // Close window
                         case sf::Keyboard::Escape:
                             running = false;
                             break;
+
+                        // Move dot
                         case sf::Keyboard::W:
                             dot.setPosition(dot.getPosition().x, dot.getPosition().y - 5);
                             break;
@@ -50,6 +53,8 @@ int main()
                         case sf::Keyboard::D:
                             dot.setPosition(dot.getPosition().x + 5, dot.getPosition().y);
                             break;
+                        
+                        // Don't worry about other events
                         default:
                             break;
                     }
