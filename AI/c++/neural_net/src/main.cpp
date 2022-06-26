@@ -8,12 +8,14 @@ void printVec(Vector vec)
 int main()
 {
     // Create XOR training data
+    // input values
     Vector x1(2), x2(2), x3(2), x4(2);
     x1 << 0, 0;
     x2 << 0, 1;
     x3 << 1, 0;
     x4 << 1, 1;
 
+    // Correct values
     Vector y1(1), y2(1), y3(1), y4(1);
     y1 << 0;
     y2 << 1;
