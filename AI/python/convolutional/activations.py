@@ -24,3 +24,25 @@ class Sigmoid(Activation):
             return s * (1 - s)
 
         super().__init__(sigmoid, sigmoidPrime)
+
+
+class Tanh(Activation):
+    def __init__(self):
+        def tanh(x):
+            return np.tanh(x)
+
+        def tanhPrime(x):
+            return 1 - np.tanh(x) ** 2
+
+        super().__init__(tanh, tanhPrime)
+
+
+class Softmax(Layer):
+    def forward(self, input):
+        tmp         = np.exp(input)
+        self.output = tmp / np.sum(tmp)
+        return self.output
+
+    def backward(self, outGrad, learningRate):
+        n = np.size(self.output)
+        return np.dot((np.identity(n) - self.output.T) * self.output, outGrad)

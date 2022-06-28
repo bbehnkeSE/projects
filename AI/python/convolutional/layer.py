@@ -13,6 +13,25 @@ class Layer:
         pass
 
 
+class Dense(Layer):
+    def __init__(self, inputSize, outputSize):
+        self.weights = np.random.randn(outputSize, inputSize)
+        self.biases  = np.random.randn(outputSize, 1)
+
+    def forward(self, input):
+        self.input = input
+        return np.dot(self.weights, self.input) + self.biases
+
+    def backward(self, outGrad, learningRate):
+        weightsGrad   = np.dot(outGrad, self.input.T)
+        inputGrad     = np.dot(self.weights.T, outGrad)
+
+        self.weights -= learningRate * weightsGrad
+        self.biases  -= learningRate * outGrad
+
+        return inputGrad
+
+
 class Convolutional(Layer):
     def __init__(self, inputShape, kernelSize, depth):
         inputDepth, inputHeight, inputWidth = inputShape
