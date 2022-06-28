@@ -1,10 +1,5 @@
 #include "layers.hpp"
 
-void printVec(Vector vec)
-{
-    std::cout << "\nVector:\n" << vec << std::endl;
-}
-
 int main()
 {
     // Create XOR training data
@@ -38,27 +33,7 @@ int main()
         new Activation<void(*)(Vector&)>(HTPtr, HTPPtr)
     };
 
-    // Training loop
-    int    epochs       = 10000;
-    double learningRate = 0.1;
-    Vector output;
-    Vector gradient;
-
-    for(int i = 0; i < epochs; ++i)
-    {
-        for(int j = 0; j < X.size(); ++j)
-        {
-            // Forward propagation
-            output = X[j];
-            for(auto layer: network)
-                output = layer->forward(output);
-
-            // Backward propagation
-            gradient = msePrime(Y[j], output);
-            for(auto it = network.rbegin(); it != network.rend(); ++it)
-                gradient = (*it)->backward(gradient, learningRate);
-        }
-    }
+    Vector output = train(network, X, Y);
 
     std::cout << "\nFinal output:\n"
               << "--------------------\n"

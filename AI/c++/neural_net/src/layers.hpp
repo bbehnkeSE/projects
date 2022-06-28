@@ -97,4 +97,11 @@ Vector Activation<Function>::backward(Vector outputGrad, double learningRate)
     return outputGrad;
 }
 
+
+//===========================================
+// Utility functions
+//
+
+Vector train(std::vector<Layer*> network, std::vector<Vector> X, std::vector<Vector> Y, int epochs = 10000, double learningRate = 0.1);
+
 #endif

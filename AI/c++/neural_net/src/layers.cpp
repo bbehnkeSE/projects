@@ -62,3 +62,32 @@ Vector Dense::backward(Vector outputGrad, double learningRate)
 
     return inputGrad;
 }
+
+
+//===========================================
+// Utility functions
+//
+
+Vector train(std::vector<Layer*> network, std::vector<Vector> X, std::vector<Vector> Y, int epochs, double learningRate)
+{
+    Vector output;
+    Vector gradient;
+
+    for(int i = 0; i < epochs; ++i)
+    {
+        for(int j = 0; j < X.size(); ++j)
+        {
+            // Forward propagation
+            output = X[j];
+            for(auto layer: network)
+                output = layer->forward(output);
+
+            // Backward propagation
+            gradient = msePrime(Y[j], output);
+            for(auto it = network.rbegin(); it != network.rend(); ++it)
+                gradient = (*it)->backward(gradient, learningRate);
+        }
+    }
+
+    return output;
+}
