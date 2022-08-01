@@ -1,0 +1,3 @@
+[submodule "AI/c++/numberReader/external/SFML"]
+	path = AI/c++/numberReader/external/SFML
+	url = git@github.com:SFML/SFML.git
