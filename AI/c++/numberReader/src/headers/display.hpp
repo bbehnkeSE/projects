@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <vector>
+#include <string>
 
 #define W_WIDTH     400
 #define W_HEIGHT    800
@@ -12,4 +13,4 @@
 // TODO: Make this a variable
 #define TMP_BRUSH_SIZE 5
 
-#endif  // _DISPLAY_HPP
+#endif      // _DISPLAY_HPP

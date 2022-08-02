@@ -3,7 +3,8 @@
 int main()
 {
     // Create window
-    sf::RenderWindow window(sf::VideoMode(W_WIDTH, W_HEIGHT), "Number Reader");
+    // sf::Style::Close prevents resize
+    sf::RenderWindow window(sf::VideoMode(W_WIDTH, W_HEIGHT), "Number Reader", sf::Style::Close);
     window.setFramerateLimit(MAX_FPS);
 
     // Create divider
@@ -15,10 +16,15 @@ int main()
     // Create brush
     sf::CircleShape brush(TMP_BRUSH_SIZE);
     brush.setFillColor(sf::Color::Black);
-    brush.setPosition(((W_WIDTH / 2) - TMP_BRUSH_SIZE), (W_HEIGHT - 50));
+    //brush.setPosition(((W_WIDTH / 2) - TMP_BRUSH_SIZE), (W_HEIGHT - 50));
 
     // Vector to store/draw circles to the screen
     std::vector<sf::Shape*> points;
+
+    sf::Texture testTex;
+    testTex.create(W_WIDTH, W_HEIGHT/2);
+
+    const std::string screenshotPath = "doc/screenshots/test.png";
 
     // Main loop
     bool running = true;
@@ -47,6 +53,14 @@ int main()
                             
                             points.clear();
                             break;
+
+                        // Take screenshot and save in doc directory
+                        case sf::Keyboard::P:
+                            testTex.update(window);
+                            if(testTex.copyToImage().saveToFile(screenshotPath))
+                                std::cout << "Screenshot saved to " << '\"' << screenshotPath << "\"\n";
+
+                            break;
                     }
                     break;
             }
@@ -69,7 +83,7 @@ int main()
                 points.push_back(point);
             }
 
-            window.draw(brush);
+            //window.draw(brush);
         }
 
         for(auto point: points)
