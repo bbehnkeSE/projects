@@ -9,3 +9,4 @@ Controls:
 * Esc - Closes window.
 * Backspace - Clears screen.
 * LMB - Draw on the screen.
+* P - Take screenshot and save it in doc/screenshot directory.
