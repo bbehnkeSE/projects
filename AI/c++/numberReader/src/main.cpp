@@ -11,7 +11,7 @@ int main()
     sf::Vector2f dividerSize(W_WIDTH, 2);
     sf::RectangleShape divider(dividerSize);
     divider.setFillColor(sf::Color::Black);
-    divider.setPosition(0, W_HEIGHT/2);
+    divider.setPosition(0, W_HEIGHT - 40);
 
     // Create brush
     sf::CircleShape brush(TMP_BRUSH_SIZE);
@@ -20,9 +20,6 @@ int main()
 
     // Vector to store/draw circles to the screen
     std::vector<sf::Shape*> points;
-
-    sf::Texture testTex;
-    testTex.create(W_WIDTH, W_HEIGHT/2);
 
     const std::string screenshotPath = "doc/screenshots/test.png";
 
@@ -56,8 +53,15 @@ int main()
 
                         // Take screenshot and save in doc directory
                         case sf::Keyboard::P:
+                            sf::Texture testTex;
+                            testTex.create(W_WIDTH, W_HEIGHT);
                             testTex.update(window);
-                            if(testTex.copyToImage().saveToFile(screenshotPath))
+
+                            sf::Texture cropped;
+                            cropped.create(W_WIDTH, divider.getPosition().y);
+                            cropped.update(testTex);
+
+                            if(cropped.copyToImage().saveToFile(screenshotPath))
                                 std::cout << "Screenshot saved to " << '\"' << screenshotPath << "\"\n";
 
                             break;
@@ -70,7 +74,7 @@ int main()
         window.draw(divider);
 
         // Update brush position if mouse is in drawing area
-        if(sf::Mouse::getPosition(window).y > W_HEIGHT/2)
+        if(sf::Mouse::getPosition(window).y < divider.getPosition().y)
         {
             brush.setPosition((float)sf::Mouse::getPosition(window).x - TMP_BRUSH_SIZE, 
                               (float)sf::Mouse::getPosition(window).y - TMP_BRUSH_SIZE);
@@ -87,9 +91,8 @@ int main()
         }
 
         for(auto point: points)
-        {
             window.draw(*point);
-        }
+        
         window.display();
     }
     window.close();

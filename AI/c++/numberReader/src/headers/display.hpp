@@ -7,7 +7,7 @@
 #include <string>
 
 #define W_WIDTH     400
-#define W_HEIGHT    800
+#define W_HEIGHT    440
 #define MAX_FPS     120
 
 // TODO: Make this a variable
