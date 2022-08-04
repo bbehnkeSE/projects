@@ -9,8 +9,8 @@
 #include <string>
 #include <ctime>
 
-#define W_WIDTH        400
-#define W_HEIGHT       440
+#define W_WIDTH        200
+#define W_HEIGHT       240
 #define MAX_FPS        120
 #define DIVIDER_OFFSET  40
 #define TEXT_OFFSET      3
