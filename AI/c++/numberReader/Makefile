@@ -1,4 +1,4 @@
-all: compile link clean run
+all: compile link clean
 
 compile:
 	g++ -I include -c src/main.cpp src/display.cpp
@@ -8,6 +8,3 @@ link:
 
 clean:
 	rm *.o
-
-run:
-	./numberReader
