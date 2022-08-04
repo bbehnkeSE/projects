@@ -10,7 +10,7 @@ Example:
 <img style="display: block;
             margin-right: auto;
             width: 30%"
-src="resources/examples/generating_training_data.png">
+src="AI/c++/numberReader/resources/examples/generating_training_data.png">
 </img>
 
 In the above image, pressing enter will save the screenshots previously taken for a 2, 3, 1, 7, 8, 5, and a 4. Pushing the "4" number key will save a screenshot of the "4" currently in the drawing area into the buffer.
