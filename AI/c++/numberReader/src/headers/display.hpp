@@ -22,7 +22,9 @@
 void takeScreenshot         (const sf::RenderWindow&, std::vector<sf::Image>&);
 void clearPoints            (std::vector<sf::Shape*>&);
 
+std::string nameImg         (char, int);
 std::string createString    (const std::vector<char>&);
-std::string createRandString(int);
+
+int getRandNumberInRange    (int, int, int);
 
 #endif      // _DISPLAY_HPP

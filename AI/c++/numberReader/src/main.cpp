@@ -39,10 +39,15 @@ int main()
     std::vector<char>      trainingValues;
 
     // Paths to store training/test data
-    const std::string trainingImgPath = "resources/training_images/";
-    const std::string trainingValPath = "resources/training_values.txt";
-    const std::string testImgPath     = "resources/test_images/";
-    const std::string testValPath     = "resources/test_values.txt";
+    std::vector<std::string> trainingImgNames;
+    const std::string        trainingImgPath = "resources/training_images/";
+    const std::string        trainingValPath = "resources/training_values.txt";
+    const std::string        testImgPath     = "resources/test_images/";
+    const std::string        testValPath     = "resources/test_values.txt";
+
+    // Ranges for random numbers
+    int max = 999999;
+    int min = 100000;
 
     // Files to write correct training and test values to
     std::fstream trainingValFile, testValFile;
@@ -74,6 +79,7 @@ int main()
                     case sf::Keyboard::Num1:
                         takeScreenshot(window, trainingImgs);
                         trainingValues.push_back('1');
+                        trainingImgNames.push_back(nameImg(trainingValues.back(), getRandNumberInRange(rand(), max, min)));
                         displayValues.setString(createString(trainingValues));
                         clearPoints(points);
                         break;
@@ -81,6 +87,7 @@ int main()
                     case sf::Keyboard::Num2:
                         takeScreenshot(window, trainingImgs);
                         trainingValues.push_back('2');
+                        trainingImgNames.push_back(nameImg(trainingValues.back(), getRandNumberInRange(rand(), max, min)));
                         displayValues.setString(createString(trainingValues));
                         clearPoints(points);
                         break;
@@ -88,6 +95,7 @@ int main()
                     case sf::Keyboard::Num3:
                         takeScreenshot(window, trainingImgs);
                         trainingValues.push_back('3');
+                        trainingImgNames.push_back(nameImg(trainingValues.back(), getRandNumberInRange(rand(), max, min)));
                         displayValues.setString(createString(trainingValues));
                         clearPoints(points);
                         break;
@@ -95,6 +103,7 @@ int main()
                     case sf::Keyboard::Num4:
                         takeScreenshot(window, trainingImgs);
                         trainingValues.push_back('4');
+                        trainingImgNames.push_back(nameImg(trainingValues.back(), getRandNumberInRange(rand(), max, min)));
                         displayValues.setString(createString(trainingValues));
                         clearPoints(points);
                         break;
@@ -102,6 +111,7 @@ int main()
                     case sf::Keyboard::Num5:
                         takeScreenshot(window, trainingImgs);
                         trainingValues.push_back('5');
+                        trainingImgNames.push_back(nameImg(trainingValues.back(), getRandNumberInRange(rand(), max, min)));
                         displayValues.setString(createString(trainingValues));
                         clearPoints(points);
                         break;
@@ -109,6 +119,7 @@ int main()
                     case sf::Keyboard::Num6:
                         takeScreenshot(window, trainingImgs);
                         trainingValues.push_back('6');
+                        trainingImgNames.push_back(nameImg(trainingValues.back(), getRandNumberInRange(rand(), max, min)));
                         displayValues.setString(createString(trainingValues));
                         clearPoints(points);
                         break;
@@ -116,6 +127,7 @@ int main()
                     case sf::Keyboard::Num7:
                         takeScreenshot(window, trainingImgs);
                         trainingValues.push_back('7');
+                        trainingImgNames.push_back(nameImg(trainingValues.back(), getRandNumberInRange(rand(), max, min)));
                         displayValues.setString(createString(trainingValues));
                         clearPoints(points);
                         break;
@@ -123,6 +135,7 @@ int main()
                     case sf::Keyboard::Num8:
                         takeScreenshot(window, trainingImgs);
                         trainingValues.push_back('8');
+                        trainingImgNames.push_back(nameImg(trainingValues.back(), getRandNumberInRange(rand(), max, min)));
                         displayValues.setString(createString(trainingValues));
                         clearPoints(points);
                         break;
@@ -130,6 +143,7 @@ int main()
                     case sf::Keyboard::Num9:
                         takeScreenshot(window, trainingImgs);
                         trainingValues.push_back('9');
+                        trainingImgNames.push_back(nameImg(trainingValues.back(), getRandNumberInRange(rand(), max, min)));
                         displayValues.setString(createString(trainingValues));
                         clearPoints(points);
                         break;
@@ -137,6 +151,7 @@ int main()
                     case sf::Keyboard::Num0:
                         takeScreenshot(window, trainingImgs);
                         trainingValues.push_back('0');
+                        trainingImgNames.push_back(nameImg(trainingValues.back(), getRandNumberInRange(rand(), max, min)));
                         displayValues.setString(createString(trainingValues));
                         clearPoints(points);
                         break;
@@ -146,6 +161,7 @@ int main()
                         if(!trainingImgs.empty() && !trainingValues.empty())
                         {
                             trainingImgs.pop_back();
+                            trainingImgNames.pop_back();
                             trainingValues.pop_back();
                             displayValues.setString(createString(trainingValues));
                         }
@@ -155,22 +171,23 @@ int main()
                         break;
                     
                     case sf::Keyboard::Enter:
-                        for(auto img: trainingImgs)
+                        trainingValFile.open(trainingValPath, std::ios_base::app);
+                        if(!trainingValFile.is_open())
                         {
-                            trainingValFile.open(trainingValPath, std::ios_base::app);
-                            if(!trainingValFile.is_open())
-                            {
-                                std::cout << "Unable to open \"" << trainingValPath << "\"\n";
-                                return EXIT_FAILURE;
-                            }
-                            for(auto value: trainingValues)
-                                trainingValFile << value;
+                            std::cout << "Unable to open \"" << trainingValPath << "\"\n";
+                            return EXIT_FAILURE;
+                        }
 
-                            trainingValFile.close();
+                        for(int i = 0; i < trainingImgs.size(); ++i)
+                        {
+                            // for(auto value: trainingValues)
+                            //     trainingValFile << value;
+
                             trainingValues.clear();
 
-                            img.saveToFile(trainingImgPath + std::to_string(rand()) + ".png");
+                            trainingImgs[i].saveToFile(trainingImgPath + trainingImgNames[i]);
                         }
+                        trainingValFile.close();
                         break;
                 }
         }

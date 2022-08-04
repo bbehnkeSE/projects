@@ -18,10 +18,35 @@ void takeScreenshot(const sf::RenderWindow& window, std::vector<sf::Image>& imag
 }
 
 
+// Free memory and empty points vec
 void clearPoints(std::vector<sf::Shape*>& points)
 {
     for(auto point: points)
         delete point;
                         
     points.clear();
+}
+
+
+// Generates unique filename for an image
+std::string nameImg(char value, int rando)
+{
+    std::string result = value + std::to_string(rando) + ".png";
+    return result;
+}
+
+
+std::string createString(const std::vector<char>& values)
+{
+    std::string result = "";
+    for(auto value: values)
+        result += value;
+
+    return result;
+}
+
+
+int getRandNumberInRange(int rando, int max, int min)
+{
+    return min + (rando % (max - min + 1));
 }
