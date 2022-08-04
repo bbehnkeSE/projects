@@ -3,7 +3,6 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include <fstream>
 #include <cstdlib>
 #include <vector>
 #include <string>
@@ -18,11 +17,10 @@
 // TODO: Make this a variable
 #define TMP_BRUSH_SIZE   5
 
-// Utility functions
 sf::Texture takeScreenshot(const sf::RenderWindow&);
 sf::Texture cropTexture   (const sf::Texture&);
 sf::Image   textToImg     (const sf::Texture&);
-void clearPoints          (std::vector<sf::Shape*>&);
+void        clearPoints   (std::vector<sf::Shape*>&);
 
 std::string nameImg       (char, int);
 std::string createString  (const std::vector<char>&);

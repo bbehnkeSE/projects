@@ -49,9 +49,6 @@ int main()
     int max = 999999;
     int min = 100000;
 
-    // Files to write correct training and test values to
-    std::fstream trainingValFile, testValFile;
-
     // Main loop
     bool running = true;
     while(running)
@@ -171,23 +168,11 @@ int main()
                         break;
                     
                     case sf::Keyboard::Enter:
-                        trainingValFile.open(trainingValPath, std::ios_base::app);
-                        if(!trainingValFile.is_open())
-                        {
-                            std::cout << "Unable to open \"" << trainingValPath << "\"\n";
-                            return EXIT_FAILURE;
-                        }
-
                         for(int i = 0; i < trainingImgs.size(); ++i)
                         {
-                            // for(auto value: trainingValues)
-                            //     trainingValFile << value;
-
                             trainingValues.clear();
-
                             trainingImgs[i].saveToFile(trainingImgPath + trainingImgNames[i]);
                         }
-                        trainingValFile.close();
                         break;
                 }
         }
