@@ -27,7 +27,7 @@ int main()
     // Setup text to display on the window
     sf::Text displayValues;
     displayValues.setFont(font);
-    displayValues.setCharacterSize(36);
+    displayValues.setCharacterSize(26);
     displayValues.setFillColor(sf::Color::Black);
     displayValues.setPosition(TEXT_OFFSET, (W_HEIGHT - DIVIDER_OFFSET - TEXT_OFFSET));
 

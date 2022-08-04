@@ -10,9 +10,9 @@
 #include <ctime>
 
 #define W_WIDTH        200
-#define W_HEIGHT       240
+#define W_HEIGHT       230
 #define MAX_FPS        120
-#define DIVIDER_OFFSET  40
+#define DIVIDER_OFFSET  30
 #define TEXT_OFFSET      3
 
 // TODO: Make this a variable
