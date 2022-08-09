@@ -34,16 +34,14 @@ int main()
     // Buffer for circles to be drawn on the screen
     std::vector<sf::Shape*> points;
 
-    // Buffer to store training data before saving to file
+    // Buffers to store training data before saving to file
     std::vector<sf::Image> trainingImgs;
     std::vector<char>      trainingValues;
 
     // Path info to store training/test data
     std::vector<std::string> trainingImgNames;
     const std::string        trainingImgPath = "resources/training_images/";
-    const std::string        trainingValPath = "resources/training_values.txt";
     const std::string        testImgPath     = "resources/test_images/";
-    const std::string        testValPath     = "resources/test_values.txt";
 
     // Ranges for random numbers
     int max = 999999;
@@ -169,10 +167,11 @@ int main()
                     
                     case sf::Keyboard::Enter:
                         for(int i = 0; i < trainingImgs.size(); ++i)
-                        {
-                            trainingValues.clear();
                             trainingImgs[i].saveToFile(trainingImgPath + trainingImgNames[i]);
-                        }
+
+                        trainingImgNames.clear();
+                        trainingValues.clear();
+                        trainingImgs.clear();
                         break;
                 }
         }
