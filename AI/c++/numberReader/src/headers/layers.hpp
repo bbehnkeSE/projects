@@ -15,7 +15,7 @@ typedef Eigen::VectorXd EigenVector;
 //
 
 // Mean squared error
-double mse     (EigenVector, EigenVector);
+double      mse     (EigenVector, EigenVector);
 EigenVector msePrime(EigenVector, EigenVector);
 
 
@@ -54,14 +54,14 @@ public:
     EigenVector backward(EigenVector, double) override;
 
     // Debug prints
-    void   printWeights() { std::cout << weights << std::endl; }
-    void   printBiases()  { std::cout << biases  << std::endl; }
-    void   printInput()   { std::cout << input   << std::endl; }
+    void        printWeights() { std::cout << weights << std::endl; }
+    void        printBiases()  { std::cout << biases  << std::endl; }
+    void        printInput()   { std::cout << input   << std::endl; }
 
 private:
     EigenMatrix weights;
     EigenVector biases,
-           input;
+                input;
 };
 
 
@@ -78,9 +78,9 @@ public:
     EigenVector backward(EigenVector, double) override;
 
 private:
-    Function activation,
-             activationPrime;
-    EigenVector   input;
+    Function    activation,
+                activationPrime;
+    EigenVector input;
 };
 
 template<typename Function>
