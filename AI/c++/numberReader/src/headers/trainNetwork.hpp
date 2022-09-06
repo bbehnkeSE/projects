@@ -4,10 +4,7 @@
 #include <Eigen/Dense>
 #include <iostream>
 #include <vector>
-#include <tuple>
 
-typedef std::tuple<size_t, size_t, size_t, size_t> tuple4D;
-typedef std::tuple<size_t, size_t, size_t>         tuple3D;
 typedef Eigen::MatrixXd                            eMatrix;
 typedef Eigen::VectorXd                            eVector;
 
@@ -24,17 +21,11 @@ public:
 class Convolutional : public Layer
 {
 public:
-    // inputShape: Tuple containing depth, height, and width of the input
     // kernelSize: Number denoting the size of each matrix in each kernel
     // depth:      Number of kernels (also the depth of the output)
-    Convolutional(tuple3D inputShape_, size_t kernelSize_, size_t depth_):
-        inputShape(inputShape_), kernelSize(kernelSize_), depth(depth_) 
+    Convolutional(size_t inputDepth_, size_t inputHeight_, size_t inputWidth_, size_t kernelSize_, size_t depth_):
+        inputDepth(inputDepth_), inputHeight(inputHeight_), inputWidth(inputWidth_), kernelSize(kernelSize_), depth(depth_) 
     {
-        // Break up inputShape tuple
-        inputDepth  = std::get<0>(inputShape);
-        inputHeight = std::get<1>(inputShape);
-        inputWidth  = std::get<2>(inputShape);
-
         // Initializes a vector of vectors of matrices with random values
         // Outer vector contains the kernels, inner vector contains matrices in each kernel
         // The depth of the output determines the number of kernels, while the input depth determines
@@ -74,14 +65,12 @@ public:
     }
 
 private:
-    tuple3D               inputShape;      // Depth, height, and width of the input 
-    size_t                kernelSize,      // Size of each matrix in each kernel
-                          depth,           // Number of kernels and depth of the output
-
-                          // Individual values of inputShape tuple
-                          inputDepth,
-                          inputHeight,
-                          inputWidth;
+    size_t  kernelSize,      // Size of each matrix in each kernel
+            depth,           // Number of kernels and depth of the output
+            // Individual values of inputShape tuple
+            inputDepth,
+            inputHeight,
+            inputWidth;
 
     std::vector<std::vector<eMatrix*>*> kernels;
     std::vector<eMatrix*>               biases;
