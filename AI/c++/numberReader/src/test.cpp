@@ -1,8 +1,8 @@
-#include "headers/trainNetwork.hpp"
+#include "headers/layers.hpp"
 
 int main()
 {
-    Convolutional test(std::make_tuple(3, 3, 3), 2, 2);
+    Convolutional test(3, 3, 3, 2, 2);
 
     test.debugPrint();
 }
