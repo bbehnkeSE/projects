@@ -55,11 +55,11 @@ public:
 
     std::vector<arma::mat*> forward (std::vector<arma::mat*> input) override 
     {
-        // std::vector<arma::mat*> output = biases;
-        // for(int i = 0; i < depth; ++i)
-        //     for(int j = 0; j < inputDepth; ++j)
-        //         output[i] += arma::conv2(*input[j], arma::reverse(kernels[i][j]));
-        std::vector<arma::mat*> asdf; return asdf;
+        std::vector<arma::mat*> output = biases;
+        for(int i = 0; i < depth; ++i)
+            for(int j = 0; j < inputDepth; ++j)
+                output[i] += arma::conv2(*input[j], arma::reverse(kernels[i][j]));
+        //std::vector<arma::mat*> asdf; return asdf;
     }
     std::vector<arma::mat*> backward(std::vector<arma::mat*> input, double learningRate) override 
     {
