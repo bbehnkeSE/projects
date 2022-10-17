@@ -8,7 +8,6 @@
  * Ex. myapriori data.txt 20
  */
 
-#include <algorithm>
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -62,7 +61,7 @@ int main(int argc, char* argv[])
     minsup = (minsup / 100) * total;
 
     // Generate single-item sets with support counts
-    Map         frequents, result;
+    Map frequents, result;
     std::string tmp, tmp2;
     for(auto it: sets)
     {
@@ -84,6 +83,8 @@ int main(int argc, char* argv[])
         return EXIT_SUCCESS;
     }
 
+    // Main loop
+    // K represents the number of items each set should have
     int k = 2;
     while(!frequents.empty())
     {
@@ -98,6 +99,7 @@ int main(int argc, char* argv[])
 }
 
 
+// Should generate C_k+1 from L_k, but currently does not
 Map join(const std::vector<std::string>& sets, int k)
 {
     int start, end;
@@ -108,7 +110,7 @@ Map join(const std::vector<std::string>& sets, int k)
     {
         start = 0;
         end   = k - 1;
-        set = removeSpace(set);
+        set   = removeSpace(set);
         while((start + k - 1) < set.length())
         {
             while(start + end < set.length())
