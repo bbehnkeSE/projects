@@ -1,0 +1,1 @@
+Simple test on using cuda for GPU computation in python by following the video, "CUDA Programming on Python" by Ahmad Bazzi on YouTube (https://www.youtube.com/watch?v=-lcWV4wkHsk)
