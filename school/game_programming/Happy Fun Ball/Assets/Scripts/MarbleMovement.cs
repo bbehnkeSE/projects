@@ -15,9 +15,10 @@ public class MarbleMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 70.0f;
+        speed = 50.0f;
         jumpHeight = 10.0f;
         rb = GetComponent<Rigidbody>();
+        rb.maxAngularVelocity = Mathf.Infinity;
 
         StageFunctions = FindObjectOfType<StageFunctions>();
     }

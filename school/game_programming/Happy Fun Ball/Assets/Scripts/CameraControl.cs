@@ -5,24 +5,24 @@ using UnityEngine.UIElements;
 
 public class CameraControl : MonoBehaviour
 {
-    Transform camTransform;
+    Transform        camTransform;
     public Transform marble;
-    public float senX;
-    public float senY;
-    public float minRotationY;
-    public float maxRotationY;
-    public float camSpeed;
+    public float     senX;
+    public float     senY;
+    public float     minRotationY;
+    public float     maxRotationY;
+    public float     camSpeed;
 
     float verticalLookRotation;
 
     // Start is called before the first frame update
     void Start()
     {
-        senX = 3f;
-        senY = 1.5f;
+        senX         = 3f;
+        senY         = 1.5f;
         minRotationY = -50f;
         maxRotationY = 0.1f;
-        camSpeed = 15f;
+        camSpeed     = 15f;
 
         camTransform = GetComponentInChildren<Camera>().transform;
     }
