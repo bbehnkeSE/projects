@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using Microsoft.Unity.VisualStudio.Editor;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -13,6 +15,7 @@ public class MarbleMovement : MonoBehaviour
     private AudioClip   getKey;
     private AudioClip   roll;
     private AudioClip   jump;
+    private AudioClip   success;
     private AudioClip[] collide;
     
     private Rigidbody   rb;
@@ -32,6 +35,7 @@ public class MarbleMovement : MonoBehaviour
         getKey     = Resources.Load<AudioClip>("Audio/ap_mbu/getKey");
         roll       = Resources.Load<AudioClip>("Audio/ap_mbu/rolling_hard");
         jump       = Resources.Load<AudioClip>("Audio/ap_mbu/jump");
+        success    = Resources.Load<AudioClip>("Audio/ap_mbu/success");
 
         collide    = new AudioClip[4];
         collide[0] = Resources.Load<AudioClip>("Audio/ap_mbu/bouncehard1");
@@ -61,7 +65,7 @@ public class MarbleMovement : MonoBehaviour
                 rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
                 AudioManager.Instance.PlayMarbleJump(jump);
             }
-            if (rb.angularVelocity.y > 0.0f || rb.angularVelocity.z > 0.0f)
+            if (rb.velocity.y > 0.0f || rb.velocity.z > 0.0f)
                 AudioManager.Instance.PlayMarbleRoll(roll, rb.velocity.magnitude);
         }
         else
@@ -80,15 +84,17 @@ public class MarbleMovement : MonoBehaviour
             StageFunctions.decrementKeyCount();
             AudioManager.Instance.PlayGetKey(getKey);
         }
-        if(other.gameObject.CompareTag("LightShaft"))
+        if (other.gameObject.CompareTag("LightShaft"))
+        {
+            AudioManager.Instance.SuccessSound(success);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     private void OnCollisionEnter()
     {
         AudioManager.Instance.PlayRandomMarbleBounce(collide);
     }
-
 
     bool isGrounded()
     {

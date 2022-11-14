@@ -7,17 +7,17 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public  Button playButton;
-    private AudioClip newGame;
+    private AudioClip successClip;
 
     private void Start()
     {
-        playButton.onClick.AddListener(changeScene);
-        newGame = Resources.Load<AudioClip>("Audio/ap_mbu/newGame");
+        playButton.onClick.AddListener(newGame);
+        successClip = Resources.Load<AudioClip>("Audio/ap_mbu/success");
     }
 
-    private void changeScene()
+    private void newGame()
     {
-        AudioManager.Instance.PlayNewGameSound(newGame);
+        AudioManager.Instance.SuccessSound(successClip);
         SceneManager.LoadScene("Level_1");
     }
 }

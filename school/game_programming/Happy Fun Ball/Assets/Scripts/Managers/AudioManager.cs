@@ -10,8 +10,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource MarbleRollSource;
     public AudioSource MarbleJumpSource;
 
-    // MainMenu.cs
-    public AudioSource NewGameSource;
+    // MainMenu.cs & MarbleMovement.cs
+    public AudioSource Success;
 
     public AudioSource MusicSource;
 
@@ -34,7 +34,7 @@ public class AudioManager : MonoBehaviour
         MarbleRollSource.volume   = 0.2f;
         MarbleJumpSource.volume   = 0.2f;
 
-        NewGameSource.volume      = 0.2f;
+        Success.volume      = 0.2f;
     }
 
     public void PlayGetKey(AudioClip clip)
@@ -83,10 +83,10 @@ public class AudioManager : MonoBehaviour
         MarbleJumpSource.Play();
     }
 
-    public void PlayNewGameSound(AudioClip clip)
+    public void SuccessSound(AudioClip clip)
     {
-        NewGameSource.clip = clip;
-        NewGameSource.Play();
+        Success.clip = clip;
+        Success.Play();
     }
 
     private float setPitch(float mainValue, float inValueMin, float inValueMax, float outValueMin, float outValueMax)
