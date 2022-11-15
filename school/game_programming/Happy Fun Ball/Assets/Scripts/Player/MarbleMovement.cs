@@ -28,7 +28,7 @@ public class MarbleMovement : MonoBehaviour
         speed      = 50.0f;
         jumpHeight = 10.0f;
         rb         = GetComponent<Rigidbody>();
-        rb.maxAngularVelocity = 100f;
+        rb.maxAngularVelocity = Mathf.Infinity;
 
         StageFunctions = FindObjectOfType<StageFunctions>();
 
