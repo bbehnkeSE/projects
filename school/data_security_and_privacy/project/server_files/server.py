@@ -10,14 +10,17 @@ serverSocket.listen(1)
 
 print("Listening on port " + str(serverPort))
 
-while True:
+message = ''
+
+while message != 'Exit.':
 	connectionSocket, addr = serverSocket.accept()
 
-	message = connectionSocket.recv(2048).decode()
+	message = connectionSocket.recv(1024).decode()
 	connectionSocket.send("Message received.".encode())
 
 	print(message)
-	connectionSocket.close()
 
-	serverSocket.close()
-	sys.exit()
+
+connectionSocket.close()
+serverSocket.close()
+sys.exit()
