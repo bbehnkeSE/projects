@@ -1,26 +1,20 @@
 from socket import *
-import sys
 
 
 serverPort = 9001
-serverSocket = socket(AF_INET, SOCK_STREAM)
-
-serverSocket.bind(('', serverPort))
-serverSocket.listen(1)
 
 print("Listening on port " + str(serverPort))
 
-message = ''
+with socket(AF_INET, SOCK_STREAM) as socket:
+	socket.bind(('', serverPort))
+	socket.listen()
+	conn, addr = socket.accept()
 
-while message != 'Exit.':
-	connectionSocket, addr = serverSocket.accept()
+	with conn:
+		print(f"Connected by {addr}")
+		while True:
+			data = conn.recv(1024)
+			if not data:
+				break
 
-	message = connectionSocket.recv(1024).decode()
-	connectionSocket.send("Message received.".encode())
-
-	print(message)
-
-
-connectionSocket.close()
-serverSocket.close()
-sys.exit()
+			conn.sendall(data)

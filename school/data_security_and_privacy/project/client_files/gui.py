@@ -7,6 +7,7 @@ from client import connectToServer, closeConnection
 
 
 def sendLoginInfo(socket, username, password):
+	print(str(socket) + username.get() + password.get())
 	socket.send(username.get().encode())
 	socket.send(password.get().encode())
 
@@ -40,7 +41,7 @@ loginButton = Button(window,
 	                 fg=white, 
 	                 bg=background_color,
 	                 activebackground=active_background,
-	                 command=sendLoginInfo(clientSocket, username, password)).grid(row=4, column=0)
+	                 command=lambda: sendLoginInfo(clientSocket, username, password)).grid(row=4, column=0)
 
 
 # Run GUI
