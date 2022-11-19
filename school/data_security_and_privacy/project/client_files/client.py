@@ -14,17 +14,3 @@ def connectToServer():
 
 	except zmq.ZMQError as e:
 		print(e)
-
-
-	# clientSocket = socket(AF_INET, SOCK_STREAM)
-	# serverAddress = (server_ip, port)
-
-	# clientSocket.connect(serverAddress)
-
-	# if clientSocket.fileno() != -1:
-	# 	print("Connected to " + server_ip + ":" + str(port))
-	# 	return clientSocket
-	# else:
-	# 	print('Unable to connect...')
-	# 	clientSocket.close()
-	# 	return
