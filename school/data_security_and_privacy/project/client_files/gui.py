@@ -1,6 +1,8 @@
 import tkinter.messagebox
-import tkinter as tk
+import tkinter     as tk
+import tkinter.ttk as ttk
 
+from tkinter.filedialog   import askopenfilename
 from client               import connectToServer
 from connection_functions import sendLoginInfo, sendRegisterInfo
 
@@ -42,10 +44,16 @@ class Login(Page):
 
 		loginButton = tk.Button(buttonFrame, 
 								text='Submit',
-								command=lambda: sendLoginInfo(clientSocket,
-									                          username,
-									                          password))
+								command=lambda: self.setUsercode(username, password))
 		loginButton.pack(side='left')
+
+
+	def setUsercode(self, username, password):
+		self.usercode = sendLoginInfo(clientSocket, username, password)
+
+
+	def getUsercode(self):
+		return self.usercode
 
 
 class Register(Page):
@@ -89,11 +97,48 @@ class Register(Page):
 		registerButton.pack(side='left')
 
 
+class MyFiles(Page):
+	def __init__(self, *args, **kwargs):
+		Page.__init__(self, *args, **kwargs)
+		label = tk.Label(self, text='My Files', font=("TkDefaultFont", 20, 'bold'))
+		label.pack(side='top', anchor='nw')
+
+		buttonFrame = tk.Frame(self)
+		container = tk.Frame(self)
+		buttonFrame.pack(side='bottom', anchor='sw')
+		container.pack(side='bottom', anchor='sw')
+
+		selectFileButton = tk.Button(buttonFrame,
+		                             text='Select File',
+									 command=self.getFileName)
+		selectFileButton.pack(side='left')
+
+		storeFilesButton = tk.Button(buttonFrame,
+								     text='Store File')
+		storeFilesButton.pack(side='left')
+
+	#############################################################
+	#
+	# TODO: Open file, convert to binary data, send to database
+	#
+	#############################################################
+	def getFileName(self):
+		filenamePath = askopenfilename()
+
+		# Prune path from filename
+		pos = filenamePath.rfind('/') + 1
+		filename = filenamePath[pos::1]
+
+		print(filename)
+		print(filenamePath)
+
+
 class MainView(tk.Frame):
 	def __init__(self, *args, **kwargs):
 		tk.Frame.__init__(self, *args, **kwargs)
 		loginPage = Login(self)
 		registerPage = Register(self)
+		myFilesPage = MyFiles(self)
 
 		buttonFrame = tk.Frame(self)
 		container = tk.Frame(self)
@@ -102,12 +147,15 @@ class MainView(tk.Frame):
 
 		loginPage.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
 		registerPage.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
+		myFilesPage.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
 
 		loginButton = tk.Button(buttonFrame, text='Login', command=loginPage.show)
 		registerButton = tk.Button(buttonFrame, text='Sign up', command=registerPage.show)
+		myFilesButton = tk.Button(buttonFrame, text='My Files', command=myFilesPage.show)
 
 		loginButton.pack(side='left')
 		registerButton.pack(side='left')
+		myFilesButton.pack(side='left')
 
 		loginPage.show()
 

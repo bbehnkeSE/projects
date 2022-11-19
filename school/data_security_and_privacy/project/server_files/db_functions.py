@@ -16,7 +16,7 @@ def get_connection(database):
 
 ################## Insert data ##################
 
-def add_user(username, password, usercodeEnc):
+def add_user(username, password, usercodeEnc, usercode):
 	try:
 		conn = get_connection('database.db')
 		cur = conn.cursor()
@@ -28,6 +28,14 @@ def add_user(username, password, usercodeEnc):
 		cur.execute(userTableQuery, userData)
 
 		print("Added to users table")
+
+		# Add usercode to files table
+		filesTableQuery = """INSERT INTO files(usercode) VALUES(?)"""
+		filesData = (usercode,)
+
+		cur.execute(filesTableQuery, filesData)
+
+		print("Added usercode to files table")
 
 		conn.commit()
 
@@ -87,6 +95,23 @@ def get_usercode(username, password):
 	except sqlite3.Error as e:
 		print(e)
 
+
+def usercode_in_files(usercode):
+	try:
+		conn = get_connection('database.db')
+		cur = conn.cursor()
+
+		query = """SELECT * FROM files WHERE usercode=?"""
+		row = cur.execute(query, (usercode,)).fetchall()
+
+		# Current usercode does not belong to active user
+		if len(row) == 0:
+			return False
+
+		return True
+
+	except sqlite3.Error as e:
+		print(e)
 
 
 def get_id(usercode):

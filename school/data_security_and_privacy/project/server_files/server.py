@@ -1,5 +1,5 @@
 import zmq
-from db_functions import get_usercode, add_user
+from db_functions import get_usercode, add_user, add_file, usercode_in_files
 
 
 serverPort = 9001
@@ -41,10 +41,34 @@ def registerRequest(socket):
 	usercode = socket.recv().decode(utf)
 	socket.send('usercode received'.encode(utf))
 
-	add_user(username, password, usercode)
+	add_user(username, password, usercode, usercode)
 
 	socket.recv()
 	socket.send('New user created'.encode(utf))
+
+
+def storeFilesRequest(socket):
+	# Acknowledge storefile request
+	socket.send('storefile_ack'.encode(utf))
+
+	# Get required data
+	usercode = socket.recv().decode(utf)
+	if not usercode_in_files(usercode):
+		socket.send('error'.encode(utf))
+		pass
+
+	socket.send('usercode received'.encode(utf))
+
+	filename = socket.recv().decode(utf)
+	socket.send('filename received'.encode(utf))
+
+	file = socket.recv().decode(utf)
+	socket.send('file received'.encode(utf))
+
+	add_file(usercode, filename, file)
+
+	socket.recv()
+	socket.send('File added'.encode(utf))
 
 
 if __name__ == '__main__':
@@ -61,4 +85,5 @@ if __name__ == '__main__':
 				loginRequest(socket)
 			elif request == 'register':
 				registerRequest(socket)
-		
+			elif request == 'storefile':
+				storeFilesRequest(socket)
