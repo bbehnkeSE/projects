@@ -67,14 +67,18 @@ def get_usercode(username, password):
 		cur = conn.cursor()
 
 		getUserQuery = """SELECT * FROM users WHERE username=?"""
-		userInfo = cur.execute(getUserQuery, (username,)).fetchall()[0]
+		row = cur.execute(getUserQuery, (username,)).fetchall()
+
+		if len(row) == 0:
+			return None
+		else:
+			userInfo = row[0]
 
 		if verify_password(password, userInfo[1]):
 			return userInfo[2]
 
 		else:
-			print("Incorrect password")
-			return
+			return None
 
 		cur.close()
 		conn.close()
