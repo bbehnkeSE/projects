@@ -62,7 +62,7 @@ def storeFilesRequest(socket):
 	filename = socket.recv().decode(utf)
 	socket.send('filename received'.encode(utf))
 
-	file = socket.recv().decode(utf)
+	file = socket.recv()
 	socket.send('file received'.encode(utf))
 
 	add_file(usercode, filename, file)
