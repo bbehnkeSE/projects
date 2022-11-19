@@ -49,7 +49,8 @@ class Login(Page):
 
 
 	def setUsercode(self, username, password):
-		self.usercode = sendLoginInfo(clientSocket, username, password)
+		global usercode 
+		usercode = sendLoginInfo(clientSocket, username, password)
 
 
 	def getUsercode(self):
@@ -116,16 +117,12 @@ class MyFiles(Page):
 		storeFilesButton = tk.Button(buttonFrame,
 								     text='Store File',
 									 command=lambda: storeFile(clientSocket,
-									                           self.getUsercode(),
+									                           usercode,
 															   self.filename,
 															   self.fileBlob))
 		storeFilesButton.pack(side='left')
 
-	#############################################################
-	#
-	# TODO: send to database
-	#
-	#############################################################
+
 	def processFile(self):
 		filePath = askopenfilename()
 
@@ -138,10 +135,6 @@ class MyFiles(Page):
 			binaryData = file.read()
 
 		self.fileBlob = binaryData
-
-	def getUsercode(self):
-		user = Login()
-		return user.getUsercode()
 
 
 class MainView(tk.Frame):
