@@ -4,6 +4,8 @@ def processUsercode(usercode):
     return usercode
 
 
-def convertToBinaryData(file):
-    binaryData = file.read()
-    return binaryData
+def convert_to_binary_data(filename):
+	with open(filename, 'rb') as file:
+		binaryData = file.read()
+
+	return binaryData

@@ -71,10 +71,10 @@ def sendRegisterInfo(socket, username, password, passwordConfirm):
 	print(socket.recv().decode(utf))
 
 
-def storeFile(socket, usercode, filename, file):
+def storeFile(socket, usercode, filename, fileBlob):
 	if usercode == None:
 		print('Usercode is empty.')
-		pass
+		return None
 
 	# Send initial request code
 	socket.send('storefile'.encode(utf))
@@ -90,14 +90,14 @@ def storeFile(socket, usercode, filename, file):
 	socket.send(usercode.encode(utf))
 	if socket.recv().decode(utf) == 'error':
 		print('Not signed in')
-		pass
+		return None
 
 	print(socket.recv().decode(utf))
 
 	socket.send(filename.encode(utf))
 	print(socket.recv().decode(utf))
 
-	socket.send(file.encode(utf))
+	socket.send(fileBlob.encode(utf))
 	print(socket.recv().decode(utf))
 
 	socket.send(''.encode(utf))

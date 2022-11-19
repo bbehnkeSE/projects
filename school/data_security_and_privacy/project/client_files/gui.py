@@ -4,7 +4,7 @@ import tkinter.ttk as ttk
 
 from tkinter.filedialog   import askopenfilename
 from client               import connectToServer
-from connection_functions import sendLoginInfo, sendRegisterInfo
+from connection_functions import sendLoginInfo, sendRegisterInfo, storeFile
 
 
 clientSocket = connectToServer()
@@ -110,27 +110,38 @@ class MyFiles(Page):
 
 		selectFileButton = tk.Button(buttonFrame,
 		                             text='Select File',
-									 command=self.getFileName)
+									 command=self.processFile)
 		selectFileButton.pack(side='left')
 
 		storeFilesButton = tk.Button(buttonFrame,
-								     text='Store File')
+								     text='Store File',
+									 command=lambda: storeFile(clientSocket,
+									                           self.getUsercode(),
+															   self.filename,
+															   self.fileBlob))
 		storeFilesButton.pack(side='left')
 
 	#############################################################
 	#
-	# TODO: Open file, convert to binary data, send to database
+	# TODO: send to database
 	#
 	#############################################################
-	def getFileName(self):
-		filenamePath = askopenfilename()
+	def processFile(self):
+		filePath = askopenfilename()
 
 		# Prune path from filename
-		pos = filenamePath.rfind('/') + 1
-		filename = filenamePath[pos::1]
+		pos = filePath.rfind('/') + 1
+		self.filename = filePath[pos::1]
 
-		print(filename)
-		print(filenamePath)
+		# Open file and convert to binary data
+		with open(filePath, 'rb') as file:
+			binaryData = file.read()
+
+		self.fileBlob = binaryData
+
+	def getUsercode(self):
+		user = Login()
+		return user.getUsercode()
 
 
 class MainView(tk.Frame):
