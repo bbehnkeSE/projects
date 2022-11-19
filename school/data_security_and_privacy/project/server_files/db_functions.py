@@ -76,11 +76,16 @@ def get_usercode(username, password):
 
 		getUserQuery = """SELECT * FROM users WHERE username=?"""
 		row = cur.execute(getUserQuery, (username,)).fetchall()
+		
+		cur.close()
+		conn.close()
+		print("Connection closed")
 
 		if len(row) == 0:
 			return None
 		else:
 			userInfo = row[0]
+
 
 		if verify_password(password, userInfo[1]):
 			return userInfo[2]
@@ -88,9 +93,6 @@ def get_usercode(username, password):
 		else:
 			return None
 
-		cur.close()
-		conn.close()
-		print("Connection closed")
 
 	except sqlite3.Error as e:
 		print(e)
@@ -103,6 +105,10 @@ def usercode_in_files(usercode):
 
 		query = """SELECT * FROM files WHERE usercode=?"""
 		row = cur.execute(query, (usercode,)).fetchall()
+
+		cur.close()
+		conn.close()
+		print("Connection closed")
 
 		# Current usercode does not belong to active user
 		if len(row) == 0:
