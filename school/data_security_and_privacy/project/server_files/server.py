@@ -59,16 +59,23 @@ def storeFilesRequest(socket):
 
 	socket.send('usercode received'.encode(utf))
 
-	filename = socket.recv().decode(utf)
-	socket.send('filename received'.encode(utf))
+	# After usercode, next item should be the length of the list of files
+	filesLen = int(socket.recv().decode(utf))
+	socket.send('filesLen received'.encode(utf))
 
-	file = socket.recv()
-	socket.send('file received'.encode(utf))
+	print(filesLen)
 
-	add_file(usercode, filename, file)
+	for i in range(filesLen):
+		filename = socket.recv().decode(utf)
+		socket.send('filename received'.encode(utf))
+
+		file = socket.recv()
+		socket.send('file received'.encode(utf))
+
+		add_file(usercode, filename, file)
 
 	socket.recv()
-	socket.send('File added'.encode(utf))
+	socket.send('Files added'.encode(utf))
 
 
 if __name__ == '__main__':
