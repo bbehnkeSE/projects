@@ -1,0 +1,5312 @@
+fileFormatVersion: 2
+guid: a4ba991c4e602484c82d5d558eca9f66
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8902491057700032552
+    second: Pacman sprite sheet_0
+  - first:
+      213: 6413524650614748432
+    second: Pacman sprite sheet_1
+  - first:
+      213: -2680715435049268179
+    second: Pacman sprite sheet_2
+  - first:
+      213: -697466301176351520
+    second: Pacman sprite sheet_3
+  - first:
+      213: -63197358106930158
+    second: Pacman sprite sheet_4
+  - first:
+      213: 3228770710142835516
+    second: Pacman sprite sheet_5
+  - first:
+      213: -1344320649201865714
+    second: Pacman sprite sheet_6
+  - first:
+      213: -8882842252706977467
+    second: Pacman sprite sheet_7
+  - first:
+      213: 6013687467452607656
+    second: Pacman sprite sheet_8
+  - first:
+      213: -6645546602583798970
+    second: Pacman sprite sheet_9
+  - first:
+      213: 3659579447596241471
+    second: Pacman sprite sheet_10
+  - first:
+      213: 8126083896320522265
+    second: Pacman sprite sheet_11
+  - first:
+      213: 8210348759440538712
+    second: Pacman sprite sheet_12
+  - first:
+      213: 1883990106678661239
+    second: Pacman sprite sheet_13
+  - first:
+      213: -5834468453897043473
+    second: Pacman sprite sheet_14
+  - first:
+      213: 7641298727440703748
+    second: Pacman sprite sheet_15
+  - first:
+      213: 5253083767015294624
+    second: Pacman sprite sheet_16
+  - first:
+      213: 2759439946807669327
+    second: Pacman sprite sheet_17
+  - first:
+      213: -9111132837667246328
+    second: Pacman sprite sheet_18
+  - first:
+      213: -203774497942689202
+    second: Pacman sprite sheet_19
+  - first:
+      213: 6967046993092621754
+    second: Pacman sprite sheet_20
+  - first:
+      213: 4936336311214199567
+    second: Pacman sprite sheet_21
+  - first:
+      213: -8832534974598769225
+    second: Pacman sprite sheet_22
+  - first:
+      213: -8182715218539985896
+    second: Pacman sprite sheet_23
+  - first:
+      213: -1280953679921232125
+    second: Pacman sprite sheet_24
+  - first:
+      213: 8313469975706568854
+    second: Pacman sprite sheet_25
+  - first:
+      213: -6579650172351755776
+    second: Pacman sprite sheet_26
+  - first:
+      213: 9174301889065640704
+    second: Pacman sprite sheet_27
+  - first:
+      213: -6115309234870633417
+    second: Pacman sprite sheet_28
+  - first:
+      213: -1575923625362264134
+    second: Pacman sprite sheet_29
+  - first:
+      213: 8242198119463618501
+    second: Pacman sprite sheet_30
+  - first:
+      213: 9021607424233577127
+    second: Pacman sprite sheet_31
+  - first:
+      213: 250379309717792349
+    second: Pacman sprite sheet_32
+  - first:
+      213: 3148084842936693702
+    second: Pacman sprite sheet_33
+  - first:
+      213: 3789495843459856381
+    second: Pacman sprite sheet_34
+  - first:
+      213: 6077084606982951940
+    second: Pacman sprite sheet_35
+  - first:
+      213: -1126753951235058989
+    second: Pacman sprite sheet_36
+  - first:
+      213: -7649541283629903232
+    second: Pacman sprite sheet_37
+  - first:
+      213: 133961857822824049
+    second: Pacman sprite sheet_38
+  - first:
+      213: -6815947825033454966
+    second: Pacman sprite sheet_39
+  - first:
+      213: -4683098689646518292
+    second: Pacman sprite sheet_40
+  - first:
+      213: 5910606185219499450
+    second: Pacman sprite sheet_41
+  - first:
+      213: -4738387319828074559
+    second: Pacman sprite sheet_42
+  - first:
+      213: 1961860337077468138
+    second: Pacman sprite sheet_43
+  - first:
+      213: 3703166142240804088
+    second: Pacman sprite sheet_44
+  - first:
+      213: -5828898630004371791
+    second: Pacman sprite sheet_45
+  - first:
+      213: 5199962140920823098
+    second: Pacman sprite sheet_46
+  - first:
+      213: -9116414039159116398
+    second: Pacman sprite sheet_47
+  - first:
+      213: 5576924088732401251
+    second: Pacman sprite sheet_48
+  - first:
+      213: -2607746682623290322
+    second: Pacman sprite sheet_49
+  - first:
+      213: -8012155956065659089
+    second: Pacman sprite sheet_50
+  - first:
+      213: 6348786973564230244
+    second: Pacman sprite sheet_51
+  - first:
+      213: 3172089504857076554
+    second: Pacman sprite sheet_52
+  - first:
+      213: 1111834273855208487
+    second: Pacman sprite sheet_53
+  - first:
+      213: 1884296161381173776
+    second: Pacman sprite sheet_54
+  - first:
+      213: 2747869722549403118
+    second: Pacman sprite sheet_55
+  - first:
+      213: 1935325505829717925
+    second: Pacman sprite sheet_56
+  - first:
+      213: -5838723933581360155
+    second: Pacman sprite sheet_57
+  - first:
+      213: -3677429979127620924
+    second: Pacman sprite sheet_58
+  - first:
+      213: -6894290040557500015
+    second: Pacman sprite sheet_59
+  - first:
+      213: 9109577872982567399
+    second: Pacman sprite sheet_60
+  - first:
+      213: -5295979034384961399
+    second: Pacman sprite sheet_61
+  - first:
+      213: 4637410315222828493
+    second: Pacman sprite sheet_62
+  - first:
+      213: 2220408446149489220
+    second: Pacman sprite sheet_63
+  - first:
+      213: 9024908689083057779
+    second: Pacman sprite sheet_64
+  - first:
+      213: 5696726239085800209
+    second: Pacman sprite sheet_65
+  - first:
+      213: 1439776502733662035
+    second: Pacman sprite sheet_66
+  - first:
+      213: -5419314056258915216
+    second: Pacman sprite sheet_67
+  - first:
+      213: 5499473520819083347
+    second: Pacman sprite sheet_68
+  - first:
+      213: 750704713471201244
+    second: Pacman sprite sheet_69
+  - first:
+      213: -219465128338211291
+    second: Pacman sprite sheet_70
+  - first:
+      213: 1901766417723661661
+    second: Pacman sprite sheet_71
+  - first:
+      213: 9081623342986965130
+    second: Pacman sprite sheet_72
+  - first:
+      213: 4586180255499797890
+    second: Pacman sprite sheet_73
+  - first:
+      213: -2387161364299708680
+    second: Pacman sprite sheet_74
+  - first:
+      213: 4084180141974273323
+    second: Pacman sprite sheet_75
+  - first:
+      213: -7700985116885766017
+    second: Pacman sprite sheet_76
+  - first:
+      213: 8663707136992240886
+    second: Pacman sprite sheet_77
+  - first:
+      213: -901249321774367693
+    second: Pacman sprite sheet_78
+  - first:
+      213: 4780667330380546482
+    second: Pacman sprite sheet_79
+  - first:
+      213: -1802452850668916996
+    second: Pacman sprite sheet_80
+  - first:
+      213: 1532134190066986272
+    second: Pacman sprite sheet_81
+  - first:
+      213: 8951840261076338453
+    second: Pacman sprite sheet_82
+  - first:
+      213: 9050830963868912451
+    second: Pacman sprite sheet_83
+  - first:
+      213: 7968781786054378883
+    second: Pacman sprite sheet_84
+  - first:
+      213: -7678436064815771634
+    second: Pacman sprite sheet_85
+  - first:
+      213: -7380049557132511096
+    second: Pacman sprite sheet_86
+  - first:
+      213: -6648846998090952585
+    second: Pacman sprite sheet_87
+  - first:
+      213: -4589717335793629161
+    second: Pacman sprite sheet_88
+  - first:
+      213: 3518002772070772555
+    second: Pacman sprite sheet_89
+  - first:
+      213: 2040466052962043170
+    second: Pacman sprite sheet_90
+  - first:
+      213: -2187665218246503416
+    second: Pacman sprite sheet_91
+  - first:
+      213: -2851361584349441552
+    second: Pacman sprite sheet_92
+  - first:
+      213: 7010968321568316492
+    second: Pacman sprite sheet_93
+  - first:
+      213: 2200773878330330046
+    second: Pacman sprite sheet_94
+  - first:
+      213: -8851978866158350469
+    second: Pacman sprite sheet_95
+  - first:
+      213: 6130948244689784456
+    second: Pacman sprite sheet_96
+  - first:
+      213: 6775602183573929721
+    second: Pacman sprite sheet_97
+  - first:
+      213: -1417757207484320859
+    second: Pacman sprite sheet_98
+  - first:
+      213: -4243816412066887957
+    second: Pacman sprite sheet_99
+  - first:
+      213: 8319707670909018775
+    second: Pacman sprite sheet_100
+  - first:
+      213: -4394479868577764957
+    second: Pacman sprite sheet_101
+  - first:
+      213: -3279868027150127869
+    second: Pacman sprite sheet_102
+  - first:
+      213: -2194514721989941602
+    second: Pacman sprite sheet_103
+  - first:
+      213: 3750946894085632043
+    second: Pacman sprite sheet_104
+  - first:
+      213: -756010620142594873
+    second: Pacman sprite sheet_105
+  - first:
+      213: 4703499208434776367
+    second: Pacman sprite sheet_106
+  - first:
+      213: 4416635305054825564
+    second: Pacman sprite sheet_107
+  - first:
+      213: -4049324616389521430
+    second: Pacman sprite sheet_108
+  - first:
+      213: -2596274308837194221
+    second: Pacman sprite sheet_109
+  - first:
+      213: 8928618017368286982
+    second: Pacman sprite sheet_110
+  - first:
+      213: 6065438897477678449
+    second: Pacman sprite sheet_111
+  - first:
+      213: 3205515245661377024
+    second: Pacman sprite sheet_112
+  - first:
+      213: 1661950831400579182
+    second: Pacman sprite sheet_113
+  - first:
+      213: 8464479368466105893
+    second: Pacman sprite sheet_114
+  - first:
+      213: 7712630657701581063
+    second: Pacman sprite sheet_115
+  - first:
+      213: -697527373055943924
+    second: Pacman sprite sheet_116
+  - first:
+      213: -9041932284145263396
+    second: Pacman sprite sheet_117
+  - first:
+      213: 7737683892090033993
+    second: Pacman sprite sheet_118
+  - first:
+      213: -4858470883611368459
+    second: Pacman sprite sheet_119
+  - first:
+      213: 5660197743000900019
+    second: Pacman sprite sheet_120
+  - first:
+      213: 5389142847694299428
+    second: Pacman sprite sheet_121
+  - first:
+      213: -2151101876603339450
+    second: Pacman sprite sheet_122
+  - first:
+      213: -876443922817866265
+    second: Pacman sprite sheet_123
+  - first:
+      213: 5918312740947187375
+    second: Pacman sprite sheet_124
+  - first:
+      213: -728787446187093669
+    second: Pacman sprite sheet_125
+  - first:
+      213: 1472881414933693088
+    second: Pacman sprite sheet_126
+  - first:
+      213: 3318783235419710818
+    second: Pacman sprite sheet_127
+  - first:
+      213: 2276616541019958944
+    second: Pacman sprite sheet_128
+  - first:
+      213: 1321735345697170289
+    second: Pacman sprite sheet_129
+  - first:
+      213: -6389573069279500314
+    second: Pacman sprite sheet_130
+  - first:
+      213: 2504710073467627617
+    second: Pacman sprite sheet_131
+  - first:
+      213: 7729296546429955059
+    second: Pacman sprite sheet_132
+  - first:
+      213: -4183009068163544865
+    second: Pacman sprite sheet_133
+  - first:
+      213: -7385402130554640103
+    second: Pacman sprite sheet_134
+  - first:
+      213: -7489193776883770264
+    second: Pacman sprite sheet_135
+  - first:
+      213: 6712452762091499461
+    second: Pacman sprite sheet_136
+  - first:
+      213: 4316293739146558677
+    second: Pacman sprite sheet_137
+  - first:
+      213: 6952725028059500355
+    second: Pacman sprite sheet_138
+  - first:
+      213: -712412602766525127
+    second: Pacman sprite sheet_139
+  - first:
+      213: 7688097646852407650
+    second: Pacman sprite sheet_140
+  - first:
+      213: 107753800108250374
+    second: Pacman sprite sheet_141
+  - first:
+      213: 2939798421958403267
+    second: Pacman sprite sheet_142
+  - first:
+      213: 3542075473945188558
+    second: Pacman sprite sheet_143
+  - first:
+      213: -7862351049281489487
+    second: Pacman sprite sheet_144
+  - first:
+      213: -6760422492615737385
+    second: Pacman sprite sheet_145
+  - first:
+      213: -4877932277632425733
+    second: Pacman sprite sheet_146
+  - first:
+      213: 2336874565673901067
+    second: Pacman sprite sheet_147
+  - first:
+      213: -3059426702375728933
+    second: Pacman sprite sheet_148
+  - first:
+      213: -3978367341242358291
+    second: Pacman sprite sheet_149
+  - first:
+      213: 5344037850166388514
+    second: Pacman sprite sheet_150
+  - first:
+      213: -955898978207435669
+    second: Pacman sprite sheet_151
+  - first:
+      213: -7794411832211758387
+    second: Pacman sprite sheet_152
+  - first:
+      213: -5903607457452572237
+    second: Pacman sprite sheet_153
+  - first:
+      213: 625843037963265601
+    second: Pacman sprite sheet_154
+  - first:
+      213: -4818171202068348545
+    second: Pacman sprite sheet_155
+  - first:
+      213: 274120117452186031
+    second: Pacman sprite sheet_156
+  - first:
+      213: 503869076520108623
+    second: Pacman sprite sheet_157
+  - first:
+      213: -4598420888708728955
+    second: Pacman sprite sheet_158
+  - first:
+      213: -2372894761519643710
+    second: Pacman sprite sheet_159
+  - first:
+      213: -8271089794976936166
+    second: Pacman sprite sheet_160
+  - first:
+      213: 7073142325922377507
+    second: Pacman sprite sheet_161
+  - first:
+      213: 5475738609861839120
+    second: Pacman sprite sheet_162
+  - first:
+      213: -637731771241918791
+    second: Pacman sprite sheet_163
+  - first:
+      213: 6955243266489876267
+    second: Pacman sprite sheet_164
+  - first:
+      213: 7816261078449429449
+    second: Pacman sprite sheet_165
+  - first:
+      213: -3433193277882959464
+    second: Pacman sprite sheet_166
+  - first:
+      213: 7091080084698937987
+    second: Pacman sprite sheet_167
+  - first:
+      213: 3969921820291257559
+    second: Pacman sprite sheet_168
+  - first:
+      213: -1861054843846569444
+    second: Pacman sprite sheet_169
+  - first:
+      213: 6112677128000208689
+    second: Pacman sprite sheet_170
+  - first:
+      213: 1814624136836243703
+    second: Pacman sprite sheet_171
+  - first:
+      213: 4224731878131965210
+    second: Pacman sprite sheet_172
+  - first:
+      213: -6870957394774635980
+    second: Pacman sprite sheet_173
+  - first:
+      213: -8257480724443694773
+    second: Pacman sprite sheet_174
+  - first:
+      213: -1767231614020070969
+    second: Pacman sprite sheet_175
+  - first:
+      213: -6384805025579131699
+    second: Pacman sprite sheet_176
+  - first:
+      213: -7890661227806540376
+    second: Pacman sprite sheet_177
+  - first:
+      213: -2763899813031562801
+    second: Pacman sprite sheet_178
+  - first:
+      213: -5050854175677103886
+    second: Pacman sprite sheet_179
+  - first:
+      213: 7732569921158051629
+    second: Pacman sprite sheet_180
+  - first:
+      213: -8524159085041916389
+    second: Pacman sprite sheet_181
+  - first:
+      213: -7610533698049129155
+    second: Pacman sprite sheet_182
+  - first:
+      213: -7069759678379071024
+    second: Pacman sprite sheet_183
+  - first:
+      213: -5949839359327132954
+    second: Pacman sprite sheet_184
+  - first:
+      213: 5886427255539626880
+    second: Pacman sprite sheet_185
+  - first:
+      213: 6326876239634115964
+    second: Pacman sprite sheet_186
+  - first:
+      213: 8985600971252089522
+    second: Pacman sprite sheet_187
+  - first:
+      213: -5958704621752405641
+    second: Pacman sprite sheet_188
+  - first:
+      213: -1075016275610907288
+    second: Pacman sprite sheet_189
+  - first:
+      213: -3058202083327271316
+    second: Pacman sprite sheet_190
+  - first:
+      213: 140884949260118565
+    second: Pacman sprite sheet_191
+  - first:
+      213: 8446987460823214335
+    second: Pacman sprite sheet_192
+  - first:
+      213: -3673781634249605825
+    second: Pacman sprite sheet_193
+  - first:
+      213: -1325206502024233229
+    second: Pacman sprite sheet_194
+  - first:
+      213: -7193287882485206165
+    second: Pacman sprite sheet_195
+  - first:
+      213: 8252554756475511582
+    second: Pacman sprite sheet_196
+  - first:
+      213: -442540764772148409
+    second: Pacman sprite sheet_197
+  - first:
+      213: -3538434963163080756
+    second: Pacman sprite sheet_198
+  - first:
+      213: 3530413682718952761
+    second: Pacman sprite sheet_199
+  - first:
+      213: -4592352780929553043
+    second: Pacman sprite sheet_200
+  - first:
+      213: 8433069792817154144
+    second: Pacman sprite sheet_201
+  - first:
+      213: 5822607591460392244
+    second: Pacman sprite sheet_202
+  - first:
+      213: 8542191119851539037
+    second: Pacman sprite sheet_203
+  - first:
+      213: 3483087012452440927
+    second: Pacman sprite sheet_204
+  - first:
+      213: -5067769833844915621
+    second: Pacman sprite sheet_205
+  - first:
+      213: 7141942540383428190
+    second: Pacman sprite sheet_206
+  - first:
+      213: -4507933803886012808
+    second: Pacman sprite sheet_207
+  - first:
+      213: 3050001591279166621
+    second: Pacman sprite sheet_208
+  - first:
+      213: 4060440707007347139
+    second: Pacman sprite sheet_209
+  - first:
+      213: 8823317859122939267
+    second: Pacman sprite sheet_210
+  - first:
+      213: 4781996138205534198
+    second: Pacman sprite sheet_211
+  - first:
+      213: -7532700343227254323
+    second: Pacman sprite sheet_212
+  - first:
+      213: -4334701485494014835
+    second: Pacman sprite sheet_213
+  - first:
+      213: -6927165312526903193
+    second: Pacman sprite sheet_214
+  - first:
+      213: 4260939243177043576
+    second: Pacman sprite sheet_215
+  - first:
+      213: 4770873912978440886
+    second: Pacman sprite sheet_216
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pacman sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 900
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dfa2b9ec8ff37480800000000000000
+      internalID: -8902491057700032552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 900
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0157a1e70ba610950800000000000000
+      internalID: 6413524650614748432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 900
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c4bfdc38f2ccad0800000000000000
+      internalID: -2680715435049268179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 900
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4f39b281a1256f0800000000000000
+      internalID: -697466301176351520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_4
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 900
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2141b4f665a7f1ff0800000000000000
+      internalID: -63197358106930158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_5
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 900
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3bdf37aad5eecc20800000000000000
+      internalID: 3228770710142835516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_6
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 907
+        width: 33
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ca918fd73085de0800000000000000
+      internalID: -1344320649201865714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_7
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 900
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 549e193d80ec9b480800000000000000
+      internalID: -8882842252706977467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_8
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 898
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac2bb7c3e8e47350800000000000000
+      internalID: 6013687467452607656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_9
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 900
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b40b6139646c3a0800000000000000
+      internalID: -6645546602583798970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_10
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 900
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f325b494e1079c230800000000000000
+      internalID: 3659579447596241471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_11
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 900
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918f437ff36a5c070800000000000000
+      internalID: 8126083896320522265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_12
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 900
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cb58842b401f170800000000000000
+      internalID: 8210348759440538712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_13
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 900
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7709eec2507452a10800000000000000
+      internalID: 1883990106678661239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_14
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 901
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe18e308addc70fa0800000000000000
+      internalID: -5834468453897043473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_15
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 901
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4016fbf05b85b0a60800000000000000
+      internalID: 7641298727440703748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 850
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a64154aad3b6e840800000000000000
+      internalID: 5253083767015294624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_17
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 850
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f427e70f2008b4620800000000000000
+      internalID: 2759439946807669327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_18
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 850
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f627df4f0ce8180800000000000000
+      internalID: -9111132837667246328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_19
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 850
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4aa7db7c2c0c2df0800000000000000
+      internalID: -203774497942689202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_20
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 850
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab53db4c35cefa060800000000000000
+      internalID: 6967046993092621754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_21
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 850
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f03d8c1a8b3618440800000000000000
+      internalID: 4936336311214199567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_22
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 857
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b593d4cc388c6580800000000000000
+      internalID: -8832534974598769225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_23
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 850
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814cdb4dcd7217e80800000000000000
+      internalID: -8182715218539985896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_24
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 850
+        width: 42
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 307c0963a63293ee0800000000000000
+      internalID: -1280953679921232125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_25
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 850
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6988dd075e06f5370800000000000000
+      internalID: 8313469975706568854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_26
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 850
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ac2aa570360b4a0800000000000000
+      internalID: -6579650172351755776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_27
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 850
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003e3f7e5faa15f70800000000000000
+      internalID: 9174301889065640704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_28
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 850
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cbed3b6ae022ba0800000000000000
+      internalID: -6115309234870633417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_29
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 850
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abfe225ffc1312ae0800000000000000
+      internalID: -1575923625362264134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_30
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 851
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c78507458b226270800000000000000
+      internalID: 8242198119463618501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_31
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 851
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa18706720333d70800000000000000
+      internalID: 9021607424233577127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 800
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5626d6d7a6897300800000000000000
+      internalID: 250379309717792349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_33
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 800
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c378024c7e30bb20800000000000000
+      internalID: 3148084842936693702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_34
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 800
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df77e3b546ef69430800000000000000
+      internalID: 3789495843459856381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_35
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 800
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40496359044265450800000000000000
+      internalID: 6077084606982951940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_36
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 800
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2dd5b4047fc50f0800000000000000
+      internalID: -1126753951235058989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_37
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 800
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082dd864bbe57d590800000000000000
+      internalID: -7649541283629903232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_38
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 807
+        width: 37
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1761bf4999debd100800000000000000
+      internalID: 133961857822824049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_39
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 800
+        width: 42
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ad849c093e861a0800000000000000
+      internalID: -6815947825033454966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_40
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 800
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef958bcd8a420fb0800000000000000
+      internalID: -4683098689646518292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_41
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 800
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab52c3d7201b60250800000000000000
+      internalID: 5910606185219499450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_42
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 800
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cfae6176dddd3eb0800000000000000
+      internalID: -4738387319828074559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_43
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 800
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb3e6a059de93b10800000000000000
+      internalID: 1961860337077468138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_44
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 800
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc44847cf9446330800000000000000
+      internalID: 3703166142240804088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_45
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 801
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be04de24979b1fa0800000000000000
+      internalID: -5828898630004371791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_46
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 801
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3db01f340af92840800000000000000
+      internalID: 5199962140920823098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_47
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 750
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d69827bbdfb7180800000000000000
+      internalID: -9116414039159116398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_48
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 750
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36eb63039e6356d40800000000000000
+      internalID: 5576924088732401251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_49
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 750
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e241906653c6fcbd0800000000000000
+      internalID: -2607746682623290322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_50
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 750
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f271da1bb9a1fc090800000000000000
+      internalID: -8012155956065659089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_51
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 750
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a5ce97d1c6b1850800000000000000
+      internalID: 6348786973564230244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_52
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 750
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4330c42996850c20800000000000000
+      internalID: 3172089504857076554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_53
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 757
+        width: 37
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c7e3e91670e6f00800000000000000
+      internalID: 1111834273855208487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_54
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 759
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ac1c6106d562a10800000000000000
+      internalID: 1884296161381173776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_55
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 747
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eedbb9d24f4622620800000000000000
+      internalID: 2747869722549403118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_56
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 750
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a7cbb33b48abda10800000000000000
+      internalID: 1935325505829717925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_57
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 750
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3cf4d648fa8fea0800000000000000
+      internalID: -5838723933581360155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_58
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 750
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cad9b7fae427fcc0800000000000000
+      internalID: -3677429979127620924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_59
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 750
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1998e025cbf8250a0800000000000000
+      internalID: -6894290040557500015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_60
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 750
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e962e49fc8bb6e70800000000000000
+      internalID: 9109577872982567399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_61
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 751
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9807195a027e086b0800000000000000
+      internalID: -5295979034384961399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_62
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 751
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc5c6949c146b5040800000000000000
+      internalID: 4637410315222828493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_63
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 700
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4427401b7b970de10800000000000000
+      internalID: 2220408446149489220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_64
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 700
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376c12ff2aaee3d70800000000000000
+      internalID: 9024908689083057779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_65
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 700
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b2b57f456de0f40800000000000000
+      internalID: 5696726239085800209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_66
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 700
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 357e469d91d1bf310800000000000000
+      internalID: 1439776502733662035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_67
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 700
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074f76e149abac4b0800000000000000
+      internalID: -5419314056258915216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_68
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 700
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358961c970e025c40800000000000000
+      internalID: 5499473520819083347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_69
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 725
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf89a1a5f90b6a00800000000000000
+      internalID: 750704713471201244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_70
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 708
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52eb0d8e0ad44fcf0800000000000000
+      internalID: -219465128338211291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_71
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 697
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d9f2e1b7e646a10800000000000000
+      internalID: 1901766417723661661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_72
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 697
+        width: 33
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8032ae5058680e70800000000000000
+      internalID: 9081623342986965130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_73
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 700
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 285c9fcc4a265af30800000000000000
+      internalID: 4586180255499797890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_74
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 700
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f6016b03691fded0800000000000000
+      internalID: -2387161364299708680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_75
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 700
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2db411433ceda830800000000000000
+      internalID: 4084180141974273323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_76
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 700
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f70347776da902590800000000000000
+      internalID: -7700985116885766017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_77
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 704
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f460722dbbab3870800000000000000
+      internalID: 8663707136992240886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_78
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 704
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33cb391548e1e73f0800000000000000
+      internalID: -901249321774367693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_79
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 704
+        width: 37
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1c5a0ab97585240800000000000000
+      internalID: 4780667330380546482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_80
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 705
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe2d7f9ea66cf6e0800000000000000
+      internalID: -1802452850668916996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_81
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 650
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d6c23adeb334510800000000000000
+      internalID: 1532134190066986272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_82
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 650
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517ce7fd9435b3c70800000000000000
+      internalID: 8951840261076338453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_83
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 650
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34b438beec20b9d70800000000000000
+      internalID: 9050830963868912451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_84
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 650
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385cf5260dcc69e60800000000000000
+      internalID: 7968781786054378883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_85
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 650
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e009b16c417b07590800000000000000
+      internalID: -7678436064815771634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_86
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 650
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 888765a670cc49990800000000000000
+      internalID: -7380049557132511096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_87
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 651
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770ddd0e1ec8ab3a0800000000000000
+      internalID: -6648846998090952585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_88
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 678
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7188194866c0e40c0800000000000000
+      internalID: -4589717335793629161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_89
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 647
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f2e1cc1e472d030800000000000000
+      internalID: 3518002772070772555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_90
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 647
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225cb077011315c10800000000000000
+      internalID: 2040466052962043170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_91
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 650
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80490f2231ad3a1e0800000000000000
+      internalID: -2187665218246503416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_92
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 650
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f118a60fbded68d0800000000000000
+      internalID: -2851361584349441552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_93
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 650
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4c9892fa86fb4160800000000000000
+      internalID: 7010968321568316492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_94
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 650
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb86d0ae28ba8e10800000000000000
+      internalID: 2200773878330330046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_95
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 661
+        width: 33
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7fcd5bfe14772580800000000000000
+      internalID: -8851978866158350469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_96
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 661
+        width: 33
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e0a0502f0851550800000000000000
+      internalID: 6130948244689784456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_97
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 665
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fef84b8946c70e50800000000000000
+      internalID: 6775602183573929721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_98
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 665
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a3b526d45d135ce0800000000000000
+      internalID: -1417757207484320859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_99
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 652
+        width: 37
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be6c7ca357fea15c0800000000000000
+      internalID: -4243816412066887957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_100
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 663
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792ef970c0a857370800000000000000
+      internalID: 8319707670909018775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_101
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 651
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a921dca7dba303c0800000000000000
+      internalID: -4394479868577764957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_102
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 600
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30d2e8328619b72d0800000000000000
+      internalID: -3279868027150127869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_103
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 600
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e96ac65cc748b81e0800000000000000
+      internalID: -2194514721989941602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_104
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 600
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b203459a35a0e0430800000000000000
+      internalID: 3750946894085632043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_105
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 600
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c45af3b85c1285f0800000000000000
+      internalID: -756010620142594873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_106
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 600
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29f5102c9f264140800000000000000
+      internalID: 4703499208434776367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_107
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 600
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ced3cd86a0b4d30800000000000000
+      internalID: 4416635305054825564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_108
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 613
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef8bd337b8edc7c0800000000000000
+      internalID: -4049324616389521430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_109
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 613
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3164942954e28fbd0800000000000000
+      internalID: -2596274308837194221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_110
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 599
+        width: 33
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607a36ce7c2d8eb70800000000000000
+      internalID: 8928618017368286982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_111
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 610
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1757efa8a84cc2450800000000000000
+      internalID: 6065438897477678449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_112
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 597
+        width: 42
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002deb3e1274c7c20800000000000000
+      internalID: 3205515245661377024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_113
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 597
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60fbcbc97f601710800000000000000
+      internalID: 1661950831400579182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_114
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 600
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5268b0e832fd77570800000000000000
+      internalID: 8464479368466105893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_115
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 600
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 701171c48b4c80b60800000000000000
+      internalID: 7712630657701581063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_116
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 600
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b93e3cc82e156f0800000000000000
+      internalID: -697527373055943924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_117
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 600
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc92686e7a948280800000000000000
+      internalID: -9041932284145263396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_118
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 601
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947d94cf086c16b60800000000000000
+      internalID: 7737683892090033993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_119
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 601
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f324cef87e339cb0800000000000000
+      internalID: -4858470883611368459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_120
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 550
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b15906bbdf0d8e40800000000000000
+      internalID: 5660197743000900019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_121
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 550
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 421e7a8fdd41aca40800000000000000
+      internalID: 5389142847694299428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_122
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 550
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64db1618d30c522e0800000000000000
+      internalID: -2151101876603339450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_123
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 550
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e524e255ee36d3f0800000000000000
+      internalID: -876443922817866265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_124
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 550
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa653d1d412122250800000000000000
+      internalID: 5918312740947187375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_125
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 550
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b511141dda3d2e5f0800000000000000
+      internalID: -728787446187093669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_126
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 565
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a2c56dd7d9b07410800000000000000
+      internalID: 1472881414933693088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_127
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 565
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265a6b9d4cfae0e20800000000000000
+      internalID: 3318783235419710818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_128
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 575
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aee5499eaa289f10800000000000000
+      internalID: 2276616541019958944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_129
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 547
+        width: 42
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173ab574b4fb75210800000000000000
+      internalID: 1321735345697170289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_130
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 550
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7613b952da357a0800000000000000
+      internalID: -6389573069279500314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_131
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 550
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16861629a8482c220800000000000000
+      internalID: 2504710073467627617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_132
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 550
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb6c95e14af34b60800000000000000
+      internalID: 7729296546429955059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_133
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 550
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8cfdf3a67f2f5c0800000000000000
+      internalID: -4183009068163544865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_134
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 550
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 919a0ec44e7c18990800000000000000
+      internalID: -7385402130554640103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_135
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 551
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86cd6ca70f9011890800000000000000
+      internalID: -7489193776883770264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_136
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 551
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cfad08193c672d50800000000000000
+      internalID: 6712452762091499461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_137
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 549
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dcb21c794e86eb30800000000000000
+      internalID: 4316293739146558677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_138
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 555
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f447e639a0d7060800000000000000
+      internalID: 6952725028059500355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_139
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 520
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93df69623800d16f0800000000000000
+      internalID: -712412602766525127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_140
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 520
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2618727931c91ba60800000000000000
+      internalID: 7688097646852407650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_141
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 513
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60596a2a281de7100800000000000000
+      internalID: 107753800108250374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_142
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 497
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c4a51cc6134cc820800000000000000
+      internalID: 2939798421958403267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_143
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 500
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec8502870eaf72130800000000000000
+      internalID: 3542075473945188558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_144
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 501
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b53820906153e290800000000000000
+      internalID: -7862351049281489487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_145
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 501
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dff31caf872e22a0800000000000000
+      internalID: -6760422492615737385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_146
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 499
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0ae49107a1e4cb0800000000000000
+      internalID: -4877932277632425733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_147
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 450
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c53a3490f3e6020800000000000000
+      internalID: 2336874565673901067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_148
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 417
+        width: 8
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8cc8caf9bba85d0800000000000000
+      internalID: -3059426702375728933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_149
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 460
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de5eb3f3bfff9c8c0800000000000000
+      internalID: -3978367341242358291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_150
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 449
+        width: 18
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227e86d5c16d92a40800000000000000
+      internalID: 5344037850166388514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_151
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 450
+        width: 42
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6479c2a1f6fbb2f0800000000000000
+      internalID: -955898978207435669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_152
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 450
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc2aae33cbfa4d390800000000000000
+      internalID: -7794411832211758387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_153
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 452
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b1413dcb4c221ea0800000000000000
+      internalID: -5903607457452572237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_154
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 452
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 146a3fa5de07fa800800000000000000
+      internalID: 625843037963265601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_155
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 400
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7103b9c1da622db0800000000000000
+      internalID: -4818171202068348545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_156
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 414
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1a6826bceddc300800000000000000
+      internalID: 274120117452186031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_157
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 417
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f420947614a1ef600800000000000000
+      internalID: 503869076520108623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_158
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 399
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 587b7c0b0902f20c0800000000000000
+      internalID: -4598420888708728955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_159
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 400
+        width: 42
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c38c3a59c8c11fd0800000000000000
+      internalID: -2372894761519643710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_160
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 402
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f8a0157af273d80800000000000000
+      internalID: -8271089794976936166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_161
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 402
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f22666879d82260800000000000000
+      internalID: 7073142325922377507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_162
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 412
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019c4b3014bbdfb40800000000000000
+      internalID: 5475738609861839120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_163
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 402
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be052935525627f0800000000000000
+      internalID: -637731771241918791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_164
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 399
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f7e8186ecf58060800000000000000
+      internalID: 6955243266489876267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_165
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 397
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb90bcd900f87c60800000000000000
+      internalID: 7816261078449429449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_166
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 397
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899f68257e8da50d0800000000000000
+      internalID: -3433193277882959464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_167
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 350
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ab35254c3986260800000000000000
+      internalID: 7091080084698937987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_168
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 350
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d4588cacdef71730800000000000000
+      internalID: 3969921820291257559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_169
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 350
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c125105da743c26e0800000000000000
+      internalID: -1861054843846569444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_170
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 350
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13f7b19267794d450800000000000000
+      internalID: 6112677128000208689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_171
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 347
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f069f4c907de2910800000000000000
+      internalID: 1814624136836243703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_172
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 352
+        width: 33
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d1353724341aa30800000000000000
+      internalID: 4224731878131965210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_173
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 352
+        width: 33
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a4d9147a475a0a0800000000000000
+      internalID: -6870957394774635980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_174
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 300
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49f5e7f709876d80800000000000000
+      internalID: -8257480724443694773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_175
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 300
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c15e72d5388977e0800000000000000
+      internalID: -1767231614020070969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_176
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 318
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc1a3a48ad9467a0800000000000000
+      internalID: -6384805025579131699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_177
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 318
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8adb4a97b6dbe7290800000000000000
+      internalID: -7890661227806540376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_178
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 318
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc13c7983c7a4a9d0800000000000000
+      internalID: -2763899813031562801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_179
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 318
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0c77643e2c7e9b0800000000000000
+      internalID: -5050854175677103886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_180
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 318
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d27fe77df5b9f4b60800000000000000
+      internalID: 7732569921158051629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_181
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 318
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16682f997a14b980800000000000000
+      internalID: -8524159085041916389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_182
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 318
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3544a88ce3f16690800000000000000
+      internalID: -7610533698049129155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_183
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 318
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d9e5da970b23ed90800000000000000
+      internalID: -7069759678379071024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_184
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 318
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e22ba450aced6da0800000000000000
+      internalID: -5949839359327132954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_185
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 318
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083fd9ab66ac0b150800000000000000
+      internalID: 5886427255539626880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_186
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 310
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d20413b649dc750800000000000000
+      internalID: 6326876239634115964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_187
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 313
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b2c2e0c97443bc70800000000000000
+      internalID: 8985600971252089522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_188
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 310
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77138f297bd6e4da0800000000000000
+      internalID: -5958704621752405641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_189
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 312
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86dc27c9466c411f0800000000000000
+      internalID: -1075016275610907288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_190
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 306
+        width: 47
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e1be388651f85d0800000000000000
+      internalID: -3058202083327271316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_191
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 288
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52a29da6d1684f100800000000000000
+      internalID: 140884949260118565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_192
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 288
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8eb80775ab93570800000000000000
+      internalID: 8446987460823214335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_193
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 288
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3db234711b140dc0800000000000000
+      internalID: -3673781634249605825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_194
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 288
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3febec825bbeb9de0800000000000000
+      internalID: -1325206502024233229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_195
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 288
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63f85558ce4c2c90800000000000000
+      internalID: -7193287882485206165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_196
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 288
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e13ee2db3d6f68270800000000000000
+      internalID: 8252554756475511582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_197
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 288
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b5025e487cbd9f0800000000000000
+      internalID: -442540764772148409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_198
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 288
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc797dff524f4eec0800000000000000
+      internalID: -3538434963163080756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_199
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 288
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d44ac1a8c8ef030800000000000000
+      internalID: 3530413682718952761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_200
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 288
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6daa612a7fa440c0800000000000000
+      internalID: -4592352780929553043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_201
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 250
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06881f6db48480570800000000000000
+      internalID: 8433069792817154144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_202
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 250
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d4d7341ce0ec050800000000000000
+      internalID: 5822607591460392244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_203
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 261
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a4f36a095fb8670800000000000000
+      internalID: 8542191119851539037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_204
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 200
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b11030f29665030800000000000000
+      internalID: 3483087012452440927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_205
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 200
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52cb32bf2aaba9b0800000000000000
+      internalID: -5067769833844915621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_206
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 210
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e1ecd96e64d1360800000000000000
+      internalID: 7141942540383428190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_207
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 150
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8761664e61a9071c0800000000000000
+      internalID: -4507933803886012808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_208
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 150
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d942294a948c35a20800000000000000
+      internalID: 3050001591279166621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_209
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 168
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c975b45f45995830800000000000000
+      internalID: 4060440707007347139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_210
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 100
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385026d48d8b27a70800000000000000
+      internalID: 8823317859122939267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_211
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 100
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7d70fc6201d5240800000000000000
+      internalID: 4781996138205534198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_212
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 118
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9f972a2f8767790800000000000000
+      internalID: -7532700343227254323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_213
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 50
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c65c517fb08d3c0800000000000000
+      internalID: -4334701485494014835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_214
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 50
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7681d6699d3cddf90800000000000000
+      internalID: -6927165312526903193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_215
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876e61f8aa5e12b30800000000000000
+      internalID: 4260939243177043576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacman sprite sheet_216
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b20243fb8c853240800000000000000
+      internalID: 4770873912978440886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

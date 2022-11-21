@@ -2,7 +2,7 @@ import tkinter.messagebox
 import tkinter     as tk
 import tkinter.ttk as ttk
 
-from tkinter.filedialog   import askopenfilename
+from tkinter.filedialog   import askopenfilenames
 from client               import connectToServer
 from connection_functions import sendLoginInfo, sendRegisterInfo, storeFile
 
@@ -118,23 +118,26 @@ class MyFiles(Page):
 								     text='Store File',
 									 command=lambda: storeFile(clientSocket,
 									                           usercode,
-															   self.filename,
-															   self.fileBlob))
+															   self.filenames,
+															   self.fileBlobs))
 		storeFilesButton.pack(side='left')
 
 
 	def processFile(self):
-		filePath = askopenfilename()
+		filePaths = askopenfilenames()
+		self.fileBlobs = []
+		self.filenames = []
 
 		# Prune path from filename
-		pos = filePath.rfind('/') + 1
-		self.filename = filePath[pos::1]
+		for i in range(len(filePaths)):
+			pos = filePaths[i].rfind('/') + 1
+			self.filenames.append(filePaths[i][pos::1])
 
-		# Open file and convert to binary data
-		with open(filePath, 'rb') as file:
-			binaryData = file.read()
+			# Open file and convert to binary data
+			with open(filePaths[i], 'rb') as file:
+				binaryData = file.read()
 
-		self.fileBlob = binaryData
+			self.fileBlobs.append(binaryData)
 
 
 class MainView(tk.Frame):
