@@ -71,7 +71,7 @@ def sendRegisterInfo(socket, username, password, passwordConfirm):
 	print(socket.recv().decode(utf))
 
 
-def storeFile(socket, usercode, filename, fileBlob):
+def storeFile(socket, usercode, filenames, fileBlobs):
 	if usercode == '':
 		print('Usercode is empty.')
 		return None
@@ -86,20 +86,29 @@ def storeFile(socket, usercode, filename, fileBlob):
 
 	print('storefile ack received')
 
+
 	# Send data
 	socket.send(usercode.encode(utf))
 	checkResponse = socket.recv().decode(utf)
 	if checkResponse == 'error':
 		print('Not signed in')
 		return None
-
+	
 	print(checkResponse)
 
-	socket.send(filename.encode(utf))
+	# Get length of lists
+	filesLen = len(filenames)
+
+	# Send lengths of lists to be stored
+	socket.send(str(filesLen).encode(utf))
 	print(socket.recv().decode(utf))
 
-	socket.send(fileBlob)
-	print(socket.recv().decode(utf))
+	for i in range(filesLen):
+		socket.send(filenames[i].encode(utf))
+		print(socket.recv().decode(utf))
+
+		socket.send(fileBlobs[i])
+		print(socket.recv().decode(utf))
 
 	socket.send(''.encode(utf))
 	print(socket.recv().decode(utf))
