@@ -1,5 +1,5 @@
 import zmq
-from db_functions import get_usercode, add_user, add_file, usercode_in_files
+from db_functions import *
 
 
 serverPort = 9001
@@ -24,7 +24,20 @@ def loginRequest(socket):
 	if usercode == None:
 		socket.send('error'.encode(utf))
 	else:
+		filenames = get_filenames(usercode)
+		filesLen = len(filenames)
+
 		socket.send(usercode.encode(utf))
+		socket.recv()
+
+		socket.send(str(filesLen).encode(utf))
+
+		for filename in filenames:
+			socket.recv()
+			if filename == None:
+				socket.send('skip'.encode(utf))
+			else:
+				socket.send(filename.encode(utf))
 
 
 def registerRequest(socket):
