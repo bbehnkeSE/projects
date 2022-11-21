@@ -75,16 +75,16 @@ def get_usercode(username, password):
 		cur = conn.cursor()
 
 		getUserQuery = """SELECT * FROM users WHERE username=?"""
-		row = cur.execute(getUserQuery, (username,)).fetchall()
+		rows = cur.execute(getUserQuery, (username,)).fetchall()
 		
 		cur.close()
 		conn.close()
 		print("Connection closed")
 
-		if len(row) == 0:
+		if len(rows) == 0:
 			return None
 		else:
-			userInfo = row[0]
+			userInfo = rows[0]
 
 
 		if verify_password(password, userInfo[1]):
@@ -140,7 +140,7 @@ def get_id(usercode):
 		print(e)
 
 
-def get_filename(usercode):
+def get_filenames(usercode):
 	try:
 		conn = get_connection('database.db')
 		cur = conn.cursor()
@@ -148,11 +148,18 @@ def get_filename(usercode):
 		query = """SELECT filename FROM files WHERE usercode=?"""
 		data = (usercode,)
 
-		filenames = cur.execute(query, data).fetchall()
+		rows = cur.execute(query, data).fetchall()
 
 		cur.close()
 		conn.close()
 		print("Connection closed")
+
+		if len(rows) == 0:
+			return None
+		else:
+			filenames = []
+			for row in rows:
+				filenames.append(row[0])
 
 		return filenames
 
