@@ -5,7 +5,7 @@ import random
 
 utf = "utf-8"
 
-
+# Sends username and password to server, returns usercode and list of filenames
 def sendLoginInfo(socket, username, password):
 	# Send initial request code
 	socket.send('login'.encode(utf))
@@ -26,12 +26,14 @@ def sendLoginInfo(socket, username, password):
 	response2 = socket.recv().decode(utf)
 	print(response2)
 
-	socket.send(''.encode(utf))
+	socket.send_string('')
 	usercode = socket.recv().decode(utf)
+
 	if usercode == 'error':
 		print('Incorrect username or password')
+		return None
 	else:
-		print('Usercode received.')
+		print('usercode received')
 		return usercode
 
 
@@ -67,7 +69,7 @@ def sendRegisterInfo(socket, username, password, passwordConfirm):
 	socket.send(usercode.encode())
 	print(socket.recv().decode(utf))
 
-	socket.send(''.encode(utf))
+	socket.send_string('')
 	print(socket.recv().decode(utf))
 
 
@@ -85,7 +87,6 @@ def storeFile(socket, usercode, filenames, fileBlobs):
 		return None
 
 	print('storefile ack received')
-
 
 	# Send data
 	socket.send(usercode.encode(utf))
@@ -110,5 +111,38 @@ def storeFile(socket, usercode, filenames, fileBlobs):
 		socket.send(fileBlobs[i])
 		print(socket.recv().decode(utf))
 
-	socket.send(''.encode(utf))
+	socket.send_string('')
 	print(socket.recv().decode(utf))
+
+
+def requestFilenames(socket, usercode):
+	if usercode == None:
+		return None
+
+	# Send initial request
+	socket.send('filename request'.encode(utf))
+
+	ack = socket.recv().decode(utf)
+	if ack != 'requestfile_ack':
+		return None
+
+	socket.send(usercode.encode(utf))
+	print(socket.recv().decode(utf))
+
+	socket.send_string('')
+	filenamesLen = int(socket.recv().decode(utf))
+
+	filenames = []
+
+	socket.send_string('')
+	for i in range(filenamesLen):
+		filename = socket.recv().decode(utf)
+		socket.send_string('')
+
+		if filename == 'skip':
+			continue
+
+		filenames.append(filename)
+
+	print(socket.recv().decode(utf))
+	return filenames

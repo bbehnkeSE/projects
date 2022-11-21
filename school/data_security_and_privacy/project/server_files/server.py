@@ -1,5 +1,5 @@
 import zmq
-from db_functions import get_usercode, add_user, add_file, usercode_in_files
+from db_functions import *
 
 
 serverPort = 9001
@@ -7,6 +7,7 @@ utf = "utf-8"
 
 
 def loginRequest(socket):
+	print('loginRequest')
 	# Acknowledge login request has been received
 	socket.send('login_ack'.encode(utf))
 
@@ -28,6 +29,7 @@ def loginRequest(socket):
 
 
 def registerRequest(socket):
+	print('registerRequest')
 	# Acknowledge register user request has been received
 	socket.send('register_ack'.encode(utf))
 
@@ -48,6 +50,7 @@ def registerRequest(socket):
 
 
 def storeFilesRequest(socket):
+	print('storeFilesRequest')
 	# Acknowledge storefile request
 	socket.send('storefile_ack'.encode(utf))
 
@@ -63,8 +66,6 @@ def storeFilesRequest(socket):
 	filesLen = int(socket.recv().decode(utf))
 	socket.send('filesLen received'.encode(utf))
 
-	print(filesLen)
-
 	for i in range(filesLen):
 		filename = socket.recv().decode(utf)
 		socket.send('filename received'.encode(utf))
@@ -77,6 +78,31 @@ def storeFilesRequest(socket):
 	socket.recv()
 	socket.send('Files added'.encode(utf))
 
+
+def requestFilenames(socket):
+	print("requestFilenames")
+	# Acknowledge request
+	socket.send('requestfile_ack'.encode(utf))
+
+	# Get required data
+	usercode = socket.recv().decode(utf)
+	socket.send('usercode received'.encode(utf))
+
+	filenames = get_filenames(usercode)
+	filenamesLen = len(filenames)
+	socket.recv()
+
+	socket.send(str(filenamesLen).encode(utf))
+	socket.recv()
+
+	for filename in filenames:
+		if filename == None:
+			socket.send('skip'.encode(utf))
+		else:
+			socket.send(filename.encode(utf))
+		socket.recv()
+
+	socket.send('all filenames sent'.encode())
 
 if __name__ == '__main__':
 	context = zmq.Context()
@@ -94,3 +120,5 @@ if __name__ == '__main__':
 				registerRequest(socket)
 			elif request == 'storefile':
 				storeFilesRequest(socket)
+			elif request == 'filename request':
+				requestFilenames(socket)
