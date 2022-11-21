@@ -4,7 +4,7 @@ import tkinter.ttk as ttk
 
 from tkinter.filedialog   import askopenfilenames
 from client               import connectToServer
-from connection_functions import sendLoginInfo, sendRegisterInfo, storeFile
+from connection_functions import *
 
 
 clientSocket = connectToServer()
@@ -49,7 +49,7 @@ class Login(Page):
 
 
 	def setUsercode(self, username, password):
-		global usercode 
+		global usercode
 		usercode = sendLoginInfo(clientSocket, username, password)
 
 
@@ -105,14 +105,27 @@ class MyFiles(Page):
 		label.pack(side='top', anchor='nw')
 
 		buttonFrame = tk.Frame(self)
+		refreshButtonFrame = tk.Frame(self)
 		container = tk.Frame(self)
-		buttonFrame.pack(side='bottom', anchor='sw')
-		container.pack(side='bottom', anchor='sw')
+		refreshButtonFrame.pack(side='top', anchor='nw')
+		buttonFrame.pack(side='bottom', anchor='se')
+		container.pack(side='bottom', anchor='se')
+
+		vsb = tk.Scrollbar(self, orient="vertical")
+		self.text = tk.Text(self, width=40, height=20, yscrollcommand=vsb.set)
+		vsb.config(command=self.text.yview)
+		vsb.pack(side="right", fill="y")
+		self.text.pack(side="left", fill="both", expand=True)
+
+		refreshButton = tk.Button(refreshButtonFrame,
+		                          text='Refresh List',
+								  command=lambda: self.displayFiles())
+		refreshButton.pack(side='right')
 
 		selectFileButton = tk.Button(buttonFrame,
 		                             text='Select File',
 									 command=self.processFile)
-		selectFileButton.pack(side='left')
+		selectFileButton.pack(side='right')
 
 		storeFilesButton = tk.Button(buttonFrame,
 								     text='Store File',
@@ -120,8 +133,7 @@ class MyFiles(Page):
 									                           usercode,
 															   self.filenames,
 															   self.fileBlobs))
-		storeFilesButton.pack(side='left')
-
+		storeFilesButton.pack(side='right')
 
 	def processFile(self):
 		filePaths = askopenfilenames()
@@ -138,6 +150,19 @@ class MyFiles(Page):
 				binaryData = file.read()
 
 			self.fileBlobs.append(binaryData)
+
+	def displayFiles(self):
+		filenames = requestFilenames(clientSocket, usercode)
+		
+		try:
+			self.text.delete('1.0', 'end')
+		except:
+			pass
+
+		for i in range(len(filenames)):
+			self.cb = tk.Checkbutton(self, text=filenames[i], bg='white')
+			self.text.window_create("end", window=self.cb)
+			self.text.insert("end", "\n")
 
 
 class MainView(tk.Frame):
