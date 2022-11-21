@@ -5,7 +5,7 @@ import random
 
 utf = "utf-8"
 
-
+# Sends username and password to server, returns usercode and list of filenames
 def sendLoginInfo(socket, username, password):
 	# Send initial request code
 	socket.send('login'.encode(utf))
@@ -26,13 +26,30 @@ def sendLoginInfo(socket, username, password):
 	response2 = socket.recv().decode(utf)
 	print(response2)
 
+
 	socket.send(''.encode(utf))
 	usercode = socket.recv().decode(utf)
+
 	if usercode == 'error':
 		print('Incorrect username or password')
+		return None
 	else:
 		print('Usercode received.')
-		return usercode
+
+	socket.send(''.encode(utf))
+	filesLen = int(socket.recv().decode(utf))
+
+	filenames = []
+
+	for i in range(filesLen):
+		socket.send(''.encode(utf))
+		filename = socket.recv().decode(utf)
+		if filename == 'skip':
+			continue
+		else:
+			filenames.append(filename)
+
+	print(filenames)
 
 
 def sendRegisterInfo(socket, username, password, passwordConfirm):
