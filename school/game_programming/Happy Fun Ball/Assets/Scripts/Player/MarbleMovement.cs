@@ -81,6 +81,7 @@ public class MarbleMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Key"))
         {
             other.gameObject.SetActive(false);
+            other.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Play();
             StageFunctions.decrementKeyCount();
             AudioManager.Instance.PlayGetKey(getKey);
         }
