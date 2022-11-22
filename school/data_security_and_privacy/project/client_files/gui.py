@@ -104,11 +104,11 @@ class MyFiles(Page):
 		label = tk.Label(self, text='My Files', font=("TkDefaultFont", 20, 'bold'))
 		label.pack(side='top', anchor='nw')
 
-		buttonFrame = tk.Frame(self)
 		refreshButtonFrame = tk.Frame(self)
+		serverFilesButtonFrame = tk.Frame(self)
 		container = tk.Frame(self)
 		refreshButtonFrame.pack(side='top', anchor='nw')
-		buttonFrame.pack(side='bottom', anchor='se')
+		serverFilesButtonFrame.pack(side='bottom')
 		container.pack(side='bottom', anchor='se')
 
 		vsb = tk.Scrollbar(self, orient="vertical")
@@ -122,18 +122,28 @@ class MyFiles(Page):
 								  command=lambda: self.displayFiles())
 		refreshButton.pack(side='right')
 
-		selectFileButton = tk.Button(buttonFrame,
-		                             text='Select File',
-									 command=self.processFile)
-		selectFileButton.pack(side='right')
-
-		storeFilesButton = tk.Button(buttonFrame,
-								     text='Store File',
+		storeFilesButton = tk.Button(serverFilesButtonFrame,
+								     text='Upload File',
 									 command=lambda: storeFile(clientSocket,
 									                           usercode,
 															   self.filenames,
 															   self.fileBlobs))
-		storeFilesButton.pack(side='right')
+		storeFilesButton.pack(side='right', anchor='se')
+
+		selectFileButton = tk.Button(serverFilesButtonFrame,
+		                             text='Select File',
+									 command=self.processFile)
+		selectFileButton.pack(side='right', anchor='se')
+
+		deleteFileButton = tk.Button(serverFilesButtonFrame,
+		                             text='Delete Files')
+		deleteFileButton.pack(side='left', anchor='sw')
+
+		downloadFileButton = tk.Button(serverFilesButtonFrame,
+		                               text='Download Files',
+									   command=self.downloadFiles)
+		downloadFileButton.pack(side='left', anchor='sw')
+
 
 	def processFile(self):
 		filePaths = askopenfilenames()
@@ -152,17 +162,36 @@ class MyFiles(Page):
 			self.fileBlobs.append(binaryData)
 
 	def displayFiles(self):
-		filenames = requestFilenames(clientSocket, usercode)
+		self.filenames = requestFilenames(clientSocket, usercode)
 		
 		try:
 			self.text.delete('1.0', 'end')
 		except:
 			pass
 
-		for i in range(len(filenames)):
-			self.cb = tk.Checkbutton(self, text=filenames[i], bg='white')
-			self.text.window_create("end", window=self.cb)
+		self.cbIntVar= []
+		for filename in self.filenames:
+			self.cbIntVar.append(tk.IntVar())
+			cb = tk.Checkbutton(self, 
+			                    text=filename,
+						        bg='white',
+						        variable=self.cbIntVar[-1],
+						        command=self.cbChecked)
+			self.text.window_create("end", window=cb)
 			self.text.insert("end", "\n")
+
+
+	def cbChecked(self):
+		self.filesToDownload = []
+		for ctr, intVar in enumerate(self.cbIntVar):
+			if intVar.get():
+				self.filesToDownload.append(self.filenames[ctr])
+
+
+	def downloadFiles(self):
+		for cb in self.cbList:
+			value = cb[0].cget('text')
+			print(value, cb[1])
 
 
 class MainView(tk.Frame):
