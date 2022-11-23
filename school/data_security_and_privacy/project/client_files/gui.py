@@ -126,7 +126,7 @@ class MyFiles(Page):
 								     text='Upload File',
 									 command=lambda: storeFile(clientSocket,
 									                           usercode,
-															   self.filenames,
+															   self.localFilenames,
 															   self.fileBlobs))
 		storeFilesButton.pack(side='right', anchor='se')
 
@@ -136,24 +136,25 @@ class MyFiles(Page):
 		selectFileButton.pack(side='right', anchor='se')
 
 		deleteFileButton = tk.Button(serverFilesButtonFrame,
-		                             text='Delete Files')
+		                             text='Delete Files',
+									 command=self.guiDeleteFiles)
 		deleteFileButton.pack(side='left', anchor='sw')
 
 		downloadFileButton = tk.Button(serverFilesButtonFrame,
 		                               text='Download Files',
-									   command=self.downloadFiles)
+									   command=self.guiDownloadFiles)
 		downloadFileButton.pack(side='left', anchor='sw')
 
 
 	def processFile(self):
 		filePaths = askopenfilenames()
 		self.fileBlobs = []
-		self.filenames = []
+		self.localFilenames = []
 
 		# Prune path from filename
 		for i in range(len(filePaths)):
 			pos = filePaths[i].rfind('/') + 1
-			self.filenames.append(filePaths[i][pos::1])
+			self.localFilenames.append(filePaths[i][pos::1])
 
 			# Open file and convert to binary data
 			with open(filePaths[i], 'rb') as file:
@@ -162,7 +163,7 @@ class MyFiles(Page):
 			self.fileBlobs.append(binaryData)
 
 	def displayFiles(self):
-		self.filenames = requestFilenames(clientSocket, usercode)
+		self.ids, self.remoteFilenames = requestFilenames(clientSocket, usercode)
 		
 		try:
 			self.text.delete('1.0', 'end')
@@ -170,7 +171,7 @@ class MyFiles(Page):
 			pass
 
 		self.cbIntVar= []
-		for filename in self.filenames:
+		for filename in self.remoteFilenames:
 			self.cbIntVar.append(tk.IntVar())
 			cb = tk.Checkbutton(self, 
 			                    text=filename,
@@ -182,16 +183,18 @@ class MyFiles(Page):
 
 
 	def cbChecked(self):
-		self.filesToDownload = []
-		for ctr, intVar in enumerate(self.cbIntVar):
+		self.filesToManage= {}
+		for index, intVar in enumerate(self.cbIntVar):
 			if intVar.get():
-				self.filesToDownload.append(self.filenames[ctr])
+				self.filesToManage[self.ids[index]] = self.remoteFilenames[index]
 
 
-	def downloadFiles(self):
-		for cb in self.cbList:
-			value = cb[0].cget('text')
-			print(value, cb[1])
+	def guiDownloadFiles(self):
+		downloadFiles(clientSocket, self.filesToManage)
+
+	def guiDeleteFiles(self):
+		deleteFiles(clientSocket, self.filesToManage)
+			
 
 
 class MainView(tk.Frame):

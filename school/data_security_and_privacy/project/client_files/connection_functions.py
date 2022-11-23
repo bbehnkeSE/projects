@@ -133,16 +133,71 @@ def requestFilenames(socket, usercode):
 	filenamesLen = int(socket.recv().decode(utf))
 
 	filenames = []
+	ids = []
 
 	socket.send_string('')
 	for i in range(filenamesLen):
 		filename = socket.recv().decode(utf)
+		socket.send_string('')
+		id = socket.recv().decode(utf)
 		socket.send_string('')
 
 		if filename == 'skip':
 			continue
 
 		filenames.append(filename)
+		ids.append(int(id))
 
 	print(socket.recv().decode(utf))
-	return filenames
+	return ids, filenames
+
+
+def downloadFiles(socket, filesDict):
+	filesLen = len(filesDict)
+	if filesLen == 0:
+		return None
+	
+	socket.send('download request'.encode())
+
+	ack = socket.recv().decode(utf)
+	if ack != 'download_ack':
+		return None
+
+	socket.send(str(filesLen).encode(utf))
+	socket.recv()
+
+	for id, filename in filesDict.items():
+		socket.send(str(id).encode(utf))
+		response = socket.recv()
+
+		if response == 'error':
+			print('There was an error')
+			continue
+		else:
+			with open('downloads/' + filename, 'wb') as file:
+				file.write(response)
+
+
+def deleteFiles(socket, filesDict):
+	filesLen = len(filesDict)
+	if filesLen == 0:
+		return None
+	
+	socket.send('delete files request'.encode())
+
+	ack = socket.recv().decode(utf)
+	if ack != 'delete_files_ack':
+		return None
+
+	socket.send(str(filesLen).encode(utf))
+	socket.recv()
+
+	for id, filename in filesDict.items():
+		socket.send(str(id).encode(utf))
+		response = socket.recv().decode(utf)
+
+		if response == 'error':
+			print('There was an error')
+			continue
+		else:
+			print(response)
