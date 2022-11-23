@@ -90,19 +90,63 @@ def requestFilenames(socket):
 
 	filenames = get_filenames(usercode)
 	filenamesLen = len(filenames)
+	ids = get_file_ids(usercode)
+	idsLen = len(ids)
+
+	if idsLen != filenamesLen:
+		print('Not the same length')
+
 	socket.recv()
 
 	socket.send(str(filenamesLen).encode(utf))
 	socket.recv()
 
-	for filename in filenames:
-		if filename == None:
+	for i in range(len(filenames)):
+		if filenames[i] == None:
 			socket.send('skip'.encode(utf))
+			socket.recv()
+			socket.send_string('')
 		else:
-			socket.send(filename.encode(utf))
+			socket.send(filenames[i].encode(utf))
+			socket.recv()
+			socket.send(str(ids[i]).encode(utf))
 		socket.recv()
 
 	socket.send('all filenames sent'.encode())
+
+
+def requestDownload(socket):
+	print('requestDownload')
+	socket.send('download_ack'.encode(utf))
+
+	filesLen = int(socket.recv().decode(utf))
+	socket.send_string('')
+
+	for _ in range(filesLen):
+		file = get_file(int(socket.recv().decode(utf)))
+
+		if file == None:
+			socket.send_string('error')
+		else:
+			socket.send(file)
+
+
+def requestDeleteFiles(socket):
+	print('requestDeleteFiles')
+	socket.send('delete_files_ack'.encode(utf))
+
+	filesLen = int(socket.recv().decode(utf))
+	socket.send_string('')
+
+	for _ in range(filesLen):
+		id = int(socket.recv().decode(utf))
+		try:
+			remove_file(id)
+			socket.send('File deleted'.encode(utf))
+		except:
+			socket.send('error'.encode(utf))
+		
+
 
 if __name__ == '__main__':
 	context = zmq.Context()
@@ -122,3 +166,7 @@ if __name__ == '__main__':
 				storeFilesRequest(socket)
 			elif request == 'filename request':
 				requestFilenames(socket)
+			elif request == 'download request':
+				requestDownload(socket)
+			elif request == 'delete files request':
+				requestDeleteFiles(socket)
