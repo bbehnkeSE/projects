@@ -69,17 +69,17 @@ def storeFilesRequest(socket):
 	filesLen = int(socket.recv().decode(utf))
 	socket.send('filesLen received'.encode(utf))
 
-	for i in range(filesLen):
+	for _ in range(filesLen):
 		filename = socket.recv().decode(utf)
 		socket.send('filename received'.encode(utf))
 
-		file = socket.recv()
+		file = socket.recv().decode(utf)
 		socket.send('file received'.encode(utf))
 
 		add_file(usercode, filename, file)
 
 	socket.recv()
-	socket.send('Files added'.encode(utf))
+	socket.send('files added'.encode(utf))
 
 
 def requestFilenames(socket):
@@ -92,6 +92,12 @@ def requestFilenames(socket):
 	socket.send('usercode received'.encode(utf))
 
 	filenames = get_filenames(usercode)
+
+	if filenames == None:
+		socket.recv()
+		socket.send('no files'.encode(utf))
+		return
+	
 	filenamesLen = len(filenames)
 	ids = get_file_ids(usercode)
 	idsLen = len(ids)
@@ -129,9 +135,9 @@ def requestDownload(socket):
 		file = get_file(int(socket.recv().decode(utf)))
 
 		if file == None:
-			socket.send_string('error')
+			socket.send('error'.encode(utf))
 		else:
-			socket.send(file)
+			socket.send(file.encode(utf))
 
 
 def requestDeleteFiles(socket):
@@ -156,9 +162,9 @@ if __name__ == '__main__':
 
 	with context.socket(zmq.REP) as socket:
 		socket.bind("tcp://*:9001")
-		print("Listening on port " + str(serverPort))
 
 		while True:
+			print("Listening on port " + str(serverPort))
 			request = socket.recv().decode(utf)
 
 			if request == 'login':
