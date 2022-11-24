@@ -14,42 +14,44 @@ class AESEncrypt(object):
         self.blockSize = AES.block_size
         self.key = hashlib.sha256(key).digest()
 
-    def pad(self, plainText):
-        padBytes = self.blockSize - len(plainText) % self.blockSize
-        asciiStr = chr(padBytes)
-        padStr = padBytes * asciiStr.encode()
-        result = plainText + padStr
+    def pad(self, plainBytes):
+        padBytesNum = self.blockSize - len(plainBytes) % self.blockSize
+        asciiStr = chr(padBytesNum)
+        padBytes = padBytesNum * asciiStr.encode()
+        result = plainBytes + padBytes
 
         return result
 
     @staticmethod
-    def unpad(plainText):
-        lastChar = plainText[len(plainText) - 1:]
+    def unpad(plainBytes):
+        lastChar = plainBytes[len(plainBytes) - 1:]
         padBytes = ord(lastChar)
 
-        return plainText[:-padBytes]
+        return plainBytes[:-padBytes]
 
-    def encrypt(self, plainText):
-        plainText = self.pad(plainText)
+    def encrypt(self, plainBytes):
+        plainBytes = self.pad(plainBytes)
         iv = Random.new().read(self.blockSize)
         cipher = AES.new(self.key, AES.MODE_CBC, iv)
-        cipherText = cipher.encrypt(plainText)
+        cipherBytes = cipher.encrypt(plainBytes)
 
-        return b64encode(iv + cipherText).decode('utf-8')
+        return b64encode(iv + cipherBytes).decode('utf-8')
 
     def decrypt(self, cipherText):
         cipherText = b64decode(cipherText)
         iv = cipherText[:self.blockSize]
         cipher = AES.new(self.key, AES.MODE_CBC, iv)
-        plainText = cipher.decrypt(cipherText[self.blockSize:])
+        plainBytes = cipher.decrypt(cipherText[self.blockSize:])
 
-        return self.unpad(plainText)
+        return self.unpad(plainBytes)
 
 
 def generateSecretKey(username):
     os.chdir(f'secret_keys/{username}')
+
     with open('key.txt', 'wb') as file:
         file.write(get_random_bytes(32))
+
 
 
 def generateUsercode(username):
@@ -67,7 +69,7 @@ def generateUsercode(username):
     generateSecretKey(username)
     with open('key.txt', 'rb') as file:
         key = file.read()
-
+        
     os.chdir(homedir)
 
     usercode = string.ascii_lowercase + string.ascii_uppercase + string.ascii_letters + string.digits + string.punctuation

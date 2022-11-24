@@ -24,6 +24,7 @@ class Login(Page):
 		label.pack(side='top', anchor='nw')
 
 		usernameLabel = tk.Label(self, text='Username')
+		global username 
 		username = tk.StringVar()
 		usernameEntry = tk.Entry(self, textvariable=username)
 
@@ -50,11 +51,7 @@ class Login(Page):
 
 	def setUsercode(self, username, password):
 		global usercode
-		usercode = sendLoginInfo(clientSocket, username, password)
-
-
-	def getUsercode(self):
-		return self.usercode
+		usercode = sendLoginInfo(clientSocket, username, password).decode()
 
 
 class Register(Page):
@@ -125,6 +122,7 @@ class MyFiles(Page):
 		storeFilesButton = tk.Button(serverFilesButtonFrame,
 								     text='Upload File',
 									 command=lambda: storeFile(clientSocket,
+									 						   username,
 									                           usercode,
 															   self.localFilenames,
 															   self.fileBlobs))
@@ -163,7 +161,7 @@ class MyFiles(Page):
 			self.fileBlobs.append(binaryData)
 
 	def displayFiles(self):
-		self.ids, self.remoteFilenames = requestFilenames(clientSocket, usercode)
+		self.ids, self.remoteFilenames = requestFilenames(clientSocket, username, usercode)
 		
 		try:
 			self.text.delete('1.0', 'end')
@@ -190,7 +188,7 @@ class MyFiles(Page):
 
 
 	def guiDownloadFiles(self):
-		downloadFiles(clientSocket, self.filesToManage)
+		downloadFiles(clientSocket, username, self.filesToManage)
 
 	def guiDeleteFiles(self):
 		deleteFiles(clientSocket, self.filesToManage)
