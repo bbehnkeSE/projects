@@ -1,6 +1,6 @@
-import zmq
-import string
-import random
+import os
+
+from encrypt import AESEncrypt, generateUsercode
 
 
 utf = "utf-8"
@@ -53,17 +53,16 @@ def sendRegisterInfo(socket, username, password, passwordConfirm):
 	print('register ack received')
 
 	# Generate random usercode
-	usercode = string.ascii_lowercase + string.ascii_uppercase + string.ascii_letters + string.digits + string.punctuation
-	usercode = ''.join(random.choice(usercode) for i in range(len(usercode)))
-
-	for i in range(random.randint(1, 3)):
-		usercode += ''.join(random.choice(usercode) for i in range(len(usercode)))
+	encryptedUsercode, usercode = generateUsercode(username.get())
 
 	# Send data
 	socket.send(username.get().encode(utf))
 	print(socket.recv().decode(utf))
 
 	socket.send(password.get().encode(utf))
+	print(socket.recv().decode(utf))
+
+	socket.send(encryptedUsercode.encode())
 	print(socket.recv().decode(utf))
 
 	socket.send(usercode.encode())
@@ -174,6 +173,7 @@ def downloadFiles(socket, filesDict):
 			print('There was an error')
 			continue
 		else:
+			os.mkdir('./downloads')
 			with open('downloads/' + filename, 'wb') as file:
 				file.write(response)
 
@@ -192,7 +192,7 @@ def deleteFiles(socket, filesDict):
 	socket.send(str(filesLen).encode(utf))
 	socket.recv()
 
-	for id, filename in filesDict.items():
+	for id in filesDict:
 		socket.send(str(id).encode(utf))
 		response = socket.recv().decode(utf)
 
