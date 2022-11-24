@@ -40,10 +40,13 @@ def registerRequest(socket):
 	password = socket.recv().decode(utf)
 	socket.send('password received'.encode(utf))
 
+	encryptedUsercode = socket.recv().decode(utf)
+	socket.send('encrypted usercode received'.encode(utf))
+
 	usercode = socket.recv().decode(utf)
 	socket.send('usercode received'.encode(utf))
 
-	add_user(username, password, usercode, usercode)
+	add_user(username, password, encryptedUsercode, usercode)
 
 	socket.recv()
 	socket.send('New user created'.encode(utf))
