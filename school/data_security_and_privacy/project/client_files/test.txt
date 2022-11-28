@@ -1,5 +1,1 @@
-;alskdhfk;jhasdklbfaskbjdgklbndsfjkgbassbdg
-asdgfkjfhaklsfdghjkasgd
-asdjkgffhajklsdgf
-asdglkjgfhasdlkjgfhliausdhgguilasdg
-alskjdhgfgoiashdsgiuhadsufgh
+This file is used to test AES encryption.

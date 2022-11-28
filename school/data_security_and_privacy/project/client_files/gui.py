@@ -24,6 +24,7 @@ class Login(Page):
 		label.pack(side='top', anchor='nw')
 
 		usernameLabel = tk.Label(self, text='Username')
+		global username 
 		username = tk.StringVar()
 		usernameEntry = tk.Entry(self, textvariable=username)
 
@@ -50,11 +51,7 @@ class Login(Page):
 
 	def setUsercode(self, username, password):
 		global usercode
-		usercode = sendLoginInfo(clientSocket, username, password)
-
-
-	def getUsercode(self):
-		return self.usercode
+		usercode = sendLoginInfo(clientSocket, username, password).decode()
 
 
 class Register(Page):
@@ -104,11 +101,11 @@ class MyFiles(Page):
 		label = tk.Label(self, text='My Files', font=("TkDefaultFont", 20, 'bold'))
 		label.pack(side='top', anchor='nw')
 
-		buttonFrame = tk.Frame(self)
 		refreshButtonFrame = tk.Frame(self)
+		serverFilesButtonFrame = tk.Frame(self)
 		container = tk.Frame(self)
 		refreshButtonFrame.pack(side='top', anchor='nw')
-		buttonFrame.pack(side='bottom', anchor='se')
+		serverFilesButtonFrame.pack(side='bottom')
 		container.pack(side='bottom', anchor='se')
 
 		vsb = tk.Scrollbar(self, orient="vertical")
@@ -122,28 +119,40 @@ class MyFiles(Page):
 								  command=lambda: self.displayFiles())
 		refreshButton.pack(side='right')
 
-		selectFileButton = tk.Button(buttonFrame,
+		storeFilesButton = tk.Button(serverFilesButtonFrame,
+								     text='Upload File',
+									 command=lambda: storeFile(clientSocket,
+									 						   username,
+									                           usercode,
+															   self.localFilenames,
+															   self.fileBlobs))
+		storeFilesButton.pack(side='right', anchor='se')
+
+		selectFileButton = tk.Button(serverFilesButtonFrame,
 		                             text='Select File',
 									 command=self.processFile)
-		selectFileButton.pack(side='right')
+		selectFileButton.pack(side='right', anchor='se')
 
-		storeFilesButton = tk.Button(buttonFrame,
-								     text='Store File',
-									 command=lambda: storeFile(clientSocket,
-									                           usercode,
-															   self.filenames,
-															   self.fileBlobs))
-		storeFilesButton.pack(side='right')
+		deleteFileButton = tk.Button(serverFilesButtonFrame,
+		                             text='Delete Files',
+									 command=self.guiDeleteFiles)
+		deleteFileButton.pack(side='left', anchor='sw')
+
+		downloadFileButton = tk.Button(serverFilesButtonFrame,
+		                               text='Download Files',
+									   command=self.guiDownloadFiles)
+		downloadFileButton.pack(side='left', anchor='sw')
+
 
 	def processFile(self):
 		filePaths = askopenfilenames()
 		self.fileBlobs = []
-		self.filenames = []
+		self.localFilenames = []
 
 		# Prune path from filename
 		for i in range(len(filePaths)):
 			pos = filePaths[i].rfind('/') + 1
-			self.filenames.append(filePaths[i][pos::1])
+			self.localFilenames.append(filePaths[i][pos::1])
 
 			# Open file and convert to binary data
 			with open(filePaths[i], 'rb') as file:
@@ -152,17 +161,38 @@ class MyFiles(Page):
 			self.fileBlobs.append(binaryData)
 
 	def displayFiles(self):
-		filenames = requestFilenames(clientSocket, usercode)
+		self.ids, self.remoteFilenames = requestFilenames(clientSocket, username, usercode)
 		
 		try:
 			self.text.delete('1.0', 'end')
 		except:
 			pass
 
-		for i in range(len(filenames)):
-			self.cb = tk.Checkbutton(self, text=filenames[i], bg='white')
-			self.text.window_create("end", window=self.cb)
+		self.cbIntVar= []
+		for filename in self.remoteFilenames:
+			self.cbIntVar.append(tk.IntVar())
+			cb = tk.Checkbutton(self, 
+			                    text=filename,
+						        bg='white',
+						        variable=self.cbIntVar[-1],
+						        command=self.cbChecked)
+			self.text.window_create("end", window=cb)
 			self.text.insert("end", "\n")
+
+
+	def cbChecked(self):
+		self.filesToManage= {}
+		for index, intVar in enumerate(self.cbIntVar):
+			if intVar.get():
+				self.filesToManage[self.ids[index]] = self.remoteFilenames[index]
+
+
+	def guiDownloadFiles(self):
+		downloadFiles(clientSocket, username, self.filesToManage)
+
+	def guiDeleteFiles(self):
+		deleteFiles(clientSocket, self.filesToManage)
+			
 
 
 class MainView(tk.Frame):

@@ -120,7 +120,7 @@ def usercode_in_files(usercode):
 		print(e)
 
 
-def get_id(usercode):
+def get_file_ids(usercode):
 	try:
 		conn = get_connection('database.db')
 		cur = conn.cursor()
@@ -128,11 +128,18 @@ def get_id(usercode):
 		query = """SELECT id FROM files WHERE usercode=?"""
 		data = (usercode,)
 
-		ids = cur.execute(query, data).fetchall()
+		rows = cur.execute(query, data).fetchall()
 
 		cur.close()
 		conn.close()
 		print("Connection closed")
+
+		if len(rows) == 0:
+			return None
+		else:
+			ids = []
+			for row in rows:
+				ids.append(row[0])
 
 		return ids
 
@@ -175,7 +182,12 @@ def get_file(id):
 		query = """SELECT file FROM files WHERE id=?"""
 		data = (id,)
 
-		file = cur.execute(query, data).fetchall()
+		rows = cur.execute(query, data).fetchall()
+
+		if len(rows) == 0:
+			return None
+		else:
+			file = rows[0][0]
 
 		cur.close()
 		conn.close()
@@ -221,13 +233,13 @@ def remove_user(username, password):
 		print(e)
 
 
-def remove_file(filename):
+def remove_file(id):
 	try:
 		conn = get_connection('database.db')
 		cur = conn.cursor()
 
-		query = """DELETE FROM files WHERE filename=?"""
-		cur.execute(query, (filename,))
+		query = """DELETE FROM files WHERE id=?"""
+		cur.execute(query, (id,))
 
 		conn.commit()
 
@@ -237,3 +249,4 @@ def remove_file(filename):
 
 	except sqlite3.Error as e:
 		print(e)
+		return None
