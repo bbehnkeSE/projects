@@ -21,6 +21,7 @@ public class MarbleMovement : MonoBehaviour
     private Rigidbody   rb;
 
     private StageFunctions StageFunctions;
+    private int nextSceneIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class MarbleMovement : MonoBehaviour
         jumpHeight = 10.0f;
         rb         = GetComponent<Rigidbody>();
         rb.maxAngularVelocity = Mathf.Infinity;
+        nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
         StageFunctions = FindObjectOfType<StageFunctions>();
 
@@ -81,20 +83,31 @@ public class MarbleMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Key"))
         {
             other.gameObject.SetActive(false);
-            other.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Play();
+            other.transform.GetChild(0).gameObject.GetComponentInChildren<ParticleSystem>().Play();
             StageFunctions.decrementKeyCount();
             AudioManager.Instance.PlayGetKey(getKey);
         }
         if (other.gameObject.CompareTag("LightShaft"))
         {
             AudioManager.Instance.SuccessSound(success);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if(nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+                SceneManager.LoadScene(nextSceneIndex);
+            else
+                SceneManager.LoadScene(0);
         }
     }
 
-    private void OnCollisionEnter()
+    private void OnCollisionEnter(Collision collision)
     {
         AudioManager.Instance.PlayRandomMarbleBounce(collide);
+        if(collision.gameObject.CompareTag("MovingPlat"))
+            transform.parent.parent = collision.transform;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("MovingPlat"))
+            transform.parent.parent = null;
     }
 
     bool isGrounded()

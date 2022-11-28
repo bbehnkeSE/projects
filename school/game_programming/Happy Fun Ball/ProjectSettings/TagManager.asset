@@ -9,6 +9,7 @@ TagManager:
   - Key
   - Keys
   - LightShaft
+  - MovingPlat
   layers:
   - Default
   - TransparentFX

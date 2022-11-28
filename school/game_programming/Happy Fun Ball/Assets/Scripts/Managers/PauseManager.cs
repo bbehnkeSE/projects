@@ -59,4 +59,9 @@ public class PauseManager : MonoBehaviour
             paused = false;
         }
     }
+
+    public bool getPaused()
+    {
+        return paused;
+    }
 }

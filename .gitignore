@@ -35,3 +35,5 @@
 *.png
 *.pgn
 *.zip
+
+Pacman/*

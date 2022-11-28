@@ -13,6 +13,8 @@ public class CameraControl : MonoBehaviour
     public float     maxRotationY;
     public float     camSpeed;
 
+    private PauseManager pauseManager;
+
     float verticalLookRotation;
 
     // Start is called before the first frame update
@@ -25,16 +27,20 @@ public class CameraControl : MonoBehaviour
         camSpeed     = 15f;
 
         camTransform = GetComponentInChildren<Camera>().transform;
+        pauseManager = FindObjectOfType<PauseManager>();
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = marble.position;
-        transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * senX);
-        verticalLookRotation += Input.GetAxis("Mouse Y") * senY;
+        if (!pauseManager.getPaused())
+        {
+            transform.position = marble.position;
+            transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * senX);
+            verticalLookRotation += Input.GetAxis("Mouse Y") * senY;
 
-        verticalLookRotation = Mathf.Clamp(verticalLookRotation, minRotationY, maxRotationY);
-        camTransform.localEulerAngles = Vector3.left * verticalLookRotation;
+            verticalLookRotation = Mathf.Clamp(verticalLookRotation, minRotationY, maxRotationY);
+            camTransform.localEulerAngles = Vector3.left * verticalLookRotation;
+        }
     }
 }
