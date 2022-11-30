@@ -75,7 +75,7 @@ def generateUsercode(username):
     usercode = string.ascii_lowercase + string.ascii_uppercase + string.ascii_letters + string.digits + string.punctuation
     usercode = ''.join(random.choice(usercode) for i in range(len(usercode)))
 
-    for _ in range(random.randint(1, 3)):
+    for _ in range(3):
         usercode += ''.join(random.choice(usercode) for i in range(len(usercode)))
 
     aesObj = AESEncrypt(key)
