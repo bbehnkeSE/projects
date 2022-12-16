@@ -10,6 +10,7 @@ TagManager:
   - Keys
   - LightShaft
   - MovingPlat
+  - Obstacle
   layers:
   - Default
   - TransparentFX

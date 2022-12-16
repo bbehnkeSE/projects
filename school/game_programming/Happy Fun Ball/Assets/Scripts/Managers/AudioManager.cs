@@ -13,12 +13,20 @@ public class AudioManager : MonoBehaviour
     // MainMenu.cs & MarbleMovement.cs
     public AudioSource Success;
 
+    // MainMenu.cs & LevelSelect.cs
+    public AudioSource ButtonClick;
+
+    // MainMenu.cs
+    public AudioSource DeletePrefs;
+
     public AudioSource MusicSource;
 
     public float lowPitchRange = 0.95f;
     public float highPitchRange = 1.05f;
 
     public static AudioManager Instance = null;
+
+    private AudioClip music;
 
     private void Awake()
     {
@@ -29,12 +37,18 @@ public class AudioManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        GetKeySource.volume       = 0.2f;
-        MarbleBounceSource.volume = 0.2f;
-        MarbleRollSource.volume   = 0.2f;
-        MarbleJumpSource.volume   = 0.2f;
+        MusicSource.volume        = 0.2f;
 
-        Success.volume      = 0.2f;
+        GetKeySource.volume       = 0.4f;
+        MarbleBounceSource.volume = 0.4f;
+        MarbleRollSource.volume   = 0.4f;
+        MarbleJumpSource.volume   = 0.4f;
+        ButtonClick.volume        = 0.6f;
+        Success.volume            = 0.4f;
+        DeletePrefs.volume        = 0.4f;
+
+        music = Resources.Load<AudioClip>("Audio/melodyloops-original-ambient-vision-2m30s");
+        PlayMusic(music);
     }
 
     public void PlayGetKey(AudioClip clip)
@@ -87,6 +101,18 @@ public class AudioManager : MonoBehaviour
     {
         Success.clip = clip;
         Success.Play();
+    }
+
+    public void PlayButtonClick(AudioClip clip)
+    {
+        ButtonClick.clip = clip;
+        ButtonClick.Play();
+    }
+
+    public void PlayDeletePrefs(AudioClip clip)
+    {
+        DeletePrefs.clip = clip;
+        DeletePrefs.Play();
     }
 
     private float setPitch(float mainValue, float inValueMin, float inValueMax, float outValueMin, float outValueMax)

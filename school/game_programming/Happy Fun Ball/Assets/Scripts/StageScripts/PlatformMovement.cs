@@ -12,7 +12,10 @@ public class PlatformMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 5f;
+        if (this.CompareTag("Obstacle"))
+            speed = 10f;
+        else
+            speed = 5f;
     }
 
     // Update is called once per frame

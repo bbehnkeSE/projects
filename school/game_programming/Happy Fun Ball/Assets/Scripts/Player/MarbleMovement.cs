@@ -90,6 +90,7 @@ public class MarbleMovement : MonoBehaviour
         if (other.gameObject.CompareTag("LightShaft"))
         {
             AudioManager.Instance.SuccessSound(success);
+            PlayerPrefs.SetInt("currentLevel", nextSceneIndex);
             if(nextSceneIndex < SceneManager.sceneCountInBuildSettings)
                 SceneManager.LoadScene(nextSceneIndex);
             else
