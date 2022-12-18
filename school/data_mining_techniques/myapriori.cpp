@@ -3,9 +3,9 @@
  * CS43105 - Data Mining Techniques
  * 10/14/2022
  *
- * Demonstrates Apriori algorithm for pruning dataets
+ * Demonstrates Apriori algorithm for pruning datasets
  * Usage: myapriori file.txt frequency%
- * Ex. myapriori data.txt 20
+ * Ex.    myapriori data.txt 20
  */
 
 #include <iostream>
@@ -83,6 +83,8 @@ int main(int argc, char* argv[])
         return EXIT_SUCCESS;
     }
 
+    printMap(result, total);
+
     // Main loop
     // K represents the number of items each set should have
     int k = 2;
@@ -105,7 +107,7 @@ Map join(const std::vector<std::string>& sets, int k)
     int start, end;
     Map candidates;
     std::string tmp = "";
-    std::string spacelessSet;
+
     for(auto set: sets)
     {
         start = 0;
@@ -132,16 +134,16 @@ Map join(const std::vector<std::string>& sets, int k)
 
 Map& prune(Map& sets, const float& minsup)
 {
-    if(!sets.empty())
+    if(sets.empty())
+        return sets;
+
+    auto it = sets.begin();
+    while(it != sets.end())
     {
-        auto it = sets.begin();
-        while(it != sets.end())
-        {
-            if(it->second < minsup)
-                it = sets.erase(it);
-            else
-                ++it;
-        }
+        if(it->second < minsup)
+            it = sets.erase(it);
+        else
+            ++it;
     }
     return sets;
 }
