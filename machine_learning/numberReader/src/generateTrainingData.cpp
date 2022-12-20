@@ -41,7 +41,6 @@ int main()
     // Path info to store training/test data
     std::vector<std::string> trainingImgNames;
     const std::string        trainingImgPath = "resources/training_images/";
-    const std::string        testImgPath     = "resources/test_images/";
 
     // Ranges for random numbers
     int max = 999999;
