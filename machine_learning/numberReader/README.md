@@ -41,7 +41,7 @@ The model was trained by passing approximately 10,000 images, 1,000 per digit be
 
 The network was comprised of three convolutional layers, the first two followed by max pooling layers, then the data was flattened before a dense layer followed by the output layer. The activation function used was the Rectified Linear Unit (ReLU) function.
 
-```
+``` Python
   model = keras.models.Sequential()
   model.add(keras.layers.Conv2D(32, (4, 4), activation='relu', input_shape=(200, 200, 1)))
   model.add(keras.layers.MaxPooling2D((2, 2)))
@@ -55,7 +55,7 @@ The network was comprised of three convolutional layers, the first two followed 
 
 Finally, the model was compiled using the Adam optimizer and used Tensorflow's Sparse Categorical Crossentropy loss function.
 
-```
+``` Python
   model.compile(
     optimizer='adam',
     loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
