@@ -36,7 +36,7 @@ The model was trained by passing approximately 10,000 images, 1,000 per digit be
 <img style="display: block;
             margin-right: auto;
             width: 30%" 
-      src="https://github.com/bbehnkeSE/projects/blob/main/machine_learning/numberReader/resources/examples/training_image.PNG">
+      src="https://github.com/bbehnkeSE/projects/blob/main/machine_learning/numberReader/resources/examples/training_image.png">
 </img>
 
 The network was comprised of three convolutional layers, the first two followed by max pooling layers, then the data was flattened before a dense layer followed by the output layer. The activation function used was the Rectified Linear Unit (ReLU) function.
@@ -71,7 +71,7 @@ Fitting the model over 10 epochs resulted in a training accuracy of ~99.4% and a
 <img style="display: block;
             margin-right: auto;
             width: 30%" 
-      src="https://github.com/bbehnkeSE/projects/blob/main/machine_learning/numberReader/resources/examples/training_results.PNG">
+      src="https://github.com/bbehnkeSE/projects/blob/main/machine_learning/numberReader/resources/examples/training_results.png">
 </img>
 
 I suspect the overfitting of the model was due to two factors:
