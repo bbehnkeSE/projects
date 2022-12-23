@@ -32,7 +32,6 @@
 *.app
 
 # Misc
-*.png
 *.pgn
 *.zip
 *.pdf
