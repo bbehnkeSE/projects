@@ -19,8 +19,6 @@ Note: As the program currently has no way of knowing what you draw, you could al
 
 Provided training images must be unzipped first.
 
-Build with included Makefile.
-
 Controls:
 * Esc - Closes window.
 * Backspace - Clears screen.
