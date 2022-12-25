@@ -10,6 +10,7 @@
 ## Requirements:
 ##      Pytube: https://pytube.io/en/latest/
 ##      FFmpeg: https://ffmpeg.org/
+##      ffmpy:  https://pypi.org/project/ffmpy/
 ##
 ################################################
 
