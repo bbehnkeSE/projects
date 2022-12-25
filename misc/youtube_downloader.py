@@ -19,7 +19,7 @@ from pytube.cli  import on_progress     # Progress bar
 from ffmpy       import FFmpeg
 from ffmpy       import FFRuntimeError
 
-from pathlib import Path
+from pathlib     import Path
 
 import sys
 import os
@@ -70,7 +70,6 @@ def get_highest_quality(link):
         print(f'\n\nDownloading "{title}" at highest available quality...')
         yt.streams.get_highest_resolution().download(video_dir)         # Gets the highest quality up to 720p
         return None, None, None                                         # Return None to skip the ffmpeg step
-
 
     # Video has either 1440p or 1080p options.
     video = streams[0]
