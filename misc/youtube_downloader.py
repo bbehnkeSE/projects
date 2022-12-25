@@ -35,10 +35,10 @@ ffmpeg_exe      = str(Path.home() / 'ffmpeg-2022-12-21-git-eef763c705-full_build
 # Downloads video and audio, then stores the files in downloads directories.
 def download(video, audio):
     try:
-        print('Video')
-        video_path = video.download(downloads_video)
-        print('\nAudio')
+        print('Audio')
         audio_path = audio.download(downloads_audio)
+        print('\nVideo')
+        video_path = video.download(downloads_video)
         print('')
 
         return video_path, audio_path
@@ -50,7 +50,7 @@ def download(video, audio):
 # YouTube uses Dynamic Adaptive Streaming over HTTP (DASH) for video quality over 720p.
 # This streaming technique requires downloading the audio and video separately.
 def get_highest_quality(link):
-    # Gets video info from YouTube
+    # Create YouTube object from url.
     yt = YouTube(link, on_progress_callback=on_progress)
 
     # The title is used to name the file when it is copied, this removes illegal characters.
