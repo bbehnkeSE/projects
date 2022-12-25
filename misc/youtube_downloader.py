@@ -56,7 +56,7 @@ def get_highest_quality(link):
     # The title is used to name the file when it is copied, this removes illegal characters.
     title = ''.join(i for i in yt.title if i not in r'\/:*?<>|"')
 
-    # Check the info for 1440p quality.
+    # Check the object for 1440p quality.
     streams = yt.streams.filter(resolution='1440p')
     res = '1440p'
 
@@ -69,7 +69,7 @@ def get_highest_quality(link):
     if len(streams) == 0:
         print(f'\n\nDownloading "{title}" at highest available quality...')
         yt.streams.get_highest_resolution().download(video_dir)         # Gets the highest quality up to 720p
-        return None, None, None
+        return None, None, None                                         # Return None to skip the ffmpeg step
 
 
     # Video has either 1440p or 1080p options.
